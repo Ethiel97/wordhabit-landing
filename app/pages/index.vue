@@ -1,0 +1,12 @@
+<template>
+  <div>
+    <AppNav />
+    <HeroSection />
+    <FeaturesSection />
+    <HowItWorksSection />
+    <PricingSection />
+    <FaqSection />
+    <FinalCta />
+    <AppFooter />
+  </div>
+</template>
