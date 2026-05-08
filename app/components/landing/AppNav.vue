@@ -34,7 +34,7 @@ function anchorId(label: string) {
         </button>
       </div>
     </div>
-    <div class="flex gap-2 overflow-x-auto border-t border-[var(--color-line)] px-4 pb-3 pt-2 lg:hidden">
+    <nav aria-label="Mobile navigation" class="flex gap-2 overflow-x-auto border-t border-[var(--color-line)] px-4 pb-3 pt-2 lg:hidden">
       <a
           v-for="link in navLinks"
           :key="`mobile-${link}`"
@@ -43,7 +43,7 @@ function anchorId(label: string) {
       >
         {{ link }}
       </a>
-    </div>
+    </nav>
   </nav>
 </template>
 
