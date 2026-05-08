@@ -88,4 +88,19 @@ function anchorId(label: string) {
 .nav-app-link:hover {
   color: var(--color-green-700);
 }
+
+@media (max-width: 960px) {
+  .nav-inner {
+    padding: 12px 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-actions :deep(.btn) {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
 </style>

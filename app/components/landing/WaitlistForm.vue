@@ -98,4 +98,25 @@ function handleSubmit() {
   font-weight: 700;
   font-size: 18px;
 }
+
+@media (max-width: 640px) {
+  .form-row {
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .email-input {
+    width: 100%;
+    padding: 12px 14px;
+  }
+
+  .form-row :deep(.btn) {
+    width: 100%;
+  }
+
+  .success-box {
+    align-items: flex-start;
+  }
+}
 </style>

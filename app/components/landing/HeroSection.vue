@@ -233,14 +233,65 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
 
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 880px) {
+  .hero-container {
+    padding: 40px 16px 72px;
+  }
+
   .hero-grid,
   .hero-grid-c {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .hero-heading,
+  .hero-heading-c {
+    font-size: clamp(40px, 12vw, 56px);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+
+  .hero-big-label {
+    font-size: clamp(44px, 14vw, 72px);
+  }
+
+  .hero-big-word {
+    font-size: clamp(64px, 18vw, 120px);
+  }
+
+  .hero-big-sub {
+    font-size: 18px;
+    margin-bottom: 28px;
   }
 
   .pos-badge {
-    right: -30px;
-    top: -4px;
+    position: static;
+    transform: none;
+    margin-top: 10px;
+    display: inline-flex;
+  }
+
+  .hero-toggle {
+    right: 12px;
+    bottom: 12px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .toggle-label {
+    display: none;
+  }
+
+  .toggle-btn {
+    padding: 8px 10px;
+    font-size: 12px;
   }
 }
 </style>

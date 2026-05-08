@@ -34,10 +34,10 @@
     </div>
 
     <!-- Floating badges -->
-    <FloatingBadge color="#7C3AED" emoji="🏆" :top="0" :left="50" :rotate="-12" />
-    <FloatingBadge color="#22C55E" emoji="🎯" :top="310" :right="20" :rotate="15" />
-    <FloatingBadge color="#3B82F6" emoji="📚" :top="420" :left="80" :rotate="-8" :size="56" />
-    <FloatingBadge color="#EC4899" emoji="🔥" :top="150" :right="0" :rotate="20" :size="56" />
+    <FloatingBadge class="mobile-hide-badge" color="#7C3AED" emoji="🏆" :top="0" :left="50" :rotate="-12" />
+    <FloatingBadge class="mobile-hide-badge" color="#22C55E" emoji="🎯" :top="310" :right="20" :rotate="15" />
+    <FloatingBadge class="mobile-hide-badge" color="#3B82F6" emoji="📚" :top="420" :left="80" :rotate="-8" :size="56" />
+    <FloatingBadge class="mobile-hide-badge" color="#EC4899" emoji="🔥" :top="150" :right="0" :rotate="20" :size="56" />
   </div>
 </template>
 
@@ -160,5 +160,59 @@
   place-items: center;
   font-size: 14px;
   cursor: pointer;
+}
+
+@media (max-width: 880px) {
+  .card-scene {
+    height: 460px;
+  }
+
+  .back-card {
+    width: min(300px, calc(100% - 24px));
+    right: 8px;
+    top: 44px;
+    transform: rotate(4deg);
+  }
+
+  .main-card {
+    width: min(330px, calc(100% - 24px));
+    left: 8px;
+    top: 22px;
+    transform: rotate(-3deg);
+    padding: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .card-scene {
+    height: 420px;
+  }
+
+  .back-card,
+  .main-card {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: none;
+  }
+
+  .back-card {
+    margin-bottom: 12px;
+    padding: 18px;
+  }
+
+  .main-card {
+    padding: 20px;
+  }
+
+  .word-title {
+    font-size: 34px;
+  }
+
+  .mobile-hide-badge {
+    display: none;
+  }
 }
 </style>
