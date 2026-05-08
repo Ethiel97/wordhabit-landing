@@ -28,8 +28,10 @@ function anchorId(label: string) {
 
       <div class="nav-actions">
 <!--        <a href="/app" class="nav-app-link">Open app →</a>-->
-        <button class="btn btn-primary hidden sm:inline-flex" @click="scrollToWaitlist">Join the waitlist</button>
-        <button class="btn btn-primary px-3 py-2 text-sm sm:hidden" @click="scrollToWaitlist">Join</button>
+        <button class="btn btn-primary px-3 py-2 text-sm sm:text-base" @click="scrollToWaitlist">
+          <span class="sm:hidden">Join</span>
+          <span class="hidden sm:inline">Join the waitlist</span>
+        </button>
       </div>
     </div>
     <div class="flex gap-2 overflow-x-auto border-t border-[var(--color-line)] px-4 pb-3 pt-2 lg:hidden">
@@ -37,7 +39,7 @@ function anchorId(label: string) {
           v-for="link in navLinks"
           :key="`mobile-${link}`"
           :href="`#${anchorId(link)}`"
-          class="whitespace-nowrap rounded-full border border-[var(--color-line)] bg-white px-3 py-1.5 text-sm font-medium text-[var(--color-ink-2)] transition-colors hover:text-[var(--color-green-700)]"
+          class="whitespace-nowrap rounded-full border border-[var(--color-line)] bg-white px-3 py-1.5 text-sm font-medium text-[var(--color-ink-2)] transition-colors hover:text-[var(--color-green-700)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-green)] focus-visible:ring-offset-2"
       >
         {{ link }}
       </a>
