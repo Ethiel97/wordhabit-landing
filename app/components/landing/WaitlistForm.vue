@@ -19,7 +19,7 @@ function handleSubmit() {
 <template>
   <div class="waitlist-root" style="max-width: 520px;">
     <!-- Success state -->
-    <div v-if="isSuccess" class="success-box max-[640px]:items-start">
+    <div v-if="isSuccess" class="success-box">
       <div class="success-check">✓</div>
       <div>
         <div style="font-weight: 700; font-size: 16px;">You're on the list!</div>
@@ -29,16 +29,16 @@ function handleSubmit() {
 
     <!-- Form state -->
     <template v-else>
-      <form class="form-row max-[640px]:flex-col max-[640px]:rounded-2xl max-[640px]:p-2.5" @submit.prevent="handleSubmit">
+      <form class="form-row" @submit.prevent="handleSubmit">
         <input
             v-model="state.email"
             type="email"
             placeholder="you@example.com"
-            class="email-input max-[640px]:w-full max-[640px]:px-3.5 max-[640px]:py-3"
+            class="email-input"
             :disabled="isLoading"
             @input="state.errorMessage = ''"
         />
-        <button type="submit" class="btn btn-primary max-[640px]:w-full" :disabled="isLoading">
+        <button type="submit" class="btn btn-primary" :disabled="isLoading">
           {{ isLoading ? 'Joining...' : 'Join waitlist' }}
         </button>
       </form>
@@ -98,5 +98,4 @@ function handleSubmit() {
   font-weight: 700;
   font-size: 18px;
 }
-
 </style>

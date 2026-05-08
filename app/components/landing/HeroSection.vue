@@ -33,7 +33,7 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
       <h1 class="display hero-big-label">Today's word:</h1>
       <div class="hero-big-word-wrap">
         <h2 class="display hero-big-word">Serendipity</h2>
-        <div class="pos-badge max-[880px]:static max-[880px]:mt-2.5 max-[880px]:inline-flex">noun</div>
+        <div class="pos-badge">noun</div>
       </div>
       <p class="hero-big-sub">
         <em>The occurrence of finding something good by chance.</em><br/>
@@ -68,12 +68,12 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
     </section>
 
     <!-- Hero toggle -->
-    <div class="hero-toggle max-[880px]:right-3 max-[880px]:bottom-3 max-[880px]:p-1.5">
-      <span class="toggle-label max-[520px]:hidden">Hero</span>
+    <div class="hero-toggle max-[880px]:hidden">
+      <span class="toggle-label">Hero</span>
       <button
           v-for="k in (['A', 'B'] as const)"
           :key="k"
-          :class="['toggle-btn max-[520px]:px-2.5 max-[520px]:text-xs', { active: activeHero === k }]"
+          :class="['toggle-btn', { active: activeHero === k }]"
           @click="activeHero = k"
       >
         {{ k === 'A' ? 'Stack' : k === 'B' ? 'Big type' : 'Phone' }}
@@ -233,47 +233,14 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
 
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 880px) {
-  .hero-container {
-    padding: 40px 16px 72px;
-  }
-
   .hero-grid,
   .hero-grid-c {
     grid-template-columns: 1fr;
-    gap: 28px;
   }
 
-  .hero-copy {
-    max-width: none;
-  }
-
-  .hero-heading,
-  .hero-heading-c {
-    font-size: clamp(40px, 12vw, 56px);
-  }
-
-  .hero-sub {
-    font-size: 17px;
-    margin-bottom: 28px;
-  }
-
-  .hero-big-label {
-    font-size: clamp(44px, 14vw, 72px);
-  }
-
-  .hero-big-word {
-    font-size: clamp(64px, 18vw, 120px);
-  }
-
-  .hero-big-sub {
-    font-size: 18px;
-    margin-bottom: 28px;
-  }
-
-  /* Keep this scoped override: it overrides the scoped `.pos-badge` rotate transform defined at line 156. */
   .pos-badge {
-    transform: none;
+    right: -30px;
+    top: -4px;
   }
-
 }
 </style>

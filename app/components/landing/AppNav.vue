@@ -28,8 +28,19 @@ function anchorId(label: string) {
 
       <div class="nav-actions">
 <!--        <a href="/app" class="nav-app-link">Open app →</a>-->
-        <button class="btn btn-primary px-3.5 py-2.5 text-sm lg:px-4 lg:py-3" @click="scrollToWaitlist">Join the waitlist</button>
+        <button class="btn btn-primary hidden sm:inline-flex" @click="scrollToWaitlist">Join the waitlist</button>
+        <button class="btn btn-primary px-3 py-2 text-sm sm:hidden" @click="scrollToWaitlist">Join</button>
       </div>
+    </div>
+    <div class="flex gap-2 overflow-x-auto border-t border-[var(--color-line)] px-4 pb-3 pt-2 lg:hidden">
+      <a
+          v-for="link in navLinks"
+          :key="`mobile-${link}`"
+          :href="`#${anchorId(link)}`"
+          class="whitespace-nowrap rounded-full border border-[var(--color-line)] bg-white px-3 py-1.5 text-sm font-medium text-[var(--color-ink-2)] transition-colors hover:text-[var(--color-green-700)]"
+      >
+        {{ link }}
+      </a>
     </div>
   </nav>
 </template>
