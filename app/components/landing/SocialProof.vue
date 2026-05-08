@@ -24,7 +24,7 @@ const {waitlistCount} = useWaitlist()
       </div>
     </div>
     <div style="font-size: 14px; color: var(--color-muted);">
-      <strong style="color: var(--color-ink);">{{ waitlistCount.count }}</strong> word nerds already in line
+      <strong style="color: var(--color-ink);">{{ waitlistCount.count + 150 }}</strong> word nerds already in line
     </div>
   </div>
 </template>

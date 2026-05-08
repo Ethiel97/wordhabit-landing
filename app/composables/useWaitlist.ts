@@ -6,54 +6,55 @@ interface WaitlistState {
 
 
 export function useWaitlist() {
-    const state = reactive<WaitlistState>({
+    const state = useState<WaitlistState>('waitlist-state', () => ({
         email: '',
         status: 'idle',
         errorMessage: null,
-    })
+    }))
 
-    const isLoading = computed(() => state.status === 'loading')
-    const isSuccess = computed(() => state.status === 'success')
-    const isError = computed(() => state.status === 'error')
+    const isLoading = computed(() => state.value.status === 'loading')
+    const isSuccess = computed(() => state.value.status === 'success')
+    const isError = computed(() => state.value.status === 'error')
 
 
     const {data: waitlistCount} = useAsyncData('waitlist-count', () => $fetch<{
         count: number;
         success: boolean;
-    }>('/api/waitlist/'), {
-        default: () => ({count: 0})
+    }>('/api/waitlist'), {
+        default: () => ({count: 0, success: false})
     })
 
     function incrementCount() {
-        if (waitlistCount.value.count) {
-            waitlistCount.value.count++
+        if (!waitlistCount.value) {
+            return
         }
+        waitlistCount.value.count += 1
     }
 
     async function join() {
-        state.status = 'loading'
-        state.errorMessage = null
+        state.value.status = 'loading'
+        state.value.errorMessage = null
 
         try {
             await $fetch('/api/waitlist', {
                 method: 'POST',
-                body: {email: state.email},
+                body: {email: state.value.email},
             })
-            state.status = 'success'
-            state.email = ''
+            state.value.status = 'success'
+            state.value.email = ''
 
             incrementCount()
         } catch (err: any) {
-            state.status = 'error'
-            state.errorMessage =
+            state.value.status = 'error'
+            state.value.errorMessage =
                 err?.data?.statusMessage ?? 'Something went wrong. Please try again.'
         }
     }
 
-    async function reset() {
-        state.status = 'idle'
-        state.email = ''
-        state.errorMessage = null
+    function reset() {
+        state.value.status = 'idle'
+        state.value.email = ''
+        state.value.errorMessage = null
     }
 
     return {state, waitlistCount, join, reset, isLoading, isSuccess, isError}

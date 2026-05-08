@@ -6,11 +6,11 @@ const props = defineProps<{
 const {state, join, isLoading, isSuccess, isError} = useWaitlist()
 
 function handleSubmit() {
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(state.email)) {
-    state.errorMessage = 'Please enter a valid email'
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(state.value.email)) {
+    state.value.errorMessage = 'Please enter a valid email'
     return
   }
-  state.errorMessage = ''
+  state.value.errorMessage = ''
   join();
 }
 
