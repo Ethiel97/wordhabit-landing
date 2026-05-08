@@ -28,7 +28,7 @@ function anchorId(label: string) {
 
       <div class="nav-actions">
 <!--        <a href="/app" class="nav-app-link">Open app →</a>-->
-        <button class="btn btn-primary px-3.5 py-2.5 text-sm lg:px-[18px] lg:py-3" @click="scrollToWaitlist">Join the waitlist</button>
+        <button class="btn btn-primary px-3.5 py-2.5 text-sm lg:px-4 lg:py-3" @click="scrollToWaitlist">Join the waitlist</button>
       </div>
     </div>
   </nav>
