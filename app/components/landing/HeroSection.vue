@@ -68,7 +68,7 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
     </section>
 
     <!-- Hero toggle -->
-    <div class="hero-toggle">
+    <div class="hero-toggle hero-toggle-mobile-hidden">
       <span class="toggle-label">Hero</span>
       <button
           v-for="k in (['A', 'B'] as const)"
@@ -238,9 +238,14 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
     grid-template-columns: 1fr;
   }
 
+  /* Overrides `.pos-badge` base offsets at line 156 to keep the badge adjacent on narrower viewports. */
   .pos-badge {
     right: -30px;
     top: -4px;
+  }
+
+  .hero-toggle-mobile-hidden {
+    display: none;
   }
 }
 </style>
