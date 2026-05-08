@@ -39,7 +39,7 @@ function anchorId(label: string) {
           v-for="link in navLinks"
           :key="`mobile-${link}`"
           :href="`#${anchorId(link)}`"
-          class="whitespace-nowrap rounded-full border border-[var(--color-line)] bg-white px-3 py-1.5 text-sm font-medium text-[var(--color-ink-2)] transition-colors hover:text-[var(--color-green-700)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-green)] focus-visible:ring-offset-2"
+          class="mobile-nav-link"
       >
         {{ link }}
       </a>
@@ -99,5 +99,26 @@ function anchorId(label: string) {
 
 .nav-app-link:hover {
   color: var(--color-green-700);
+}
+
+.mobile-nav-link {
+  white-space: nowrap;
+  border-radius: 9999px;
+  border: 1px solid var(--color-line);
+  background: white;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink-2);
+  transition: color 0.15s;
+}
+
+.mobile-nav-link:hover {
+  color: var(--color-green-700);
+}
+
+.mobile-nav-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-green);
 }
 </style>
