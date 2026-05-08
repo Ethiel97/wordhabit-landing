@@ -33,7 +33,7 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
       <h1 class="display hero-big-label">Today's word:</h1>
       <div class="hero-big-word-wrap">
         <h2 class="display hero-big-word">Serendipity</h2>
-        <div class="pos-badge max-[880px]:static max-[880px]:mt-2.5 max-[880px]:inline-flex max-[880px]:!transform-none">noun</div>
+        <div class="pos-badge max-[880px]:static max-[880px]:mt-2.5 max-[880px]:inline-flex">noun</div>
       </div>
       <p class="hero-big-sub">
         <em>The occurrence of finding something good by chance.</em><br/>
@@ -268,6 +268,10 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
   .hero-big-sub {
     font-size: 18px;
     margin-bottom: 28px;
+  }
+
+  .pos-badge {
+    transform: none;
   }
 
 }

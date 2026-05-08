@@ -29,12 +29,12 @@ function handleSubmit() {
 
     <!-- Form state -->
     <template v-else>
-      <form class="form-row max-[640px]:flex-col max-[640px]:rounded-2xl max-[640px]:p-[10px]" @submit.prevent="handleSubmit">
+      <form class="form-row max-[640px]:flex-col max-[640px]:rounded-2xl max-[640px]:p-2.5" @submit.prevent="handleSubmit">
         <input
             v-model="state.email"
             type="email"
             placeholder="you@example.com"
-            class="email-input max-[640px]:w-full max-[640px]:px-[14px] max-[640px]:py-3"
+            class="email-input max-[640px]:w-full max-[640px]:px-3.5 max-[640px]:py-3"
             :disabled="isLoading"
             @input="state.errorMessage = ''"
         />
