@@ -238,7 +238,7 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
     grid-template-columns: 1fr;
   }
 
-  /* Keep the part-of-speech badge close to the word on narrower viewports. */
+  /* Nudge from default (-56px, -8px) to (-30px, -4px) so the badge stays adjacent on narrower viewports. */
   .pos-badge {
     right: -30px;
     top: -4px;
