@@ -12,7 +12,7 @@ function anchorId(label: string) {
 
 <template>
   <nav class="nav">
-    <div class="nav-inner px-4 py-3 lg:px-8 lg:py-[14px]">
+    <div class="nav-inner px-4 py-3 lg:px-8 lg:py-3.5">
       <AppLogo />
 
       <div class="nav-links hidden lg:flex">
