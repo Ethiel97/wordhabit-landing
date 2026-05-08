@@ -31,7 +31,7 @@ function anchorId(label: string) {
         <button class="btn btn-primary px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-green)] focus-visible:ring-offset-2 sm:text-base" @click="scrollToWaitlist">Join the waitlist</button>
       </div>
     </div>
-    <nav aria-label="Quick links" class="flex flex-wrap gap-2 border-t border-[var(--color-line)] px-4 pb-3 pt-2 lg:hidden">
+    <div role="navigation" aria-label="Quick links" class="flex flex-wrap gap-2 border-t border-[var(--color-line)] px-4 pb-3 pt-2 lg:hidden">
       <a
           v-for="link in navLinks"
           :key="`mobile-${link}`"
@@ -40,7 +40,7 @@ function anchorId(label: string) {
       >
         {{ link }}
       </a>
-    </nav>
+    </div>
   </nav>
 </template>
 

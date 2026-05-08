@@ -238,7 +238,7 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
     grid-template-columns: 1fr;
   }
 
-  /* Nudge from `.pos-badge` base values (right: -56px; top: -8px) so the badge stays adjacent on narrower viewports. */
+  /* Overrides base `.pos-badge` offsets above to keep the badge adjacent on narrower viewports. */
   .pos-badge {
     right: -30px;
     top: -4px;
