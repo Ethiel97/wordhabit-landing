@@ -19,7 +19,7 @@ function handleSubmit() {
 <template>
   <div class="waitlist-root" style="max-width: 520px;">
     <!-- Success state -->
-    <div v-if="isSuccess" class="success-box">
+    <div v-if="isSuccess" class="success-box max-[640px]:items-start">
       <div class="success-check">✓</div>
       <div>
         <div style="font-weight: 700; font-size: 16px;">You're on the list!</div>
@@ -29,16 +29,16 @@ function handleSubmit() {
 
     <!-- Form state -->
     <template v-else>
-      <form class="form-row" @submit.prevent="handleSubmit">
+      <form class="form-row max-[640px]:flex-col max-[640px]:rounded-2xl max-[640px]:p-[10px]" @submit.prevent="handleSubmit">
         <input
             v-model="state.email"
             type="email"
             placeholder="you@example.com"
-            class="email-input"
+            class="email-input max-[640px]:w-full max-[640px]:px-[14px] max-[640px]:py-3"
             :disabled="isLoading"
             @input="state.errorMessage = ''"
         />
-        <button type="submit" class="btn btn-primary" :disabled="isLoading">
+        <button type="submit" class="btn btn-primary max-[640px]:w-full" :disabled="isLoading">
           {{ isLoading ? 'Joining...' : 'Join waitlist' }}
         </button>
       </form>
@@ -99,24 +99,4 @@ function handleSubmit() {
   font-size: 18px;
 }
 
-@media (max-width: 640px) {
-  .form-row {
-    flex-direction: column;
-    padding: 10px;
-    border-radius: 16px;
-  }
-
-  .email-input {
-    width: 100%;
-    padding: 12px 14px;
-  }
-
-  .form-row :deep(.btn) {
-    width: 100%;
-  }
-
-  .success-box {
-    align-items: flex-start;
-  }
-}
 </style>

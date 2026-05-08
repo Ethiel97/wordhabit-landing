@@ -12,10 +12,10 @@ function anchorId(label: string) {
 
 <template>
   <nav class="nav">
-    <div class="nav-inner">
+    <div class="nav-inner px-4 py-3 lg:px-8 lg:py-[14px]">
       <AppLogo />
 
-      <div class="nav-links">
+      <div class="nav-links hidden lg:flex">
         <a
             v-for="link in navLinks"
             :key="link"
@@ -28,7 +28,7 @@ function anchorId(label: string) {
 
       <div class="nav-actions">
 <!--        <a href="/app" class="nav-app-link">Open app →</a>-->
-        <button class="btn btn-primary" @click="scrollToWaitlist">Join the waitlist</button>
+        <button class="btn btn-primary px-[14px] py-[10px] text-[13px] lg:px-[18px] lg:py-3 lg:text-[14px]" @click="scrollToWaitlist">Join the waitlist</button>
       </div>
     </div>
   </nav>
@@ -48,7 +48,6 @@ function anchorId(label: string) {
 .nav-inner {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 14px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,20 +86,5 @@ function anchorId(label: string) {
 
 .nav-app-link:hover {
   color: var(--color-green-700);
-}
-
-@media (max-width: 960px) {
-  .nav-inner {
-    padding: 12px 16px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .nav-actions :deep(.btn) {
-    padding: 10px 14px;
-    font-size: 13px;
-  }
 }
 </style>

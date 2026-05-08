@@ -34,10 +34,10 @@
     </div>
 
     <!-- Floating badges -->
-    <FloatingBadge class="mobile-hide-badge" color="#7C3AED" emoji="🏆" :top="0" :left="50" :rotate="-12" />
-    <FloatingBadge class="mobile-hide-badge" color="#22C55E" emoji="🎯" :top="310" :right="20" :rotate="15" />
-    <FloatingBadge class="mobile-hide-badge" color="#3B82F6" emoji="📚" :top="420" :left="80" :rotate="-8" :size="56" />
-    <FloatingBadge class="mobile-hide-badge" color="#EC4899" emoji="🔥" :top="150" :right="0" :rotate="20" :size="56" />
+    <FloatingBadge class="max-[520px]:hidden" color="#7C3AED" emoji="🏆" :top="0" :left="50" :rotate="-12" />
+    <FloatingBadge class="max-[520px]:hidden" color="#22C55E" emoji="🎯" :top="310" :right="20" :rotate="15" />
+    <FloatingBadge class="max-[520px]:hidden" color="#3B82F6" emoji="📚" :top="420" :left="80" :rotate="-8" :size="56" />
+    <FloatingBadge class="max-[520px]:hidden" color="#EC4899" emoji="🔥" :top="150" :right="0" :rotate="20" :size="56" />
   </div>
 </template>
 
@@ -211,8 +211,5 @@
     font-size: 34px;
   }
 
-  .mobile-hide-badge {
-    display: none;
-  }
 }
 </style>
