@@ -238,7 +238,7 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
     grid-template-columns: 1fr;
   }
 
-  /* Keep the part-of-speech badge close to the word on narrower tablet/mobile hero widths. */
+  /* Keep the part-of-speech badge close to the word on narrower tablet hero widths. */
   .pos-badge {
     right: -30px;
     top: -4px;

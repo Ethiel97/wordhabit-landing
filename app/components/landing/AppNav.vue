@@ -28,7 +28,7 @@ function anchorId(label: string) {
 
       <div class="nav-actions">
 <!--        <a href="/app" class="nav-app-link">Open app →</a>-->
-        <button class="btn btn-primary px-3 py-2 text-sm sm:text-base" @click="scrollToWaitlist">
+        <button class="btn btn-primary px-3 py-2 text-sm sm:text-base" aria-label="Join the waitlist" @click="scrollToWaitlist">
           <span class="sm:hidden">Join</span>
           <span class="hidden sm:inline">Join the waitlist</span>
         </button>
