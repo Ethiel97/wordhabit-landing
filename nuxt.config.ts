@@ -34,4 +34,11 @@ export default defineNuxtConfig({
   ui: {
     colorMode: false,
   },
+
+  runtimeConfig: {
+      apiUrl: process.env.NUXT_API_URL,
+      polarAccessToken: process.env.POLAR_ACCESS_TOKEN,
+      public: {
+      },
+  },
 })

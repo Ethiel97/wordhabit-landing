@@ -1,15 +1,19 @@
+<script setup lang="ts">
+const {waitlistCount} = useWaitlist()
+</script>
+
 <template>
   <section class="cta-section">
     <div class="cta-inner">
       <h2 class="display cta-heading">
-        Start the habit. <br />
+        Start the habit. <br/>
         Grow the vocab.
       </h2>
       <p class="cta-sub">
-        Join 4,217 word collectors on the waitlist. Get 50% off Premium when we launch.
+        Join {{ waitlistCount.count }} word collectors on the waitlist. Get 50% off Premium when we launch.
       </p>
       <div class="cta-form">
-        <WaitlistForm />
+        <WaitlistForm/>
       </div>
     </div>
   </section>

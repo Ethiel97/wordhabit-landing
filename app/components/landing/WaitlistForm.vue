@@ -68,9 +68,6 @@ function handleSubmit() {
   min-width: 0;
 }
 
-.email-input::placeholder {
-  color: var(--color-muted-2);
-}
 
 .error-msg {
   color: #DC2626;

@@ -17,6 +17,19 @@ export function useWaitlist() {
     const isError = computed(() => state.status === 'error')
 
 
+    const {data: waitlistCount} = useAsyncData('waitlist-count', () => $fetch<{
+        count: number;
+        success: boolean;
+    }>('/api/waitlist/'), {
+        default: () => ({count: 0})
+    })
+
+    function incrementCount() {
+        if (waitlistCount.value.count) {
+            waitlistCount.value.count++
+        }
+    }
+
     async function join() {
         state.status = 'loading'
         state.errorMessage = null
@@ -28,6 +41,8 @@ export function useWaitlist() {
             })
             state.status = 'success'
             state.email = ''
+
+            incrementCount()
         } catch (err: any) {
             state.status = 'error'
             state.errorMessage =
@@ -41,5 +56,5 @@ export function useWaitlist() {
         state.errorMessage = null
     }
 
-    return {state, join, reset, isLoading, isSuccess, isError}
+    return {state, waitlistCount, join, reset, isLoading, isSuccess, isError}
 }

@@ -2,11 +2,13 @@
 defineProps<{ centered?: boolean }>()
 
 const avatars = [
-  { initial: 'M', color: '#22C55E' },
-  { initial: 'J', color: '#7C3AED' },
-  { initial: 'S', color: '#F97316' },
-  { initial: 'A', color: '#EC4899' },
+  {initial: 'M', color: '#22C55E'},
+  {initial: 'J', color: '#7C3AED'},
+  {initial: 'S', color: '#F97316'},
+  {initial: 'A', color: '#EC4899'},
 ]
+
+const {waitlistCount} = useWaitlist()
 </script>
 
 <template>
@@ -22,7 +24,7 @@ const avatars = [
       </div>
     </div>
     <div style="font-size: 14px; color: var(--color-muted);">
-      <strong style="color: var(--color-ink);">4,217</strong> word nerds already in line
+      <strong style="color: var(--color-ink);">{{ waitlistCount.count }}</strong> word nerds already in line
     </div>
   </div>
 </template>

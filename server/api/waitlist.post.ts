@@ -16,8 +16,8 @@ export default defineEventHandler(async (event) => {
     }
 
     // Forward to NestJS — backend URL never exposed to browser
-    const response = await $fetch<{ id: string; email: string }>(
-        `${config.nestApiUrl}/waitlist`,
+    const response = await $fetch<{ data: { id: string; email: string } }>(
+        `${config.apiUrl}/waitlist`,
         {
             method: 'POST',
             body: parsed.data,
@@ -29,6 +29,8 @@ export default defineEventHandler(async (event) => {
         }
     ).catch((err) => {
         // Map NestJS errors to clean client-facing errors
+
+        console.error('Error joining waitlist:', err);
         const status = err?.response?.status
         if (status === 409) {
             throw createError({statusCode: 409, statusMessage: 'Already on the waitlist'})
@@ -38,6 +40,6 @@ export default defineEventHandler(async (event) => {
 
     return {
         success: true,
-        id: response.id,
+        id: response.data.id,
     }
 })
