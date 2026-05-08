@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+    <!-- Drop shadow layer (darker green, offset down) -->
+    <rect x="2" y="5" width="28" height="27" rx="7" fill="#15803D"/>
+    <!-- Main green background -->
+    <rect x="2" y="2" width="28" height="27" rx="7" fill="#22C55E"/>
+    <!-- White W letterform -->
+    <path
+            d="M7.5 9.5 L10.8 22 L13.2 14.5 L16 20 L18.8 14.5 L21.2 22 L24.5 9.5 L21.8 9.5 L19.8 16.5 L16 11 L12.2 16.5 L10.2 9.5 Z"
+            fill="white"
+    />
+</svg>

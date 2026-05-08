@@ -10,12 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.14.0",
     "@nuxt/ui": "^3.0.0",
     "nuxt": "^4.4.4",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "nuxt-og-image": "^6.5.0",
     "typescript": "^5.0.0",
     "vue-tsc": "^2.0.0"
   }
