@@ -270,7 +270,7 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
     margin-bottom: 28px;
   }
 
-  /* Keep this scoped override: base `.pos-badge` above sets `transform: rotate(8deg)`. */
+  /* Keep this scoped override: it overrides the scoped `.pos-badge` rotate transform defined at line 156. */
   .pos-badge {
     transform: none;
   }
