@@ -28,10 +28,7 @@ function anchorId(label: string) {
 
       <div class="nav-actions">
 <!--        <a href="/app" class="nav-app-link">Open app →</a>-->
-        <button class="btn btn-primary px-3 py-2 text-sm sm:text-base" @click="scrollToWaitlist">
-          <span class="sm:hidden">Join <span class="sr-only">the waitlist</span></span>
-          <span class="hidden sm:inline">Join the waitlist</span>
-        </button>
+        <button class="btn btn-primary px-3 py-2 text-sm sm:text-base" @click="scrollToWaitlist">Join the waitlist</button>
       </div>
     </div>
     <nav aria-label="Quick links" class="flex gap-2 overflow-x-auto border-t border-[var(--color-line)] px-4 pb-3 pt-2 lg:hidden">
