@@ -10,11 +10,16 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@cloudflare/puppeteer": "^1.1.0",
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/ui": "^3.0.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "@resvg/resvg-wasm": "^2.6.2",
+    "@takumi-rs/core": "^1.1.2",
     "@takumi-rs/wasm": "^1.1.2",
     "nuxt": "^4.4.4",
     "nuxt-og-image": "^6.5.0",
+    "satori": "^0.26.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {

@@ -8,6 +8,12 @@ useSeoMeta({
       'Build a lasting vocabulary habit with daily words, flashcards, and streaks designed to make words stick.',
   ogType: 'website',
   ogUrl: 'https://wordhabit.app',
+  ogImage: 'https://wordhabit.app/og-image.png',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageUrl: 'https://wordhabit.app/og-image.png',
+  ogImageSecureUrl: 'https://wordhabit.app/og-image.png',
+  twitterImage: 'https://wordhabit.app/og-image.png',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Wordhabit — Master a new word every day',
   twitterDescription:
