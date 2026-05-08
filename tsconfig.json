@@ -1,12 +1,13 @@
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "strict": true,
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+//    "strict": true,
+//    "module": "esnext",
+//    "target": "esnext",
+//    "moduleResolution": "node",
+//    "esModuleInterop": true,
+//    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["nitro"]
   }
 }

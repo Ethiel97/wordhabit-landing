@@ -3,26 +3,23 @@ const props = defineProps<{
   dark?: boolean
 }>()
 
-const { email, joined, submit } = useWaitlist()
-const localEmail = ref(email.value)
-const error = ref('')
+const {state, join, isLoading, isSuccess, isError} = useWaitlist()
 
 function handleSubmit() {
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(localEmail.value)) {
-    error.value = 'Please enter a valid email'
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(state.email)) {
+    state.errorMessage = 'Please enter a valid email'
     return
   }
-  error.value = ''
-  submit(localEmail.value)
+  state.errorMessage = ''
+  join();
 }
 
-watch(email, (v) => { localEmail.value = v })
 </script>
 
 <template>
   <div class="waitlist-root" style="max-width: 520px;">
     <!-- Success state -->
-    <div v-if="joined" class="success-box">
+    <div v-if="isSuccess" class="success-box">
       <div class="success-check">✓</div>
       <div>
         <div style="font-weight: 700; font-size: 16px;">You're on the list!</div>
@@ -34,15 +31,18 @@ watch(email, (v) => { localEmail.value = v })
     <template v-else>
       <form class="form-row" @submit.prevent="handleSubmit">
         <input
-            v-model="localEmail"
+            v-model="state.email"
             type="email"
             placeholder="you@example.com"
             class="email-input"
-            @input="error = ''"
+            :disabled="isLoading"
+            @input="state.errorMessage = ''"
         />
-        <button type="submit" class="btn btn-primary">Join waitlist</button>
+        <button type="submit" class="btn btn-primary" :disabled="isLoading">
+          {{ isLoading ? 'Joining...' : 'Join waitlist' }}
+        </button>
       </form>
-      <div v-if="error" class="error-msg">{{ error }}</div>
+      <div v-if="isError" class="error-msg">{{ state.errorMessage }}</div>
     </template>
   </div>
 </template>
