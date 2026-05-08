@@ -28,10 +28,10 @@ function anchorId(label: string) {
 
       <div class="nav-actions">
 <!--        <a href="/app" class="nav-app-link">Open app →</a>-->
-        <button class="btn btn-primary px-3 py-2 text-sm sm:text-base" @click="scrollToWaitlist">Join the waitlist</button>
+        <button class="btn btn-primary px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-green)] focus-visible:ring-offset-2 sm:text-base" @click="scrollToWaitlist">Join the waitlist</button>
       </div>
     </div>
-    <nav aria-label="Quick links" class="flex gap-2 overflow-x-auto border-t border-[var(--color-line)] px-4 pb-3 pt-2 lg:hidden">
+    <nav aria-label="Quick links" class="flex flex-wrap gap-2 border-t border-[var(--color-line)] px-4 pb-3 pt-2 lg:hidden">
       <a
           v-for="link in navLinks"
           :key="`mobile-${link}`"
