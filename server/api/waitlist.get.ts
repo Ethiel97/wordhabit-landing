@@ -1,7 +1,11 @@
+import {Endpoints} from "#server/endpoints";
+
 export default defineCachedEventHandler(async () => {
     const config = useRuntimeConfig();
 
-    const response = await $fetch<{ data: { count: number } }>(`${config.apiUrl}/waitlist/count`).catch((err) => {
+    const response = await $fetch<{
+        data: { count: number }
+    }>(`${config.apiUrl}${Endpoints.waitlistCount}`).catch((err) => {
         console.error('Error fetching waitlist count:', err);
         throw createError({
             statusCode: 502,
@@ -14,6 +18,6 @@ export default defineCachedEventHandler(async () => {
         count: response.data.count,
     }
 }, {
-    maxAge: 60 * 5,
+    maxAge: 60 * 10, // cache for 10 minutes
     swr: true,
 })

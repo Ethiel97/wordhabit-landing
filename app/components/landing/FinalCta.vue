@@ -10,7 +10,7 @@ const {waitlistCount} = useWaitlist()
         Grow the vocab.
       </h2>
       <p class="cta-sub">
-        Join {{ waitlistCount.count + 150 }} word collectors on the waitlist. Get 50% off Premium when we launch.
+        Join {{ waitlistCount.count + 1500 }} word collectors on the waitlist. Get 50% off Premium when we launch.
       </p>
       <div class="cta-form">
         <WaitlistForm/>
