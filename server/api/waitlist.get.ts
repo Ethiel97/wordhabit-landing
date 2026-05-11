@@ -1,11 +1,11 @@
-import {Endpoints} from "#server/endpoints";
+import {Endpoint} from "#server/endpoint";
 
 export default defineCachedEventHandler(async () => {
     const config = useRuntimeConfig();
 
     const response = await $fetch<{
         data: { count: number }
-    }>(`${config.apiUrl}${Endpoints.waitlistCount}`).catch((err) => {
+    }>(`${config.apiUrl}${Endpoint.waitlistCount}`).catch((err) => {
         console.error('Error fetching waitlist count:', err);
         throw createError({
             statusCode: 502,
