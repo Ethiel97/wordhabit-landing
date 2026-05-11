@@ -1,5 +1,6 @@
 import {z} from 'zod';
 import {getRequestIP} from 'h3';
+import {Endpoints} from "#server/endpoints";
 
 const WaitlistPostSchema = z.object({
     email: z.string().email(),
@@ -17,7 +18,7 @@ export default defineEventHandler(async (event) => {
 
     // Forward to NestJS — backend URL never exposed to browser
     const response = await $fetch<{ data: { id: string; email: string } }>(
-        `${config.apiUrl}/waitlist`,
+        `${config.apiUrl}/${Endpoints.waitlist}`,
         {
             method: 'POST',
             body: parsed.data,
