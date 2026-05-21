@@ -1,10 +1,26 @@
+<script lang="ts" setup>
+import type {GetRandomWordForLandingResult} from "#server/api/random-word.get";
+
+const props = defineProps<{
+  randomWord: GetRandomWordForLandingResult | null
+}>();
+
+const synonyms = computed(() => props.randomWord?.synonyms?.map((synonym) => synonym.value).join(', ') || 'No synonyms yet.');
+const term = computed(() => props.randomWord?.word?.normalizedTerm || 'Word of the day');
+const meaning = computed(() => {
+  const hasMultipleDefinitions = (props.randomWord?.definitions?.length ?? 0) > 1;
+  return (hasMultipleDefinitions ? props.randomWord?.definitions?.[1]?.text : props.randomWord?.definitions?.[0]?.text) || 'A fresh word is loading...';
+});
+const example = computed(() => props.randomWord?.examples?.[0]?.sentence || 'Example sentence is loading...');
+
+</script>
 <template>
   <div class="card-scene">
     <!-- Back card -->
     <div class="back-card">
       <div class="back-label">Synonyms</div>
       <div class="back-content">
-        Chance, Fluke, Luck, Fortune, Coincidence, Blessing
+        {{ synonyms }}
       </div>
     </div>
 
@@ -15,13 +31,13 @@
         <div class="sound-btn">♪</div>
       </div>
 
-      <h3 class="display word-title">Serendipity</h3>
+      <h3 class="display word-title">{{ term }}</h3>
 
       <div class="card-meaning">
-        <strong>Meaning:</strong> The occurrence of finding something good or pleasant by chance.
+        <strong>Meaning:</strong> {{ meaning }}
       </div>
       <div class="card-example">
-        "It was pure serendipity that I met my best friend on a delayed flight."
+        "{{ example }}"
       </div>
 
       <div class="card-footer">
@@ -34,10 +50,10 @@
     </div>
 
     <!-- Floating badges -->
-    <FloatingBadge aria-hidden="true" color="#7C3AED" emoji="🏆" :top="0" :left="50" :rotate="-12" />
-    <FloatingBadge aria-hidden="true" color="#22C55E" emoji="🎯" :top="310" :right="20" :rotate="15" />
-    <FloatingBadge aria-hidden="true" color="#3B82F6" emoji="📚" :top="420" :left="80" :rotate="-8" :size="56" />
-    <FloatingBadge aria-hidden="true" color="#EC4899" emoji="🔥" :top="150" :right="0" :rotate="20" :size="56" />
+    <FloatingBadge aria-hidden="true" color="#7C3AED" emoji="🏆" :top="0" :left="50" :rotate="-12"/>
+    <FloatingBadge aria-hidden="true" color="#22C55E" emoji="🎯" :top="310" :right="20" :rotate="15"/>
+    <FloatingBadge aria-hidden="true" color="#3B82F6" emoji="📚" :top="420" :left="80" :rotate="-8" :size="56"/>
+    <FloatingBadge aria-hidden="true" color="#EC4899" emoji="🔥" :top="150" :right="0" :rotate="20" :size="56"/>
   </div>
 </template>
 

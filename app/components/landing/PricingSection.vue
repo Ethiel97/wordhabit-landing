@@ -9,7 +9,7 @@ const freeTier = {
 
 const premiumTier = {
   tier: 'Premium',
-  price: '$4.99',
+  price: '$3.99',
   per: '/mo',
   tagline: 'Power tools for word collectors.',
   features: ['Unlimited words & decks', '30+ collector badges', 'Audio pronunciation', 'Offline mode', 'Priority support'],

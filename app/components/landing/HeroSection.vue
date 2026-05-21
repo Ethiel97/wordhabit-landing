@@ -1,5 +1,12 @@
 <script setup lang="ts">
 const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
+
+const {randomWord} = useLearning()
+
+const heroWord = computed(() => randomWord.value?.word?.normalizedTerm || 'Vocabulary')
+const heroPartOfSpeech = computed(() => randomWord.value?.word?.partOfSpeech?.toLocaleLowerCase() || 'word')
+const heroDefinition = computed(() => randomWord.value?.definitions?.[0]?.text || 'Build a vocabulary you actually use. One beautiful word a day.')
+
 </script>
 
 <template>
@@ -21,29 +28,30 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
         <WaitlistForm/>
         <SocialProof/>
       </div>
-      <FlashcardStack/>
+      <FlashcardStack :random-word="randomWord"/>
     </section>
 
     <!-- Hero B: Giant typography -->
     <section v-else-if="activeHero === 'B'" id="hero-form" class="hero-container hero-center">
-      <div class="pill" style="margin-bottom: 28px;">
-        <span class="pill-dot"/>
-        Now in private beta
-      </div>
-      <h1 class="display hero-big-label">Today's word:</h1>
-      <div class="hero-big-word-wrap">
-        <h2 class="display hero-big-word">Serendipity</h2>
-        <div class="pos-badge">noun</div>
-      </div>
-      <p class="hero-big-sub">
-        <em>The occurrence of finding something good by chance.</em><br/>
-        Build a vocabulary you actually use. One beautiful word a day.
-      </p>
-      <div class="hero-form-center">
-        <WaitlistForm/>
-      </div>
-      <SocialProof centered style="margin-top: 28px;"/>
+        <div class="pill" style="margin-bottom: 28px;">
+          <span class="pill-dot"/>
+          Now in private beta
+        </div>
+        <h1 class="display hero-big-label">Today's word:</h1>
+        <div class="hero-big-word-wrap">
+          <h2 class="display hero-big-word">{{ heroWord }}</h2>
+          <div class="pos-badge">{{ heroPartOfSpeech }}</div>
+        </div>
+        <p class="hero-big-sub">
+          <em>{{ heroDefinition }}</em><br/>
+          Build a vocabulary you actually use. One beautiful word a day.
+        </p>
+        <div class="hero-form-center">
+          <WaitlistForm/>
+        </div>
+        <SocialProof centered style="margin-top: 28px;"/>
     </section>
+
 
     <!-- Hero C: Split with phone mock -->
     <section v-else id="hero-form" class="hero-container hero-grid-c">
@@ -135,7 +143,7 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
 
 /* Hero B specific */
 .hero-big-label {
-  font-size: clamp(72px, 14vw, 200px);
+  font-size: clamp(72px, 14vw, 150px);
   line-height: 0.9;
   margin-bottom: 8px;
 }
@@ -147,7 +155,7 @@ const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
 }
 
 .hero-big-word {
-  font-size: clamp(96px, 18vw, 260px);
+  font-size: clamp(96px, 18vw, 200px);
   color: var(--color-green);
   letter-spacing: -0.05em;
   line-height: 0.85;

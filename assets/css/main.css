@@ -71,6 +71,12 @@
 
 /* ── Reusable component classes ────────────────────────────── */
 @layer components {
+
+    ::selection {
+        background-color: var(--color-green-500);
+        color: var(--color-paper);
+    }
+
     /* Display / heading font */
     .display {
         font-family: var(--font-display);

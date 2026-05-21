@@ -18,6 +18,7 @@ export default defineCachedEventHandler(async () => {
         count: response.data.count,
     }
 }, {
-    maxAge: 60 * 10, // cache for 10 minutes
+    //cache for 1 hour with stale-while-revalidate
+    maxAge: 60 * 60,
     swr: true,
 })
