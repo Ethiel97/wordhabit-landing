@@ -8,10 +8,16 @@ const props = defineProps<{
 const synonyms = computed(() => props.randomWord?.synonyms?.map((synonym) => synonym.value).join(', ') || 'No synonyms yet.');
 const term = computed(() => props.randomWord?.word?.normalizedTerm || 'Word of the day');
 const meaning = computed(() => {
-  const hasMultipleDefinitions = (props.randomWord?.definitions?.length ?? 0) > 1;
-  return (hasMultipleDefinitions ? props.randomWord?.definitions?.[1]?.text : props.randomWord?.definitions?.[0]?.text) || 'A fresh word is loading...';
+  const hasDefinitions = (props.randomWord?.definitions?.length ?? 0) > 0;
+  return hasDefinitions
+      ? props.randomWord?.definitions?.[0]?.text
+      : 'Meaning is loading...';
 });
-const example = computed(() => props.randomWord?.examples?.[0]?.sentence || 'Example sentence is loading...');
+
+const example = computed(() => {
+  const hasExamples = (props.randomWord?.examples?.length ?? 0) > 0;
+  return hasExamples ? props.randomWord?.examples?.[0]?.sentence : 'Example sentence is loading...';
+});
 
 </script>
 <template>
