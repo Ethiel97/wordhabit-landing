@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
 
     // Forward to NestJS — backend URL never exposed to browser
     const response = await $fetch<{ data: { id: string; email: string } }>(
-        `${config.apiUrl}/${Endpoint.waitlist}`,
+        `${config.apiUrl}${Endpoint.waitlist}`,
         {
             method: 'POST',
             body: parsed.data,
