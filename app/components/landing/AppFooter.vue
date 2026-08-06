@@ -16,6 +16,7 @@
       <div class="footer-links">
         <a href="#" class="footer-link">Twitter</a>
         <a href="#" class="footer-link">Instagram</a>
+        <NuxtLink to="/support" class="footer-link">Support</NuxtLink>
         <NuxtLink to="/privacy" class="footer-link">Privacy</NuxtLink>
         <NuxtLink to="/terms" class="footer-link">Terms</NuxtLink>
       </div>

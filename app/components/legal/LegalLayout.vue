@@ -1,9 +1,13 @@
 <script setup lang="ts">
-defineProps<{
-  title: string
-  updatedOn: string
-  summary: string
-}>()
+withDefaults(
+  defineProps<{
+    title: string
+    updatedOn: string
+    summary: string
+    eyebrow?: string
+  }>(),
+  { eyebrow: 'Legal' },
+)
 </script>
 
 <template>
@@ -19,7 +23,7 @@ defineProps<{
     </header>
 
     <main class="legal-main">
-      <p class="pill legal-pill">Legal</p>
+      <p class="pill legal-pill">{{ eyebrow }}</p>
       <h1 class="display legal-title">{{ title }}</h1>
       <p class="legal-summary">{{ summary }}</p>
       <p class="legal-updated">Last updated {{ updatedOn }}</p>
