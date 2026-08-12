@@ -22,10 +22,21 @@ useHead({
     <ul>
       <li>Open <strong>Wordhabit</strong> and sign in.</li>
       <li>Go to the <strong>Profile</strong> tab.</li>
-      <li>Open <strong>Settings</strong>.</li>
-      <li>Tap <strong>Delete account</strong>.</li>
-      <li>Confirm. The deletion is immediate and cannot be undone.</li>
+      <li>Tap <strong>Delete account</strong>, at the bottom.</li>
+      <li>
+        Confirm. Your account is closed straight away and your data is
+        erased 30 days later.
+      </li>
     </ul>
+    <p>
+      Those 30 days are yours to change your mind: signing in again
+      brings the account back, exactly as you left it. After that it is
+      gone for good.
+    </p>
+    <p>
+      Deleting your account does not cancel a paid subscription. The App
+      Store or Google Play bills it, so cancel it there first.
+    </p>
 
     <h2>By email</h2>
     <p>
@@ -38,8 +49,8 @@ useHead({
 
     <h2>What gets deleted</h2>
     <p>
-      Everything below is erased permanently. We keep no shadow copy and
-      no anonymised remainder tied back to you.
+      Once the 30 days are up, everything below is erased permanently. We
+      keep no shadow copy and no anonymised remainder tied back to you.
     </p>
     <ul>
       <li>Your account: email address, name, and password.</li>

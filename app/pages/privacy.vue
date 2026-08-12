@@ -168,9 +168,11 @@ useHead({
 
     <h2>Deleting your data</h2>
     <p>
-      Open <strong>Profile → Settings → Delete account</strong>. The
-      deletion is permanent and covers your account, your progress, your
-      badges and your notification token. We do not keep a shadow copy.
+      Open <strong>Profile → Delete account</strong>. Your account is
+      closed straight away and erased 30 days later, which gives you time
+      to change your mind by signing in again. The erasure covers your
+      account, your progress, your badges and your notification token,
+      and we keep no shadow copy.
     </p>
     <p>
       If you cannot reach the app, email

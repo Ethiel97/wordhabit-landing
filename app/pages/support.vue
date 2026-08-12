@@ -134,14 +134,16 @@ useHead({
 
     <h3>Can I change my email address?</h3>
     <p>
-      Yes, in <strong>Profile → Settings</strong>. The new address has to
-      be confirmed before it takes effect.
+      Yes, in <strong>Profile → Edit profile</strong>. The new address
+      has to be confirmed before it takes effect.
     </p>
 
     <h3>How do I delete my account?</h3>
     <p>
-      <strong>Profile → Settings → Delete account</strong>. It is
-      immediate and permanent. Full details of what is erased are on the
+      <strong>Profile → Delete account</strong>. Your account closes
+      straight away and is erased 30 days later, so signing in again
+      within that window brings it back. Full details of what is erased
+      are on the
       <NuxtLink to="/delete-account">account deletion page</NuxtLink>.
     </p>
 

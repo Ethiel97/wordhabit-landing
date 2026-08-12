@@ -14,7 +14,7 @@ useHead({
 <template>
   <LegalLayout
     title="Terms of Service"
-    updated-on="6 August 2026"
+    updated-on="12 August 2026"
     summary="The agreement between you and Wordhabit. Plain terms, no traps: what the app gives you, what we ask in return, and how either of us can end it."
   >
     <h2>Agreeing to these terms</h2>
@@ -84,15 +84,21 @@ useHead({
       refund the period already paid, except where the law requires it.
     </p>
     <p>
+      Deleting your Wordhabit account does not cancel a subscription. The
+      store bills it, so cancel it there first — otherwise it keeps
+      renewing after your account is gone.
+    </p>
+    <p>
       If we change a price, we will tell you before it applies to you, and
       you may cancel rather than accept it.
     </p>
 
     <h2>Ending the agreement</h2>
     <p>
-      You can leave whenever you like: <strong>Profile → Settings →
-      Delete account</strong>. That ends this agreement and erases your
-      data.
+      You can leave whenever you like: <strong>Profile → Delete
+      account</strong>. That ends this agreement. You have 30 days to
+      change your mind — signing in again brings the account back — and
+      after that your data is erased for good.
     </p>
     <p>
       We may suspend or close an account that breaks these terms. Unless
