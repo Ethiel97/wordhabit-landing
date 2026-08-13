@@ -1,9 +1,7 @@
 <script setup lang="ts">
-// Rendered by satori, not a browser: flex-only layout, no inline <svg>
-// (the mascot ships as an SVG data URI instead), fonts declared in
-// nuxt.config's ogImage block.
-// No phonetic here although the page shows one: satori's Inter subset
-// has no IPA glyphs, and tofu on a share card is worse than absence.
+// Rendered by Takumi, not a browser: keep the layout self-contained and
+// flex-based. Takumi's WASM renderer stays within Cloudflare's CPU budget.
+// No phonetic here: share cards benefit more from a compact definition.
 const props = withDefaults(defineProps<{
     term?: string;
     pos?: string;
@@ -21,7 +19,7 @@ const shortDefinition = computed(() =>
 
 const MASCOT_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="35" cy="35" r="22" fill="white"/><circle cx="40" cy="32" r="3" fill="#0F1B12"/><path d="M30 38 Q35 42 40 38" stroke="#0F1B12" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M52 35 L62 33 L62 40 L52 40z" fill="#F97316"/><path d="M30 50 Q40 75 60 78 Q70 75 75 65 Q70 55 55 53" fill="rgba(255,255,255,0.85)"/><path d="M55 53 Q70 55 80 50 Q75 65 65 70" fill="rgba(255,255,255,0.6)"/><path d="M65 80 L72 90 L68 80z M55 82 L60 92 L58 82z" fill="#F97316"/></svg>`;
 
-// Base64, not utf8: satori quietly drops utf8-encoded SVG data URIs.
+// Base64 keeps the embedded mascot portable across edge renderers.
 const mascotSrc = `data:image/svg+xml;base64,${btoa(MASCOT_SVG)}`;
 </script>
 

@@ -7,6 +7,7 @@ useSeoMeta({
   ogTitle: () => t('seo.home.title'),
   ogDescription: () => t('seo.home.ogDescription'),
   ogType: 'website',
+  ogSiteName: 'Wordhabit',
   ogUrl: 'https://wordhabit.app',
   ogImage: 'https://wordhabit.app/og-image.png',
   ogImageWidth: 1200,

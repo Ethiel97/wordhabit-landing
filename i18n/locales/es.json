@@ -208,6 +208,7 @@
   "sharedWord": {
     "origin": "Palabra del día · WordHabit",
     "ogEyebrow": "Palabra del día",
+    "ogAlt": "Tarjeta de Wordhabit para {term}",
     "tagline": {
       "first": "Una palabra al día.",
       "emphasis": "Aprendida a fondo.",

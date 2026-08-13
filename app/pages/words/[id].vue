@@ -31,23 +31,29 @@ if (import.meta.server && notFound.value && event) {
 
 if (word.value && definition.value) {
     const title = `${word.value.term} — ${t('sharedWord.origin')}`;
+    const canonicalUrl = `https://wordhabit.app/words/${word.value.id}`;
+    const imageAlt = t('sharedWord.ogAlt', {term: word.value.term});
+    useHead({
+        link: [{rel: 'canonical', href: canonicalUrl}],
+    });
     useSeoMeta({
         title,
         description: definition.value.text,
         ogTitle: title,
         ogDescription: definition.value.text,
         ogType: 'article',
-        ogUrl: `https://wordhabit.app/words/${word.value.id}`,
+        ogUrl: canonicalUrl,
+        ogSiteName: 'Wordhabit',
         twitterCard: 'summary_large_image',
         twitterTitle: title,
         twitterDescription: definition.value.text,
     });
-    defineOgImage('SharedWordSatori', {
+    defineOgImage('SharedWordTakumi', {
         term: word.value.term,
         pos: posLabel.value,
         definition: definition.value.text,
         eyebrow: t('sharedWord.ogEyebrow'),
-    }, {width: 1200, height: 630});
+    }, {width: 1200, height: 630, alt: imageAlt});
 } else {
     useSeoMeta({
         title: `${t('sharedWord.notFound.title')} · WordHabit`,
