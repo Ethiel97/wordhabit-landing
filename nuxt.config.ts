@@ -23,12 +23,12 @@ export default defineNuxtConfig({
     name: 'Wordhabit',
   },
 
-  // OG images only. nuxt-og-image resolves satori's fonts through
+  // OG images only. nuxt-og-image resolves the renderer's fonts through
   // @nuxt/fonts; its bundled Inter 400/700 covers everything but the
   // display face. Bricolage ships as a local static TTF
   // (public/fonts/) because the remote providers serve woff2 or
-  // variable fonts, and satori handles neither — the weight axis
-  // collapses to 400.
+  // variable fonts; the local static file keeps the display weight
+  // deterministic across edge environments.
   fonts: {
     families: [
       {name: 'Bricolage Grotesque', provider: 'local', weights: [800], global: true},
@@ -53,6 +53,7 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {

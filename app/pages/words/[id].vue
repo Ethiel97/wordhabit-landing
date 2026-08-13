@@ -19,6 +19,21 @@ const definition = computed(() => {
     return selectLocalizedDefinition(word.value?.definitions, locale.value);
 });
 
+const seoDescription = computed(() => {
+    if (!definition.value) {
+        return '';
+    }
+
+    const description = `${definition.value.text.trim()} ${t('sharedWord.seoSuffix')}`;
+    if (description.length <= 160) {
+        return description;
+    }
+
+    const shortened = description.slice(0, 159);
+    const lastSpace = shortened.lastIndexOf(' ');
+    return `${shortened.slice(0, lastSpace > 0 ? lastSpace : 159).trimEnd()}…`;
+});
+
 const posLabel = computed(() =>
     word.value
         ? t(`sharedWord.partOfSpeech.${word.value.partOfSpeech.toLowerCase()}`)
@@ -38,21 +53,22 @@ if (word.value && definition.value) {
     });
     useSeoMeta({
         title,
-        description: definition.value.text,
+        description: seoDescription.value,
         ogTitle: title,
-        ogDescription: definition.value.text,
+        ogDescription: seoDescription.value,
         ogType: 'article',
         ogUrl: canonicalUrl,
         ogSiteName: 'Wordhabit',
         twitterCard: 'summary_large_image',
         twitterTitle: title,
-        twitterDescription: definition.value.text,
+        twitterDescription: seoDescription.value,
     });
     defineOgImage('SharedWordTakumi', {
         term: word.value.term,
         pos: posLabel.value,
         definition: definition.value.text,
         eyebrow: t('sharedWord.ogEyebrow'),
+        cta: t('sharedWord.ogCta'),
     }, {width: 1200, height: 630, alt: imageAlt});
 } else {
     useSeoMeta({
@@ -557,6 +573,43 @@ if (word.value && definition.value) {
 .pop {
   opacity: 0;
   animation: swPop 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.3) 0.5s forwards;
+}
+
+@media (max-width: 560px) {
+  .sw-hero {
+    padding-inline: 18px;
+  }
+
+  .sw-head {
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .sw-locale {
+    position: static;
+    flex: 0 0 auto;
+  }
+
+  .sw-locale :deep(select) {
+    min-height: 38px;
+    max-width: 104px;
+    padding-inline: 10px 26px;
+    font-size: 12px;
+  }
+
+  .sw-head a {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .sw-head .mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sw-head .name {
+    font-size: 18px;
+  }
 }
 
 @keyframes swPop {

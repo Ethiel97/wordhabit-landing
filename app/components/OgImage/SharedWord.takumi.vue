@@ -7,11 +7,13 @@ const props = withDefaults(defineProps<{
     pos?: string;
     definition?: string;
     eyebrow?: string;
+    cta?: string;
 }>(), {
     term: '',
     pos: '',
     definition: '',
     eyebrow: 'Word of the day',
+    cta: 'Learn it with Wordhabit',
 });
 
 const shortDefinition = computed(() =>
@@ -63,7 +65,11 @@ const mascotSrc = `data:image/svg+xml;base64,${btoa(MASCOT_SVG)}`;
           Wordhabit
         </div>
       </div>
-      <div style="font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.75);">wordhabit.app</div>
+      <div
+          style="display: flex; align-items: center; background: white; color: #15803D; padding: 14px 22px; border-radius: 999px; font-size: 22px; font-weight: 800;">
+        <div>{{ cta }}</div>
+        <div style="margin-left: 10px; font-size: 26px; line-height: 1;">→</div>
+      </div>
     </div>
   </div>
 </template>
