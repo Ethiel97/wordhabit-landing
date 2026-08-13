@@ -1,26 +1,28 @@
 <script setup lang="ts">
-const items = [
+const { t } = useI18n()
+
+const items = computed(() => [
   {
-    q: 'When does Wordhabit launch?',
-    a: "We're rolling out access waves throughout 2026. Waitlist members get in first — and at half price for the first year.",
+    q: t('landing.faq.items.launch.question'),
+    a: t('landing.faq.items.launch.answer'),
   },
   {
-    q: 'Will it work on my phone?',
-    a: "Yes. We're launching iOS and Android first",
+    q: t('landing.faq.items.devices.question'),
+    a: t('landing.faq.items.devices.answer'),
   },
   {
-    q: 'How is this different from a dictionary app?',
-    a: "Dictionaries are for lookups. Wordhabit is for retention. We use spaced repetition, real-life examples, and quizzes so words actually move from \"I've seen that\" to \"I use that.\"",
+    q: t('landing.faq.items.dictionary.question'),
+    a: t('landing.faq.items.dictionary.answer'),
   },
   {
-    q: 'How long is a daily session?',
-    a: "Five minutes. The whole point is that it's short enough to do every day — that's where the habit lives.",
+    q: t('landing.faq.items.duration.question'),
+    a: t('landing.faq.items.duration.answer'),
   },
   {
-    q: 'Do you support languages other than English?',
-    a: 'Right now: English and French, with Spanish, German, and Japanese coming through 2026.',
+    q: t('landing.faq.items.languages.question'),
+    a: t('landing.faq.items.languages.answer'),
   },
-]
+])
 
 const open = ref<number>(0)
 
@@ -34,9 +36,10 @@ function toggle(i: number) {
     <div class="section-inner">
       <!-- Header -->
       <div class="section-header">
-        <div class="pill" style="margin-bottom: 16px;">FAQ</div>
+        <div class="pill" style="margin-bottom: 16px;">{{ t('landing.faq.eyebrow') }}</div>
         <h2 class="display section-heading">
-          Questions? <span class="text-green">We've got you.</span>
+          {{ t('landing.faq.headingFirst') }}
+          <span class="text-green">{{ t('landing.faq.headingEmphasis') }}</span>
         </h2>
       </div>
 
@@ -48,7 +51,11 @@ function toggle(i: number) {
             class="accordion-item"
             :class="{ open: open === i }"
         >
-          <button class="accordion-trigger" @click="toggle(i)">
+          <button
+            class="accordion-trigger"
+            :aria-expanded="open === i"
+            @click="toggle(i)"
+          >
             <span>{{ item.q }}</span>
             <span class="accordion-icon" :class="{ active: open === i }">
               {{ open === i ? '−' : '+' }}

@@ -1,24 +1,26 @@
 <script setup lang="ts">
-const steps = [
+const { t } = useI18n()
+
+const steps = computed(() => [
   {
     n: '01',
-    title: 'Pick what excites you',
-    desc: "Science, history, business, slang — choose interests so we serve words you'll actually use.",
+    title: t('landing.howItWorks.steps.interests.title'),
+    desc: t('landing.howItWorks.steps.interests.description'),
     accent: '#22C55E',
   },
   {
     n: '02',
-    title: 'Five minutes a day',
-    desc: 'A new word in the morning. A quick review at lunch. A flashcard sweep at night. That\'s it.',
+    title: t('landing.howItWorks.steps.daily.title'),
+    desc: t('landing.howItWorks.steps.daily.description'),
     accent: '#7C3AED',
   },
   {
     n: '03',
-    title: 'Watch it compound',
-    desc: "After 30 days you've banked 30 words. After a year, you're fluent in a richer version of yourself.",
+    title: t('landing.howItWorks.steps.compound.title'),
+    desc: t('landing.howItWorks.steps.compound.description'),
     accent: '#F97316',
   },
-]
+])
 </script>
 
 <template>
@@ -26,10 +28,10 @@ const steps = [
     <div class="section-inner">
       <!-- Header -->
       <div class="section-header">
-        <div class="pill dark-pill" style="margin-bottom: 16px;">How it works</div>
+        <div class="pill dark-pill" style="margin-bottom: 16px;">{{ t('landing.howItWorks.eyebrow') }}</div>
         <h2 class="display section-heading">
-          Three steps. <br />
-          <span class="text-green">One habit.</span>
+          {{ t('landing.howItWorks.headingFirst') }} <br />
+          <span class="text-green">{{ t('landing.howItWorks.headingEmphasis') }}</span>
         </h2>
       </div>
 

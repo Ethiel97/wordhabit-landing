@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { selectLocalizedDefinition } from '~/utils/selectLocalizedDefinition'
+
 const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
-
 const {randomWord} = useLearning()
+const { locale, t } = useI18n()
 
-const heroWord = computed(() => randomWord.value?.word?.normalizedTerm || 'Vocabulary')
-const heroPartOfSpeech = computed(() => randomWord.value?.word?.partOfSpeech?.toLocaleLowerCase() || 'word')
-const heroDefinition = computed(() => randomWord.value?.definitions?.[0]?.text || 'Build a vocabulary you actually use. One beautiful word a day.')
+const heroWord = computed(() => randomWord.value?.word?.normalizedTerm || t('landing.flashcard.fallbackTerm'))
+const heroDefinition = computed(() =>
+  selectLocalizedDefinition(randomWord.value?.definitions, locale.value)?.text
+    ?? t('landing.flashcard.loadingMeaning'))
+const heroPartOfSpeech = computed(() => randomWord.value?.word?.partOfSpeech
+  ? t(`sharedWord.partOfSpeech.${randomWord.value.word.partOfSpeech.toLowerCase()}`)
+  : t('sharedWord.partOfSpeech.other'))
 
 </script>
 
@@ -16,14 +22,15 @@ const heroDefinition = computed(() => randomWord.value?.definitions?.[0]?.text |
       <div class="hero-copy">
         <div class="pill" style="margin-bottom: 20px;">
           <span class="pill-dot"/>
-          Now in private beta
+          {{ t('landing.hero.beta') }}
         </div>
         <h1 class="display hero-heading">
-          Master a <span class="text-green">new word</span> every day.
+          {{ t('landing.hero.primary.headingFirst') }}
+          <span class="text-green">{{ t('landing.hero.primary.headingEmphasis') }}</span>
+          {{ t('landing.hero.primary.headingLast') }}
         </h1>
         <p class="hero-sub">
-          Wordhabit is a mobile app that turns vocabulary into a daily ritual. Flashcards, quizzes,
-          and streaks designed to make words stick — for real.
+          {{ t('landing.hero.primary.description') }}
         </p>
         <WaitlistForm/>
         <SocialProof/>
@@ -33,23 +40,23 @@ const heroDefinition = computed(() => randomWord.value?.definitions?.[0]?.text |
 
     <!-- Hero B: Giant typography -->
     <section v-else-if="activeHero === 'B'" id="hero-form" class="hero-container hero-center">
-        <div class="pill" style="margin-bottom: 28px;">
-          <span class="pill-dot"/>
-          Now in private beta
-        </div>
-        <h1 class="display hero-big-label">Today's word:</h1>
-        <div class="hero-big-word-wrap">
-          <h2 class="display hero-big-word">{{ heroWord }}</h2>
-          <div class="pos-badge">{{ heroPartOfSpeech }}</div>
-        </div>
-        <p class="hero-big-sub">
-          <em>{{ heroDefinition }}</em><br/>
-          Build a vocabulary you actually use. One beautiful word a day.
-        </p>
-        <div class="hero-form-center">
-          <WaitlistForm/>
-        </div>
-        <SocialProof centered style="margin-top: 28px;"/>
+      <div class="pill" style="margin-bottom: 28px;">
+        <span class="pill-dot"/>
+        {{ t('landing.hero.beta') }}
+      </div>
+      <h1 class="display hero-big-label">{{ t('landing.hero.big.today') }}</h1>
+      <div class="hero-big-word-wrap">
+        <h2 class="display hero-big-word">{{ heroWord }}</h2>
+        <div class="pos-badge">{{ heroPartOfSpeech }}</div>
+      </div>
+      <p class="hero-big-sub">
+        <em>{{ heroDefinition }}</em><br/>
+        {{ t('landing.hero.big.description') }}
+      </p>
+      <div class="hero-form-center">
+        <WaitlistForm/>
+      </div>
+      <SocialProof centered style="margin-top: 28px;"/>
     </section>
 
 
@@ -58,33 +65,32 @@ const heroDefinition = computed(() => randomWord.value?.definitions?.[0]?.text |
       <div class="hero-copy">
         <div class="pill" style="margin-bottom: 20px;">
           <span class="pill-dot"/>
-          iOS · Android · Web
+          {{ t('landing.hero.phone.platforms') }}
         </div>
         <h1 class="display hero-heading-c">
-          Your brain.<br/>
-          <span class="text-green">Levelled up.</span><br/>
-          One word at a time.
+          {{ t('landing.hero.phone.headingFirst') }}<br/>
+          <span class="text-green">{{ t('landing.hero.phone.headingEmphasis') }}</span><br/>
+          {{ t('landing.hero.phone.headingLast') }}
         </h1>
         <p class="hero-sub">
-          A 5-minute habit that makes you sharper, more articulate,
-          and impossible to ignore at dinner parties.
+          {{ t('landing.hero.phone.description') }}
         </p>
         <WaitlistForm/>
         <SocialProof/>
       </div>
-      <PhoneMock/>
+      <PhoneMock :random-word="randomWord"/>
     </section>
 
     <!-- Hero toggle -->
     <div class="hero-toggle hero-toggle-mobile-hidden">
-      <span class="toggle-label">Hero</span>
+      <span class="toggle-label">{{ t('landing.hero.toggle.label') }}</span>
       <button
           v-for="k in (['A', 'B'] as const)"
           :key="k"
           :class="['toggle-btn', { active: activeHero === k }]"
           @click="activeHero = k"
       >
-        {{ k === 'A' ? 'Stack' : k === 'B' ? 'Big type' : 'Phone' }}
+        {{ k === 'A' ? t('landing.hero.toggle.stack') : t('landing.hero.toggle.bigType') }}
       </button>
     </div>
   </div>

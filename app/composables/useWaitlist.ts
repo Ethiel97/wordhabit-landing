@@ -6,6 +6,7 @@ interface WaitlistState {
 
 
 export function useWaitlist() {
+    const {t} = useI18n()
     const state = useState<WaitlistState>('waitlist-state', () => ({
         email: '',
         status: 'idle',
@@ -46,8 +47,10 @@ export function useWaitlist() {
             incrementCount()
         } catch (err: any) {
             state.value.status = 'error'
-            state.value.errorMessage =
-                err?.data?.statusMessage ?? 'Something went wrong. Please try again.'
+            const status = err?.statusCode ?? err?.status ?? err?.response?.status
+            state.value.errorMessage = status === 409
+                ? t('landing.waitlist.errors.alreadyJoined')
+                : t('landing.waitlist.errors.generic')
         }
     }
 

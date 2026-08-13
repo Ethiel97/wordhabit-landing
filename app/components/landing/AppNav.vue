@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const navLinks = ['Features', 'How it works', 'Pricing', 'FAQ']
+const { t } = useI18n()
+
+const navLinks = computed(() => [
+  { id: 'features', label: t('landing.nav.features') },
+  { id: 'how-it-works', label: t('landing.nav.howItWorks') },
+  { id: 'pricing', label: t('landing.nav.pricing') },
+  { id: 'faq', label: t('landing.nav.faq') },
+])
 const isMobileMenuOpen = ref(false)
 
 function scrollToWaitlist() {
@@ -19,14 +26,9 @@ function handleWaitlistClick() {
   closeMobileMenu()
 }
 
-function anchorId(label: string) {
-  return label.toLowerCase().replace(/\s+/g, '-')
-}
-
-function handleNavLinkClick(event: MouseEvent, label: string) {
+function handleNavLinkClick(event: MouseEvent, targetId: string) {
   event.preventDefault()
 
-  const targetId = anchorId(label)
   const target = document.getElementById(targetId)
   if (!target) {
     return
@@ -46,19 +48,20 @@ function handleNavLinkClick(event: MouseEvent, label: string) {
       <div class="nav-links hidden lg:flex flex-1">
         <a
             v-for="link in navLinks"
-            :key="link"
-            :href="`#${anchorId(link)}`"
+            :key="link.id"
+            :href="`#${link.id}`"
             class="nav-link"
-            @click="(event) => handleNavLinkClick(event, link)"
+            @click="handleNavLinkClick($event, link.id)"
         >
-          {{ link }}
+          {{ link.label }}
         </a>
       </div>
 
       <div class="nav-actions hidden lg:flex">
+        <LocaleSwitcher />
         <button
             class="btn btn-primary px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-green)] focus-visible:ring-offset-2 sm:text-base"
-            @click="scrollToWaitlist">Join the waitlist
+            @click="scrollToWaitlist">{{ t('landing.nav.joinWaitlist') }}
         </button>
       </div>
 
@@ -66,10 +69,10 @@ function handleNavLinkClick(event: MouseEvent, label: string) {
           class="menu-toggle lg:hidden"
           :aria-expanded="isMobileMenuOpen"
           aria-controls="mobile-nav"
-          aria-label="Toggle navigation"
+          :aria-label="t('landing.nav.toggle')"
           @click="toggleMobileMenu"
       >
-        <span class="sr-only">Menu</span>
+        <span class="sr-only">{{ t('landing.nav.menu') }}</span>
         <span :class="['menu-line', { open: isMobileMenuOpen }]"/>
         <span :class="['menu-line', { open: isMobileMenuOpen }]"/>
         <span :class="['menu-line', { open: isMobileMenuOpen }]"/>
@@ -79,21 +82,23 @@ function handleNavLinkClick(event: MouseEvent, label: string) {
     <div
         v-if="isMobileMenuOpen"
         id="mobile-nav"
-        aria-label="Mobile navigation"
+        :aria-label="t('landing.nav.mobile')"
         class="mobile-menu lg:hidden"
     >
       <a
           v-for="link in navLinks"
-          :key="`mobile-${link}`"
-          :href="`#${anchorId(link)}`"
+          :key="`mobile-${link.id}`"
+          :href="`#${link.id}`"
           class="mobile-nav-link"
-          @click="(event) => handleNavLinkClick(event, link)"
+          @click="handleNavLinkClick($event, link.id)"
       >
-        {{ link }}
+        {{ link.label }}
       </a>
 
+      <LocaleSwitcher />
+
       <button class="btn btn-primary mobile-cta" @click="handleWaitlistClick">
-        Join the waitlist
+        {{ t('landing.nav.joinWaitlist') }}
       </button>
     </div>
   </nav>

@@ -9,6 +9,7 @@ const avatars = [
 ]
 
 const {waitlistCount} = useWaitlist()
+const {t} = useI18n()
 </script>
 
 <template>
@@ -24,7 +25,7 @@ const {waitlistCount} = useWaitlist()
       </div>
     </div>
     <div style="font-size: 14px; color: var(--color-muted);">
-      <strong style="color: var(--color-ink);">{{ waitlistCount.count + 1500 }}</strong> word nerds already in line
+      {{ t('landing.socialProof.people', { count: waitlistCount.count + 1500 }) }}
     </div>
   </div>
 </template>

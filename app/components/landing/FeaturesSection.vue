@@ -1,48 +1,50 @@
 <script setup lang="ts">
-const features = [
+const { t } = useI18n()
+
+const features = computed(() => [
   {
     icon: '📇',
     color: '#22C55E',
     bg: '#DCFCE7',
-    title: 'Smart flashcards',
-    desc: "Spaced repetition that knows when you're about to forget — and shows up just in time.",
+    title: t('landing.features.items.flashcards.title'),
+    desc: t('landing.features.items.flashcards.description'),
   },
   {
     icon: '✨',
     color: '#7C3AED',
     bg: '#F3E8FF',
-    title: 'Word of the day',
-    desc: 'A new word each morning, hand-picked for usefulness, beauty, and the occasional showoff.',
+    title: t('landing.features.items.dailyWord.title'),
+    desc: t('landing.features.items.dailyWord.description'),
   },
   {
     icon: '🏆',
     color: '#F97316',
     bg: '#FFEDD5',
-    title: 'Badges & streaks',
-    desc: 'Build a 100-day streak. Unlock 30+ collector badges. Find out what kind of word nerd you are.',
+    title: t('landing.features.items.streaks.title'),
+    desc: t('landing.features.items.streaks.description'),
   },
   {
     icon: '🎯',
     color: '#EC4899',
     bg: '#FCE7F3',
-    title: 'Quizzes that stick',
-    desc: 'Quick daily challenges. Multiple choice, fill-in-the-blank, audio. Five minutes, real recall.',
+    title: t('landing.features.items.quizzes.title'),
+    desc: t('landing.features.items.quizzes.description'),
   },
   {
     icon: '🌍',
     color: '#3B82F6',
     bg: '#DBEAFE',
-    title: 'Pick your interests',
-    desc: 'Science, business, literature, slang. Words tailored to your world — not a generic word list.',
+    title: t('landing.features.items.interests.title'),
+    desc: t('landing.features.items.interests.description'),
   },
   {
     icon: '👥',
     color: '#0F1B12',
     bg: '#E6E8E4',
-    title: 'Learn with friends',
-    desc: "Share wins, race streaks, send words. Vocabulary is more fun when it's a group habit.",
+    title: t('landing.features.items.friends.title'),
+    desc: t('landing.features.items.friends.description'),
   },
-]
+])
 </script>
 
 <template>
@@ -50,13 +52,13 @@ const features = [
     <div class="section-inner">
       <!-- Header -->
       <div class="section-header">
-        <div class="pill" style="margin-bottom: 16px;">Features</div>
+        <div class="pill" style="margin-bottom: 16px;">{{ t('landing.features.eyebrow') }}</div>
         <h2 class="display section-heading">
-          Built to make words <span class="text-green">actually stick.</span>
+          {{ t('landing.features.headingFirst') }}
+          <span class="text-green">{{ t('landing.features.headingEmphasis') }}</span>
         </h2>
         <p class="section-sub">
-          Most vocab apps drown you in lists. We use spaced repetition, real context,
-          and just enough game design to make daily practice feel like a treat.
+          {{ t('landing.features.description') }}
         </p>
       </div>
 

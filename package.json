@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/i18n": "^10.6.0",
     "typescript": "^5.0.0",
     "vue-tsc": "^2.0.0"
   }

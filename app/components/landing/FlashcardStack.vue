@@ -1,22 +1,27 @@
 <script lang="ts" setup>
 import type {GetRandomWordForLandingResult} from "#server/api/random-word.get";
+import {selectLocalizedDefinition} from '~/utils/selectLocalizedDefinition'
 
 const props = defineProps<{
   randomWord: GetRandomWordForLandingResult | null
 }>();
 
-const synonyms = computed(() => props.randomWord?.synonyms?.map((synonym) => synonym.value).join(', ') || 'No synonyms yet.');
-const term = computed(() => props.randomWord?.word?.normalizedTerm || 'Word of the day');
-const meaning = computed(() => {
-  const hasDefinitions = (props.randomWord?.definitions?.length ?? 0) > 0;
-  return hasDefinitions
-      ? props.randomWord?.definitions?.[0]?.text
-      : 'Meaning is loading...';
-});
+const {locale, t} = useI18n()
+
+const selectedDefinition = computed(() =>
+  selectLocalizedDefinition(props.randomWord?.definitions, locale.value))
+const synonyms = computed(() => props.randomWord?.synonyms?.map((synonym) => synonym.value).join(', ')
+  || t('landing.flashcard.noSynonyms'))
+const term = computed(() => props.randomWord?.word?.normalizedTerm || t('landing.flashcard.fallbackTerm'))
+const meaning = computed(() => selectedDefinition.value?.text || t('landing.flashcard.loadingMeaning'))
+const definitionLanguage = computed(() => {
+  const code = selectedDefinition.value?.explanationLanguage.toLowerCase() || locale.value
+  return t(`languages.${code}`)
+})
 
 const example = computed(() => {
   const hasExamples = (props.randomWord?.examples?.length ?? 0) > 0;
-  return hasExamples ? props.randomWord?.examples?.[0]?.sentence : 'Example sentence is loading...';
+  return hasExamples ? props.randomWord?.examples?.[0]?.sentence : t('landing.flashcard.loadingExample');
 });
 
 </script>
@@ -24,7 +29,7 @@ const example = computed(() => {
   <div class="card-scene">
     <!-- Back card -->
     <div class="back-card">
-      <div class="back-label">Synonyms</div>
+      <div class="back-label">{{ t('landing.flashcard.synonyms') }}</div>
       <div class="back-content">
         {{ synonyms }}
       </div>
@@ -33,24 +38,24 @@ const example = computed(() => {
     <!-- Main card -->
     <div class="main-card">
       <div class="card-header">
-        <div class="card-tag">Word of the day</div>
-        <div class="sound-btn">♪</div>
+        <div class="card-tag">{{ t('landing.flashcard.wordOfDay') }}</div>
+        <div class="sound-btn" role="img" :aria-label="t('landing.flashcard.listen')">♪</div>
       </div>
 
       <h3 class="display word-title">{{ term }}</h3>
 
       <div class="card-meaning">
-        <strong>Meaning:</strong> {{ meaning }}
+        <strong>{{ t('landing.flashcard.meaning') }}:</strong> {{ meaning }}
       </div>
       <div class="card-example">
         "{{ example }}"
       </div>
 
       <div class="card-footer">
-        <span class="lang-select">English ▾</span>
+        <span class="lang-select">{{ definitionLanguage }}</span>
         <div class="card-actions">
-          <button class="icon-btn">★</button>
-          <button class="icon-btn">↗</button>
+          <button type="button" class="icon-btn" :aria-label="t('landing.flashcard.save')">★</button>
+          <button type="button" class="icon-btn" :aria-label="t('landing.flashcard.share')">↗</button>
         </div>
       </div>
     </div>

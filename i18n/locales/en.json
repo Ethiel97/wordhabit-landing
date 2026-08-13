@@ -1,0 +1,252 @@
+{
+  "languages": {
+    "selector": "Choose language",
+    "en": "English",
+    "fr": "Français",
+    "es": "Español"
+  },
+  "seo": {
+    "default": {
+      "title": "Wordhabit — Master a new word every day",
+      "description": "Wordhabit helps you build a daily vocabulary habit with spaced repetition, flashcards, and gamified progress."
+    },
+    "home": {
+      "title": "Wordhabit — Master a new word every day",
+      "description": "Wordhabit turns vocabulary into a daily ritual. Flashcards, quizzes, and streaks designed to make words stick — for real.",
+      "ogDescription": "Build a lasting vocabulary habit with daily words, flashcards, and streaks designed to make words stick.",
+      "twitterDescription": "Learn better words daily with spaced repetition and flashcards that are actually fun to use."
+    }
+  },
+  "landing": {
+    "nav": {
+      "features": "Features",
+      "howItWorks": "How it works",
+      "pricing": "Pricing",
+      "faq": "FAQ",
+      "joinWaitlist": "Join the waitlist",
+      "toggle": "Toggle navigation",
+      "menu": "Menu",
+      "mobile": "Mobile navigation"
+    },
+    "hero": {
+      "beta": "Now in private beta",
+      "primary": {
+        "headingFirst": "Master a",
+        "headingEmphasis": "new word",
+        "headingLast": "every day.",
+        "description": "Wordhabit is a mobile app that turns vocabulary into a daily ritual. Flashcards, quizzes, and streaks designed to make words stick — for real."
+      },
+      "big": {
+        "today": "Today’s word:",
+        "description": "Build a vocabulary you actually use. One beautiful word a day."
+      },
+      "phone": {
+        "platforms": "iOS · Android · Web",
+        "headingFirst": "Your brain.",
+        "headingEmphasis": "Levelled up.",
+        "headingLast": "One word at a time.",
+        "description": "A 5-minute habit that makes you sharper, more articulate, and impossible to ignore at dinner parties."
+      },
+      "toggle": {
+        "label": "Hero",
+        "stack": "Stack",
+        "bigType": "Big type"
+      }
+    },
+    "flashcard": {
+      "synonyms": "Synonyms",
+      "noSynonyms": "No synonyms yet.",
+      "wordOfDay": "Word of the day",
+      "fallbackTerm": "Vocabulary",
+      "meaning": "Meaning",
+      "loadingMeaning": "Meaning is loading…",
+      "loadingExample": "Example sentence is loading…",
+      "listen": "Listen to the pronunciation",
+      "save": "Save this word",
+      "share": "Share this word"
+    },
+    "features": {
+      "eyebrow": "Features",
+      "headingFirst": "Built to make words",
+      "headingEmphasis": "actually stick.",
+      "description": "Most vocab apps drown you in lists. We use spaced repetition, real context, and just enough game design to make daily practice feel like a treat.",
+      "items": {
+        "flashcards": {
+          "title": "Smart flashcards",
+          "description": "Spaced repetition that knows when you’re about to forget — and shows up just in time."
+        },
+        "dailyWord": {
+          "title": "Word of the day",
+          "description": "A new word each morning, hand-picked for usefulness, beauty, and the occasional showoff."
+        },
+        "streaks": {
+          "title": "Badges & streaks",
+          "description": "Build a 100-day streak. Unlock 30+ collector badges. Find out what kind of word nerd you are."
+        },
+        "quizzes": {
+          "title": "Quizzes that stick",
+          "description": "Quick daily challenges. Multiple choice, fill-in-the-blank, audio. Five minutes, real recall."
+        },
+        "interests": {
+          "title": "Pick your interests",
+          "description": "Science, business, literature, slang. Words tailored to your world — not a generic word list."
+        },
+        "friends": {
+          "title": "Learn with friends",
+          "description": "Share wins, race streaks, send words. Vocabulary is more fun when it’s a group habit."
+        }
+      }
+    },
+    "howItWorks": {
+      "eyebrow": "How it works",
+      "headingFirst": "Three steps.",
+      "headingEmphasis": "One habit.",
+      "steps": {
+        "interests": {
+          "title": "Pick what excites you",
+          "description": "Science, history, business, slang — choose interests so we serve words you’ll actually use."
+        },
+        "daily": {
+          "title": "Five minutes a day",
+          "description": "A new word in the morning. A quick review at lunch. A flashcard sweep at night. That’s it."
+        },
+        "compound": {
+          "title": "Watch it compound",
+          "description": "After 30 days you’ve banked 30 words. After a year, you’re fluent in a richer version of yourself."
+        }
+      }
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "headingFirst": "Free forever.",
+      "headingEmphasis": "Premium when you’re ready.",
+      "perMonth": "/mo",
+      "waitlistDiscount": "50% off for waitlist",
+      "free": {
+        "name": "Free",
+        "tagline": "The daily habit, on us.",
+        "cta": "Start free",
+        "features": {
+          "dailyWord": "1 word a day",
+          "review": "Daily flashcard review",
+          "badges": "6 starter badges",
+          "stats": "Basic stats"
+        }
+      },
+      "premium": {
+        "name": "Premium",
+        "tagline": "Power tools for word collectors.",
+        "cta": "Get early access",
+        "features": {
+          "unlimited": "Unlimited words & decks",
+          "badges": "30+ collector badges",
+          "audio": "Audio pronunciation",
+          "offline": "Offline mode",
+          "support": "Priority support"
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "headingFirst": "Questions?",
+      "headingEmphasis": "We’ve got you.",
+      "items": {
+        "launch": {
+          "question": "When does Wordhabit launch?",
+          "answer": "We’re rolling out access waves throughout 2026. Waitlist members get in first — and at half price for the first year."
+        },
+        "devices": {
+          "question": "Will it work on my phone?",
+          "answer": "Yes. We’re launching iOS and Android first."
+        },
+        "dictionary": {
+          "question": "How is this different from a dictionary app?",
+          "answer": "Dictionaries are for lookups. Wordhabit is for retention. We use spaced repetition, real-life examples, and quizzes so words actually move from “I’ve seen that” to “I use that.”"
+        },
+        "duration": {
+          "question": "How long is a daily session?",
+          "answer": "Five minutes. The whole point is that it’s short enough to do every day — that’s where the habit lives."
+        },
+        "languages": {
+          "question": "Do you support languages other than English?",
+          "answer": "Right now: English and French, with Spanish, German, and Japanese coming through 2026."
+        }
+      }
+    },
+    "finalCta": {
+      "headingFirst": "Start the habit.",
+      "headingLast": "Grow the vocab.",
+      "description": "Join {count} word collectors on the waitlist. Get 50% off Premium when we launch."
+    },
+    "waitlist": {
+      "placeholder": "you{'@'}example.com",
+      "emailLabel": "Email address",
+      "joining": "Joining…",
+      "join": "Join waitlist",
+      "successTitle": "You’re on the list!",
+      "successMessage": "We’ll email you when your spot opens.",
+      "errors": {
+        "invalidEmail": "Please enter a valid email.",
+        "alreadyJoined": "This email is already on the waitlist.",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "socialProof": {
+      "people": "{count} word nerds already in line"
+    },
+    "phone": {
+      "streak": "Day {day} · 🔥 {count} streak",
+      "greeting": "Good morning, {name}",
+      "wordOfDay": "WORD OF THE DAY",
+      "fallbackTerm": "Ephemeral",
+      "fallbackDefinition": "Lasting for a very short time.",
+      "review": "REVIEW",
+      "badges": "BADGES",
+      "startLesson": "Start today’s lesson"
+    }
+  },
+  "sharedWord": {
+    "origin": "Word of the day · WordHabit",
+    "ogEyebrow": "Word of the day",
+    "tagline": {
+      "first": "One word a day.",
+      "emphasis": "Deeply learned.",
+      "last": "Remembered for life."
+    },
+    "subtitle": "Get the free app and make it a habit.",
+    "store": {
+      "getOn": "Get it on",
+      "googlePlay": "Google Play",
+      "downloadOn": "Download on the",
+      "appStore": "App Store",
+      "comingSoon": "Coming soon"
+    },
+    "free": "Free · No sign-up",
+    "notFound": {
+      "title": "This word has flown.",
+      "message": "The link may have expired, but a new word is waiting in the app every day.",
+      "home": "Visit wordhabit.app"
+    },
+    "partOfSpeech": {
+      "noun": "noun",
+      "verb": "verb",
+      "adjective": "adjective",
+      "adverb": "adverb",
+      "expression": "expression",
+      "other": "word"
+    },
+    "aria": {
+      "notFound": "Word not found",
+      "sharedWord": "Shared word",
+      "mascot": "Wordhabit mascot",
+      "googlePlay": "Get it on Google Play",
+      "appStore": "Download on the App Store"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 · Made for word lovers.",
+    "support": "Support",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}

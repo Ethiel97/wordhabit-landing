@@ -1,20 +1,33 @@
 <script setup lang="ts">
-const freeTier = {
-  tier: 'Free',
-  price: '$0',
-  tagline: 'The daily habit, on us.',
-  features: ['1 word a day', 'Daily flashcard review', '6 starter badges', 'Basic stats'],
-  highlight: false,
-}
+const { t } = useI18n()
 
-const premiumTier = {
-  tier: 'Premium',
+const freeTier = computed(() => ({
+  tier: t('landing.pricing.free.name'),
+  price: '$0',
+  tagline: t('landing.pricing.free.tagline'),
+  features: [
+    t('landing.pricing.free.features.dailyWord'),
+    t('landing.pricing.free.features.review'),
+    t('landing.pricing.free.features.badges'),
+    t('landing.pricing.free.features.stats'),
+  ],
+  highlight: false,
+}))
+
+const premiumTier = computed(() => ({
+  tier: t('landing.pricing.premium.name'),
   price: '$3.99',
-  per: '/mo',
-  tagline: 'Power tools for word collectors.',
-  features: ['Unlimited words & decks', '30+ collector badges', 'Audio pronunciation', 'Offline mode', 'Priority support'],
+  per: t('landing.pricing.perMonth'),
+  tagline: t('landing.pricing.premium.tagline'),
+  features: [
+    t('landing.pricing.premium.features.unlimited'),
+    t('landing.pricing.premium.features.badges'),
+    t('landing.pricing.premium.features.audio'),
+    t('landing.pricing.premium.features.offline'),
+    t('landing.pricing.premium.features.support'),
+  ],
   highlight: true,
-}
+}))
 
 function scrollToWaitlist() {
   document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' })
@@ -26,9 +39,10 @@ function scrollToWaitlist() {
     <div class="section-inner">
       <!-- Header -->
       <div class="section-header">
-        <div class="pill" style="margin-bottom: 16px;">Pricing</div>
+        <div class="pill" style="margin-bottom: 16px;">{{ t('landing.pricing.eyebrow') }}</div>
         <h2 class="display section-heading">
-          Free forever. <span class="text-green">Premium when you're ready.</span>
+          {{ t('landing.pricing.headingFirst') }}
+          <span class="text-green">{{ t('landing.pricing.headingEmphasis') }}</span>
         </h2>
       </div>
 
@@ -48,13 +62,13 @@ function scrollToWaitlist() {
             </li>
           </ul>
           <button class="btn btn-ghost" style="width: 100%;" @click="scrollToWaitlist">
-            Start free
+            {{ t('landing.pricing.free.cta') }}
           </button>
         </div>
 
         <!-- Premium -->
         <div class="pricing-card highlight">
-          <div class="best-value-badge">50% off for waitlist</div>
+          <div class="best-value-badge">{{ t('landing.pricing.waitlistDiscount') }}</div>
           <div class="tier-label">{{ premiumTier.tier }}</div>
           <div class="price-row">
             <span class="display price">{{ premiumTier.price }}</span>
@@ -68,7 +82,7 @@ function scrollToWaitlist() {
             </li>
           </ul>
           <button class="btn btn-primary" style="width: 100%;" @click="scrollToWaitlist">
-            Get early access
+            {{ t('landing.pricing.premium.cta') }}
           </button>
         </div>
       </div>

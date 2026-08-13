@@ -4,10 +4,11 @@ const props = defineProps<{
 }>()
 
 const {state, join, isLoading, isSuccess, isError} = useWaitlist()
+const {t} = useI18n()
 
 function handleSubmit() {
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(state.value.email)) {
-    state.value.errorMessage = 'Please enter a valid email'
+    state.value.errorMessage = t('landing.waitlist.errors.invalidEmail')
     return
   }
   state.value.errorMessage = ''
@@ -22,8 +23,8 @@ function handleSubmit() {
     <div v-if="isSuccess" class="success-box">
       <div class="success-check">✓</div>
       <div>
-        <div style="font-weight: 700; font-size: 16px;">You're on the list!</div>
-        <div style="font-size: 14px; color: var(--color-muted);">We'll email you when your spot opens.</div>
+        <div style="font-weight: 700; font-size: 16px;">{{ t('landing.waitlist.successTitle') }}</div>
+        <div style="font-size: 14px; color: var(--color-muted);">{{ t('landing.waitlist.successMessage') }}</div>
       </div>
     </div>
 
@@ -33,13 +34,14 @@ function handleSubmit() {
         <input
             v-model="state.email"
             type="email"
-            placeholder="you@example.com"
+            :placeholder="t('landing.waitlist.placeholder')"
+            :aria-label="t('landing.waitlist.emailLabel')"
             class="email-input"
             :disabled="isLoading"
             @input="state.errorMessage = ''"
         />
         <button type="submit" class="btn btn-primary" :disabled="isLoading">
-          {{ isLoading ? 'Joining...' : 'Join waitlist' }}
+          {{ isLoading ? t('landing.waitlist.joining') : t('landing.waitlist.join') }}
         </button>
       </form>
       <div v-if="isError" class="error-msg">{{ state.errorMessage }}</div>

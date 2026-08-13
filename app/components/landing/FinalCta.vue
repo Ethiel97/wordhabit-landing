@@ -1,16 +1,17 @@
 <script setup lang="ts">
 const {waitlistCount} = useWaitlist()
+const {t} = useI18n()
 </script>
 
 <template>
   <section class="cta-section">
     <div class="cta-inner">
       <h2 class="display cta-heading">
-        Start the habit. <br/>
-        Grow the vocab.
+        {{ t('landing.finalCta.headingFirst') }} <br/>
+        {{ t('landing.finalCta.headingLast') }}
       </h2>
       <p class="cta-sub">
-        Join {{ waitlistCount.count + 1500 }} word collectors on the waitlist. Get 50% off Premium when we launch.
+        {{ t('landing.finalCta.description', { count: waitlistCount.count + 1500 }) }}
       </p>
       <div class="cta-form">
         <WaitlistForm/>

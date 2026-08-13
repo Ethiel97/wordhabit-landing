@@ -1,3 +1,19 @@
+<script setup lang="ts">
+import type {GetRandomWordForLandingResult} from '#server/api/random-word.get'
+import {selectLocalizedDefinition} from '~/utils/selectLocalizedDefinition'
+
+const props = defineProps<{ randomWord: GetRandomWordForLandingResult | null }>()
+const {locale, t} = useI18n()
+
+const term = computed(() => props.randomWord?.word.normalizedTerm || t('landing.phone.fallbackTerm'))
+const definition = computed(() =>
+  selectLocalizedDefinition(props.randomWord?.definitions, locale.value)?.text
+    ?? t('landing.phone.fallbackDefinition'))
+const partOfSpeech = computed(() => props.randomWord?.word.partOfSpeech
+  ? t(`sharedWord.partOfSpeech.${props.randomWord.word.partOfSpeech.toLowerCase()}`)
+  : t('sharedWord.partOfSpeech.adjective'))
+</script>
+
 <template>
   <div class="phone-outer">
     <div class="phone-screen">
@@ -7,33 +23,33 @@
       <!-- Header -->
       <div class="screen-header">
         <div>
-          <div class="streak-tag">Day 47 · 🔥 12 streak</div>
-          <div class="display greeting">Good morning, Ami</div>
+          <div class="streak-tag">{{ t('landing.phone.streak', { day: 47, count: 12 }) }}</div>
+          <div class="display greeting">{{ t('landing.phone.greeting', { name: 'Ami' }) }}</div>
         </div>
       </div>
 
       <!-- Word of the day card -->
       <div class="wotd-card">
-        <div class="wotd-label">WORD OF THE DAY</div>
-        <h3 class="display wotd-word">Ephemeral</h3>
-        <div class="wotd-pos">adjective</div>
-        <div class="wotd-def">Lasting for a very short time.</div>
+        <div class="wotd-label">{{ t('landing.phone.wordOfDay') }}</div>
+        <h3 class="display wotd-word">{{ term }}</h3>
+        <div class="wotd-pos">{{ partOfSpeech }}</div>
+        <div class="wotd-def">{{ definition }}</div>
       </div>
 
       <!-- Stats grid -->
       <div class="stats-grid">
         <div class="stat-tile green">
-          <div class="stat-label">REVIEW</div>
+          <div class="stat-label">{{ t('landing.phone.review') }}</div>
           <div class="display stat-num">14</div>
         </div>
         <div class="stat-tile purple">
-          <div class="stat-label">BADGES</div>
+          <div class="stat-label">{{ t('landing.phone.badges') }}</div>
           <div class="display stat-num">6</div>
         </div>
       </div>
 
       <!-- CTA -->
-      <button class="phone-cta">Start today's lesson →</button>
+      <button type="button" class="phone-cta">{{ t('landing.phone.startLesson') }} →</button>
     </div>
   </div>
 </template>
