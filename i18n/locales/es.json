@@ -181,10 +181,10 @@
     "waitlist": {
       "placeholder": "tu{'@'}ejemplo.com",
       "emailLabel": "Correo electrónico",
-      "joining": "Uniéndote…",
-      "join": "Unirme a la lista",
-      "successTitle": "¡Estás en la lista!",
-      "successMessage": "Te escribiremos cuando se abra tu plaza.",
+      "joining": "Guardando…",
+      "join": "Avisadme",
+      "successTitle": "¡Estás en la lista de iOS!",
+      "successMessage": "Te escribiremos en cuanto Wordhabit llegue a la App Store.",
       "errors": {
         "invalidEmail": "Introduce un correo electrónico válido.",
         "alreadyJoined": "Este correo ya está en la lista de espera.",
@@ -203,6 +203,43 @@
       "review": "REPASAR",
       "badges": "INSIGNIAS",
       "startLesson": "Empezar la lección de hoy"
+    },
+    "launch": {
+      "nowOnPlay": "Ya en Google Play",
+      "navCta": "Descargar la app",
+      "getOn": "Disponible en",
+      "googlePlay": "Google Play",
+      "downloadOn": "Descárgala en la",
+      "appStore": "App Store",
+      "comingSoon": "Muy pronto",
+      "playAria": "Consigue Wordhabit en Google Play",
+      "appStoreAria": "Versión para App Store muy pronto, avisadme",
+      "screenshotAlt": "La pantalla de inicio de Wordhabit: la palabra del día y el recorrido diario",
+      "freeForever": "Gratis. La palabra del día, las tarjetas y el dominio seguirán siendo gratis para siempre.",
+      "iphoneHint": "¿Tienes iPhone?",
+      "iphoneHintLink": "Te avisamos en cuanto esté en la App Store →",
+      "finalSub": "Cinco minutos al día. Una palabra para toda la vida.",
+      "iosCaptureLabel": "¿Tienes iPhone? Déjanos tu correo y te avisamos en cuanto esté en la App Store.",
+      "heroes": {
+        "a": {
+          "first": "Diez palabras hoy, nueve olvidadas el viernes.",
+          "emphasis": "O una sola,",
+          "last": "para toda la vida.",
+          "description": "Wordhabit te enseña una palabra al día, a fondo. Descúbrela, practícala, domínala y repásala más tarde: un pequeño recorrido diario y la palabra es tuya."
+        },
+        "b": {
+          "first": "El",
+          "emphasis": "ritual de cinco minutos",
+          "last": "que le faltaba a tus mañanas.",
+          "description": "Una palabra con tu café. Tres pasos pequeños, una racha que te mantiene y mañana te espera una nueva palabra."
+        },
+        "c": {
+          "first": "Aprende una palabra una vez.",
+          "emphasis": "Consérvala",
+          "last": "para siempre.",
+          "description": "El repaso espaciado trae cada palabra justo antes de que la olvides, hasta que pasa de haberla visto a usarla de verdad."
+        }
+      }
     }
   },
   "sharedWord": {

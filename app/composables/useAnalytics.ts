@@ -12,17 +12,29 @@ export function useAnalytics() {
   const {$posthog} = useNuxtApp()
   const client = $posthog as PostHog | null
 
+  /**
+   * `variant` carries the hero headline in play. Nothing randomizes it
+   * today, so every row reads the same value: it is here so switching
+   * the cookie to random is a one-line change with the measurement
+   * already in place.
+   */
   function trackStoreClick(
     store: StoreName,
     context: StoreClickContext,
     wordId?: string,
+    variant?: string,
   ) {
     client?.capture('store link clicked', {
       store,
       context,
       ...(wordId ? {word_id: wordId} : {}),
+      ...(variant ? {hero_variant: variant} : {}),
     })
   }
 
-  return {trackStoreClick}
+  function trackIosNotifySubmitted() {
+    client?.capture('ios notify submitted')
+  }
+
+  return {trackStoreClick, trackIosNotifySubmitted}
 }

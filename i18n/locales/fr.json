@@ -181,10 +181,10 @@
     "waitlist": {
       "placeholder": "vous{'@'}exemple.com",
       "emailLabel": "Adresse e-mail",
-      "joining": "Inscription…",
-      "join": "Rejoindre la liste",
-      "successTitle": "Vous êtes sur la liste !",
-      "successMessage": "Nous vous écrirons dès que votre place sera disponible.",
+      "joining": "Enregistrement…",
+      "join": "Me prévenir",
+      "successTitle": "Vous êtes sur la liste iOS !",
+      "successMessage": "Nous vous écrirons dès que Wordhabit arrive sur l’App Store.",
       "errors": {
         "invalidEmail": "Saisissez une adresse e-mail valide.",
         "alreadyJoined": "Cette adresse e-mail est déjà sur la liste d’attente.",
@@ -203,6 +203,43 @@
       "review": "À RÉVISER",
       "badges": "BADGES",
       "startLesson": "Commencer la leçon du jour"
+    },
+    "launch": {
+      "nowOnPlay": "Disponible sur Google Play",
+      "navCta": "Obtenir l’app",
+      "getOn": "Disponible sur",
+      "googlePlay": "Google Play",
+      "downloadOn": "Téléchargez dans l’",
+      "appStore": "App Store",
+      "comingSoon": "Bientôt",
+      "playAria": "Obtenir Wordhabit sur Google Play",
+      "appStoreAria": "Version App Store bientôt disponible, être prévenu",
+      "screenshotAlt": "L’écran d’accueil de Wordhabit : le mot du jour et le parcours de la journée",
+      "freeForever": "Gratuit. Le mot du jour, les flashcards et la maîtrise le resteront pour toujours.",
+      "iphoneHint": "Sur iPhone ?",
+      "iphoneHintLink": "On vous prévient dès la sortie sur l’App Store →",
+      "finalSub": "Cinq minutes par jour. Un mot gardé pour la vie.",
+      "iosCaptureLabel": "Sur iPhone ? Laissez votre e-mail, on vous prévient dès la sortie App Store.",
+      "heroes": {
+        "a": {
+          "first": "Dix mots appris aujourd’hui, neuf oubliés vendredi.",
+          "emphasis": "Ou un seul,",
+          "last": "gardé pour la vie.",
+          "description": "Wordhabit vous apprend un mot par jour, en profondeur. Découvrez-le, pratiquez-le, maîtrisez-le, révisez-le plus tard : un petit parcours par jour, et le mot est à vous."
+        },
+        "b": {
+          "first": "Le",
+          "emphasis": "rituel de cinq minutes",
+          "last": "qui manquait à vos matins.",
+          "description": "Un mot avec votre café. Trois petites étapes, une série qui vous tient, et demain un nouveau mot vous attend."
+        },
+        "c": {
+          "first": "Apprenez un mot une fois.",
+          "emphasis": "Gardez-le",
+          "last": "pour toujours.",
+          "description": "La révision espacée ramène chaque mot juste avant que vous ne l’oubliiez, jusqu’à ce qu’il passe de déjà-vu à vraiment utilisé."
+        }
+      }
     }
   },
   "sharedWord": {

@@ -181,10 +181,10 @@
     "waitlist": {
       "placeholder": "you{'@'}example.com",
       "emailLabel": "Email address",
-      "joining": "Joining…",
-      "join": "Join waitlist",
-      "successTitle": "You’re on the list!",
-      "successMessage": "We’ll email you when your spot opens.",
+      "joining": "Saving…",
+      "join": "Notify me",
+      "successTitle": "You’re on the iOS list!",
+      "successMessage": "We’ll email you the moment Wordhabit lands on the App Store.",
       "errors": {
         "invalidEmail": "Please enter a valid email.",
         "alreadyJoined": "This email is already on the waitlist.",
@@ -203,6 +203,43 @@
       "review": "REVIEW",
       "badges": "BADGES",
       "startLesson": "Start today’s lesson"
+    },
+    "launch": {
+      "nowOnPlay": "Now on Google Play",
+      "navCta": "Get the app",
+      "getOn": "Get it on",
+      "googlePlay": "Google Play",
+      "downloadOn": "Download on the",
+      "appStore": "App Store",
+      "comingSoon": "Coming soon",
+      "playAria": "Get Wordhabit on Google Play",
+      "appStoreAria": "App Store version coming soon, get notified",
+      "screenshotAlt": "The Wordhabit home screen: today’s word and the day’s journey",
+      "freeForever": "Free. The word of the day, flashcards and mastery will stay free forever.",
+      "iphoneHint": "On iPhone?",
+      "iphoneHintLink": "We will email you the moment it is on the App Store →",
+      "finalSub": "It takes five minutes. It stays for life.",
+      "iosCaptureLabel": "On iPhone? We’ll let you know the moment it’s on the App Store.",
+      "heroes": {
+        "a": {
+          "first": "Ten words forgotten by Friday.",
+          "emphasis": "Or one,",
+          "last": "kept for life.",
+          "description": "Wordhabit teaches one word a day, deeply. Discover it, practice it, master it, review it later: one small journey a day, and the word is yours."
+        },
+        "b": {
+          "first": "The",
+          "emphasis": "five-minute word ritual",
+          "last": "your mornings were missing.",
+          "description": "One word with your coffee. Three small steps, a streak that keeps you honest, and tomorrow a new word is waiting."
+        },
+        "c": {
+          "first": "Learn a word once.",
+          "emphasis": "Keep it",
+          "last": "forever.",
+          "description": "Spaced review brings each word back just before you would forget it, until it moves from seen-it to use-it."
+        }
+      }
     }
   },
   "sharedWord": {

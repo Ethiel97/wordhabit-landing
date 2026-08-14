@@ -1,200 +1,144 @@
 <script setup lang="ts">
-import { selectLocalizedDefinition } from '~/utils/selectLocalizedDefinition'
+const {t} = useI18n()
 
-const activeHero = useCookie<'A' | 'B' | 'C'>('wh-hero', {default: () => 'A'})
-const {randomWord} = useLearning()
-const { locale, t } = useI18n()
+/**
+ * Launch-mode hero: the real app home screen next to the anti-volume
+ * headline, with the Play badge as the single primary action.
+ *
+ * The three headlines are kept because the cookie can select them, but
+ * nothing randomizes it: everyone gets 'a' until we choose to test.
+ * `hero_variant` rides along on store-click events so the measurement
+ * is already there when we do.
+ */
+const HERO_VARIANTS = ['a', 'b', 'c'] as const
+type HeroVariant = (typeof HERO_VARIANTS)[number]
 
-const heroWord = computed(() => randomWord.value?.word?.normalizedTerm || t('landing.flashcard.fallbackTerm'))
-const heroDefinition = computed(() =>
-  selectLocalizedDefinition(randomWord.value?.definitions, locale.value)?.text
-    ?? t('landing.flashcard.loadingMeaning'))
-const heroPartOfSpeech = computed(() => randomWord.value?.word?.partOfSpeech
-  ? t(`sharedWord.partOfSpeech.${randomWord.value.word.partOfSpeech.toLowerCase()}`)
-  : t('sharedWord.partOfSpeech.other'))
+const heroCookie = useCookie<string>('wh-hero', {default: () => 'a'})
 
+/**
+ * Normalized, never trusted raw: the pre-launch hero wrote 'A'|'B'|'C'
+ * into this same cookie, and returning visitors still carry it. An
+ * unrecognized value would resolve to no translation and print the key.
+ */
+const heroVariant = computed<HeroVariant>(() => {
+  const value = String(heroCookie.value ?? '').toLowerCase()
+  return HERO_VARIANTS.includes(value as HeroVariant) ? (value as HeroVariant) : 'a'
+})
+
+function scrollToNotify() {
+  document.getElementById('ios-notify')?.scrollIntoView({behavior: 'smooth'})
+}
 </script>
 
 <template>
-  <div>
-    <!-- Hero A: Stacked flashcards -->
-    <section v-if="activeHero === 'A'" id="hero-form" class="hero-container hero-grid">
-      <div class="hero-copy">
-        <div class="pill" style="margin-bottom: 20px;">
-          <span class="pill-dot"/>
-          {{ t('landing.hero.beta') }}
-        </div>
-        <h1 class="display hero-heading">
-          {{ t('landing.hero.primary.headingFirst') }}
-          <span class="text-green">{{ t('landing.hero.primary.headingEmphasis') }}</span>
-          {{ t('landing.hero.primary.headingLast') }}
-        </h1>
-        <p class="hero-sub">
-          {{ t('landing.hero.primary.description') }}
-        </p>
-        <WaitlistForm/>
-        <SocialProof/>
-      </div>
-      <FlashcardStack :random-word="randomWord"/>
-    </section>
-
-    <!-- Hero B: Giant typography -->
-    <section v-else-if="activeHero === 'B'" id="hero-form" class="hero-container hero-center">
-      <div class="pill" style="margin-bottom: 28px;">
+  <section id="hero" class="hero">
+    <div class="copy">
+      <div class="pill live">
         <span class="pill-dot"/>
-        {{ t('landing.hero.beta') }}
+        {{ t('landing.launch.nowOnPlay') }}
       </div>
-      <h1 class="display hero-big-label">{{ t('landing.hero.big.today') }}</h1>
-      <div class="hero-big-word-wrap">
-        <h2 class="display hero-big-word">{{ heroWord }}</h2>
-        <div class="pos-badge">{{ heroPartOfSpeech }}</div>
-      </div>
-      <p class="hero-big-sub">
-        <em>{{ heroDefinition }}</em><br/>
-        {{ t('landing.hero.big.description') }}
+
+      <h1 class="display heading">
+        {{ t(`landing.launch.heroes.${heroVariant}.first`) }}
+        <span class="text-green">{{ t(`landing.launch.heroes.${heroVariant}.emphasis`) }}</span>
+        {{ t(`landing.launch.heroes.${heroVariant}.last`) }}
+      </h1>
+
+      <p class="sub">{{ t(`landing.launch.heroes.${heroVariant}.description`) }}</p>
+
+      <StoreBadges context="landing" :variant="heroVariant" class="badges"/>
+
+      <p class="free">
+        <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">
+          <circle cx="10" cy="10" r="10" fill="var(--color-green)"/>
+          <path
+              d="M6 10.2l2.6 2.6L14 7.5"
+              stroke="white"
+              stroke-width="2.2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+          />
+        </svg>
+        <span>{{ t('landing.launch.freeForever') }}</span>
       </p>
-      <div class="hero-form-center">
-        <WaitlistForm/>
-      </div>
-      <SocialProof centered style="margin-top: 28px;"/>
-    </section>
 
-
-    <!-- Hero C: Split with phone mock -->
-    <section v-else id="hero-form" class="hero-container hero-grid-c">
-      <div class="hero-copy">
-        <div class="pill" style="margin-bottom: 20px;">
-          <span class="pill-dot"/>
-          {{ t('landing.hero.phone.platforms') }}
-        </div>
-        <h1 class="display hero-heading-c">
-          {{ t('landing.hero.phone.headingFirst') }}<br/>
-          <span class="text-green">{{ t('landing.hero.phone.headingEmphasis') }}</span><br/>
-          {{ t('landing.hero.phone.headingLast') }}
-        </h1>
-        <p class="hero-sub">
-          {{ t('landing.hero.phone.description') }}
-        </p>
-        <WaitlistForm/>
-        <SocialProof/>
-      </div>
-      <PhoneMock :random-word="randomWord"/>
-    </section>
-
-    <!-- Hero toggle -->
-    <div class="hero-toggle hero-toggle-mobile-hidden">
-      <span class="toggle-label">{{ t('landing.hero.toggle.label') }}</span>
-      <button
-          v-for="k in (['A', 'B'] as const)"
-          :key="k"
-          :class="['toggle-btn', { active: activeHero === k }]"
-          @click="activeHero = k"
-      >
-        {{ k === 'A' ? t('landing.hero.toggle.stack') : t('landing.hero.toggle.bigType') }}
-      </button>
+      <p class="hint">
+        {{ t('landing.launch.iphoneHint') }}
+        <a href="#ios-notify" @click.prevent="scrollToNotify">
+          {{ t('landing.launch.iphoneHintLink') }}
+        </a>
+      </p>
     </div>
-  </div>
+
+    <div class="shot">
+      <PhoneShot/>
+    </div>
+  </section>
 </template>
 
 <style scoped>
-/* ── Shared hero layout ─────────────────────────────────────── */
-.hero-container {
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 56px;
+  align-items: center;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 64px 32px 96px;
+  padding: 64px 32px 88px;
 }
 
-/* Hero A */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 48px;
-  align-items: center;
+.heading {
+  font-size: clamp(40px, 5.4vw, 60px);
+  text-wrap: balance;
+  max-width: 11.5em;
 }
 
-/* Hero C */
-.hero-grid-c {
-  display: grid;
-  grid-template-columns: 1fr 0.85fr;
-  gap: 64px;
-  align-items: center;
-}
-
-/* Hero B */
-.hero-center {
-  text-align: center;
-}
-
-.hero-copy {
-  max-width: 600px;
-}
-
-.hero-heading {
-  font-size: clamp(56px, 8vw, 96px);
-  margin-bottom: 24px;
-}
-
-.hero-heading-c {
-  font-size: clamp(56px, 7vw, 84px);
-  margin-bottom: 24px;
-}
-
-.hero-sub {
-  font-size: 20px;
-  line-height: 1.5;
+.sub {
+  margin-top: 22px;
+  font-size: 19px;
+  line-height: 1.55;
   color: var(--color-muted);
-  max-width: 520px;
-  margin-bottom: 36px;
+  max-width: 30em;
+  text-wrap: pretty;
 }
 
-/* Hero B specific */
-.hero-big-label {
-  font-size: clamp(72px, 14vw, 150px);
-  line-height: 0.9;
-  margin-bottom: 8px;
+.badges {
+  margin-top: 32px;
 }
 
-.hero-big-word-wrap {
-  position: relative;
-  display: inline-block;
-  margin: 12px 0 32px;
+.free {
+  display: flex;
+  gap: 8px;
+  margin-top: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.45;
+  max-width: 30em;
 }
 
-.hero-big-word {
-  font-size: clamp(96px, 18vw, 200px);
-  color: var(--color-green);
-  letter-spacing: -0.05em;
-  line-height: 0.85;
+.free svg {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.pos-badge {
-  position: absolute;
-  top: -8px;
-  right: -56px;
-  background-color: #7C3AED;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 9999px;
+.hint {
+  margin-top: 12px;
   font-size: 13px;
-  font-weight: 700;
-  transform: rotate(8deg);
-  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
-}
-
-.hero-big-sub {
-  font-size: 22px;
-  line-height: 1.5;
   color: var(--color-muted);
-  max-width: 620px;
-  margin: 0 auto 40px;
 }
 
-.hero-form-center {
-  max-width: 480px;
-  margin: 0 auto;
+.hint a {
+  font-weight: 600;
+  color: var(--color-green-700);
 }
 
-/* ── Pill ───────────────────────────────────────────────────── */
+.shot {
+  display: flex;
+  justify-content: center;
+}
+
 .pill-dot {
   width: 6px;
   height: 6px;
@@ -203,63 +147,39 @@ const heroPartOfSpeech = computed(() => randomWord.value?.word?.partOfSpeech
   display: inline-block;
 }
 
+.pill.live {
+  margin-bottom: 22px;
+}
+
 .text-green {
   color: var(--color-green);
 }
 
-/* ── Hero toggle ────────────────────────────────────────────── */
-.hero-toggle {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 100;
-  background: var(--color-ink);
-  color: white;
-  border-radius: 9999px;
-  padding: 8px;
-  display: flex;
-  gap: 4px;
-  box-shadow: 0 8px 24px rgba(15, 27, 18, 0.3);
-}
-
-.toggle-label {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 11px;
-  padding: 8px 6px 8px 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.toggle-btn {
-  padding: 8px 14px;
-  border-radius: 9999px;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 13px;
-  font-weight: 600;
-  transition: all 0.15s;
-}
-
-.toggle-btn.active {
-  background-color: var(--color-green);
-  color: white;
-}
-
-/* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 880px) {
-  .hero-grid,
-  .hero-grid-c {
-    grid-template-columns: 1fr;
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px 64px;
+    text-align: center;
   }
 
-  /* Overrides `.pos-badge` base offsets at line 156 to keep the badge adjacent on narrower viewports. */
-  .pos-badge {
-    right: -30px;
-    top: -4px;
+  .copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .hero-toggle-mobile-hidden {
-    display: none;
+  .badges {
+    justify-content: center;
+  }
+
+  .free {
+    text-align: left;
+  }
+
+  .sub {
+    font-size: 16.5px;
   }
 }
 </style>
