@@ -11,6 +11,7 @@ const {t} = useI18n()
 const {trackStoreClick} = useAnalytics()
 const heroVariant = useHeroVariant()
 const isWordPage = computed(() => props.context === 'word_page')
+const playStoreUrl = usePlayStoreLink(props.context, toRef(props, 'wordId'))
 
 const badgeClass = computed(() => [
   'inline-flex items-center gap-[11px] rounded-[14px] bg-ink text-left text-white shadow-[0_4px_0_0_#000,0_12px_24px_-8px_rgba(15,27,18,0.35)]',
@@ -73,7 +74,7 @@ function scrollToNotify(event: MouseEvent) {
   <div class="flex flex-wrap items-stretch gap-3" :class="{'justify-center': center}">
     <a
         :class="badgeClass"
-        :href="config.public.playStoreUrl"
+        :href="playStoreUrl"
         :aria-label="t('landing.launch.playAria')"
         @click="trackClick('play_store')"
     >
