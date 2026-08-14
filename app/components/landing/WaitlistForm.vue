@@ -21,86 +21,39 @@ function handleSubmit() {
 </script>
 
 <template>
-  <div class="waitlist-root" style="max-width: 520px;">
+  <div class="max-w-[520px]">
     <!-- Success state -->
-    <div v-if="isSuccess" class="success-box">
-      <div class="success-check">✓</div>
+    <div v-if="isSuccess" class="flex items-center gap-3.5 rounded-2xl border border-green bg-green-50 px-[22px] py-5">
+      <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-green text-lg font-bold text-white">✓</div>
       <div>
-        <div style="font-weight: 700; font-size: 16px;">{{ t('landing.waitlist.successTitle') }}</div>
-        <div style="font-size: 14px; color: var(--color-muted);">{{ t('landing.waitlist.successMessage') }}</div>
+        <div class="text-base font-bold">{{ t('landing.waitlist.successTitle') }}</div>
+        <div class="text-sm text-muted">{{ t('landing.waitlist.successMessage') }}</div>
       </div>
     </div>
 
     <!-- Form state -->
     <template v-else>
-      <form class="form-row" @submit.prevent="handleSubmit">
+      <form
+          class="flex gap-2 rounded-[18px] bg-white p-1.5 shadow-[0_2px_0_0_var(--color-line),inset_0_0_0_1px_var(--color-line)]"
+          @submit.prevent="handleSubmit"
+      >
         <input
             v-model="state.email"
             type="email"
             :placeholder="t('landing.waitlist.placeholder')"
             :aria-label="t('landing.waitlist.emailLabel')"
-            class="email-input"
+            class="min-w-0 flex-1 border-0 bg-transparent px-4 py-3.5 text-base text-ink outline-0"
             :disabled="isLoading"
             @input="state.errorMessage = ''"
         />
-        <button type="submit" class="btn btn-primary" :disabled="isLoading">
+        <AppButton
+            type="submit"
+            :disabled="isLoading"
+        >
           {{ isLoading ? t('landing.waitlist.joining') : t('landing.waitlist.join') }}
-        </button>
+        </AppButton>
       </form>
-      <div v-if="isError" class="error-msg">{{ state.errorMessage }}</div>
+      <div v-if="isError" class="mt-2 text-[13px] font-medium text-red-600">{{ state.errorMessage }}</div>
     </template>
   </div>
 </template>
-
-<style scoped>
-.form-row {
-  display: flex;
-  gap: 8px;
-  background: white;
-  border-radius: 18px;
-  padding: 6px;
-  box-shadow: 0 2px 0 0 var(--color-line), inset 0 0 0 1px var(--color-line);
-}
-
-.email-input {
-  flex: 1;
-  border: 0;
-  outline: 0;
-  padding: 14px 16px;
-  font-size: 16px;
-  background: transparent;
-  color: var(--color-ink);
-  min-width: 0;
-}
-
-
-.error-msg {
-  color: #DC2626;
-  font-size: 13px;
-  margin-top: 8px;
-  font-weight: 500;
-}
-
-.success-box {
-  background-color: var(--color-green-50);
-  border: 1px solid var(--color-green);
-  border-radius: 16px;
-  padding: 20px 22px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.success-check {
-  width: 40px;
-  height: 40px;
-  border-radius: 9999px;
-  background-color: var(--color-green);
-  color: white;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  font-weight: 700;
-  font-size: 18px;
-}
-</style>

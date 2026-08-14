@@ -11,24 +11,37 @@ withDefaults(
 </script>
 
 <template>
-  <div class="legal">
+  <div class="min-h-screen bg-paper">
     <!-- Not AppNav: its links are anchors into the landing sections, and
          none of them exist on this route. -->
-    <header class="legal-nav">
-      <NuxtLink to="/" class="legal-brand">
-        <span class="legal-logo-mark"><span>W</span></span>
-        <span class="display legal-wordmark">Wordhabit</span>
-      </NuxtLink>
-      <NuxtLink to="/" class="legal-back">← Back to site</NuxtLink>
+    <header class="mx-auto flex max-w-[820px] items-center justify-between gap-4 px-6 pt-6">
+      <AppLogo to="/" compact/>
+      <NuxtLink to="/" class="text-sm text-muted transition-colors duration-150 hover:text-ink">← Back to site</NuxtLink>
     </header>
 
-    <main class="legal-main">
-      <p class="pill legal-pill">{{ eyebrow }}</p>
-      <h1 class="display legal-title">{{ title }}</h1>
-      <p class="legal-summary">{{ summary }}</p>
-      <p class="legal-updated">Last updated {{ updatedOn }}</p>
+    <main class="mx-auto max-w-[820px] px-6 pt-14 pb-24">
+      <p class="mb-5 inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1.5 text-xs font-semibold text-green-700">
+        {{ eyebrow }}
+      </p>
+      <h1 class="mb-5 font-display text-[clamp(36px,6vw,56px)] font-extrabold leading-[1.05] tracking-[-0.03em] text-ink">
+        {{ title }}
+      </h1>
+      <p class="max-w-[62ch] text-lg leading-[1.6] text-muted">{{ summary }}</p>
+      <p class="mt-4 text-sm text-muted-2">Last updated {{ updatedOn }}</p>
 
-      <article class="legal-body">
+      <article
+          class="mt-12 text-base leading-[1.7] text-ink-2
+          [&_h2]:mt-12 [&_h2]:mb-3 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:leading-[1.25] [&_h2]:text-ink [&_h2:first-child]:mt-0
+          [&_h3]:mt-7 [&_h3]:mb-2 [&_h3]:text-[17px] [&_h3]:font-bold [&_h3]:text-ink
+          [&_p]:mb-4 [&_p]:max-w-[68ch]
+          [&_ul]:mb-4 [&_ul]:max-w-[68ch] [&_ul]:list-disc [&_ul]:pl-[22px]
+          [&_li]:mb-2
+          [&_a]:text-green-700 [&_a]:underline [&_a]:underline-offset-2
+          [&_strong]:font-bold [&_strong]:text-ink
+          [&_table]:mb-6 [&_table]:block [&_table]:w-full [&_table]:border-collapse [&_table]:overflow-x-auto [&_table]:text-[15px]
+          [&_th]:whitespace-nowrap [&_th]:border-b-2 [&_th]:border-line [&_th]:py-2.5 [&_th]:pr-3 [&_th]:text-left [&_th]:font-bold [&_th]:text-ink
+          [&_td]:border-b [&_td]:border-line [&_td]:py-2.5 [&_td]:pr-3 [&_td]:align-top"
+      >
         <slot />
       </article>
     </main>
@@ -36,169 +49,3 @@ withDefaults(
     <AppFooter />
   </div>
 </template>
-
-<style scoped>
-.legal {
-  background-color: var(--color-paper);
-  min-height: 100vh;
-}
-
-.legal-nav {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 24px 24px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.legal-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.legal-logo-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background-color: var(--color-green);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-}
-
-.legal-logo-mark span {
-  color: white;
-  font-weight: 800;
-  font-size: 16px;
-  font-family: var(--font-display);
-}
-
-.legal-wordmark {
-  font-size: 18px;
-  color: var(--color-ink);
-}
-
-.legal-back {
-  font-size: 14px;
-  color: var(--color-muted);
-  transition: color 0.15s;
-}
-
-.legal-back:hover {
-  color: var(--color-ink);
-}
-
-.legal-main {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 56px 24px 96px;
-}
-
-.legal-pill {
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-.legal-title {
-  font-size: clamp(36px, 6vw, 56px);
-  line-height: 1.05;
-  color: var(--color-ink);
-  margin-bottom: 20px;
-}
-
-.legal-summary {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--color-muted);
-  max-width: 62ch;
-}
-
-.legal-updated {
-  margin-top: 16px;
-  font-size: 14px;
-  color: var(--color-muted-2);
-}
-
-.legal-body {
-  margin-top: 48px;
-  color: var(--color-ink-2);
-  font-size: 16px;
-  line-height: 1.7;
-}
-
-.legal-body :deep(h2) {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.25;
-  color: var(--color-ink);
-  margin-top: 48px;
-  margin-bottom: 12px;
-}
-
-.legal-body :deep(h2:first-child) {
-  margin-top: 0;
-}
-
-.legal-body :deep(h3) {
-  font-weight: 700;
-  font-size: 17px;
-  color: var(--color-ink);
-  margin-top: 28px;
-  margin-bottom: 8px;
-}
-
-.legal-body :deep(p) {
-  margin-bottom: 16px;
-  max-width: 68ch;
-}
-
-.legal-body :deep(ul) {
-  margin: 0 0 16px;
-  padding-left: 22px;
-  list-style: disc;
-  max-width: 68ch;
-}
-
-.legal-body :deep(li) {
-  margin-bottom: 8px;
-}
-
-.legal-body :deep(a) {
-  color: var(--color-green-700);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.legal-body :deep(strong) {
-  color: var(--color-ink);
-  font-weight: 700;
-}
-
-.legal-body :deep(table) {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 24px;
-  font-size: 15px;
-  display: block;
-  overflow-x: auto;
-}
-
-.legal-body :deep(th) {
-  text-align: left;
-  font-weight: 700;
-  color: var(--color-ink);
-  border-bottom: 2px solid var(--color-line);
-  padding: 10px 12px 10px 0;
-  white-space: nowrap;
-}
-
-.legal-body :deep(td) {
-  border-bottom: 1px solid var(--color-line);
-  padding: 10px 12px 10px 0;
-  vertical-align: top;
-}
-</style>

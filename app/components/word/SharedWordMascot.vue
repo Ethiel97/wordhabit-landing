@@ -9,7 +9,7 @@ withDefaults(defineProps<{ size?: number; flying?: boolean; label?: string }>(),
 <template>
   <svg
       :width="size" :height="size" viewBox="0 0 100 100"
-      :style="flying ? { transform: 'scaleX(-1)' } : undefined"
+      :class="{'-scale-x-100': flying}"
       :aria-label="label">
     <circle cx="35" cy="35" r="22" fill="#22C55E"/>
     <circle cx="40" cy="32" r="3" fill="#0F1B12"/>

@@ -16,36 +16,43 @@ function toggle(i: number) {
 </script>
 
 <template>
-  <section id="faq" class="faq-section">
-    <div class="section-inner">
+  <section id="faq" class="bg-white px-8 py-[120px]">
+    <div class="mx-auto max-w-[880px]">
       <!-- Header -->
-      <div class="section-header">
-        <div class="pill" style="margin-bottom: 16px;">{{ t('landing.faq.eyebrow') }}</div>
-        <h2 class="display section-heading">
-          {{ t('landing.faq.headingFirst') }}
-          <span class="text-green">{{ t('landing.faq.headingEmphasis') }}</span>
-        </h2>
-      </div>
+      <LandingSectionHeader
+          class="mb-14"
+          size="large"
+          :eyebrow="t('landing.faq.eyebrow')"
+          :heading-first="t('landing.faq.headingFirst')"
+          :heading-emphasis="t('landing.faq.headingEmphasis')"
+      />
 
       <!-- Accordion -->
-      <div class="accordion">
+      <div class="flex flex-col gap-3">
         <div
             v-for="(item, i) in items"
             :key="i"
-            class="accordion-item"
-            :class="{ open: open === i }"
+            :class="[
+              'rounded-[18px] border border-line transition-colors duration-200',
+              open === i ? 'bg-paper' : 'bg-white',
+            ]"
         >
           <button
-            class="accordion-trigger"
+            class="flex w-full items-center justify-between gap-4 px-6 py-[22px] text-left text-[17px] font-semibold text-ink"
             :aria-expanded="open === i"
             @click="toggle(i)"
           >
             <span>{{ item.q }}</span>
-            <span class="accordion-icon" :class="{ active: open === i }">
+            <span
+                :class="[
+                  'grid h-7 w-7 shrink-0 place-items-center rounded-full text-base font-bold transition-all duration-200',
+                  open === i ? 'bg-green text-white' : 'bg-paper text-ink-2',
+                ]"
+            >
               {{ open === i ? '−' : '+' }}
             </span>
           </button>
-          <div v-if="open === i" class="accordion-body">
+          <div v-if="open === i" class="px-6 pt-0 pb-[22px] text-[15px] leading-[1.6] text-muted">
             {{ item.a }}
           </div>
         </div>
@@ -53,84 +60,3 @@ function toggle(i: number) {
     </div>
   </section>
 </template>
-
-<style scoped>
-.faq-section {
-  padding: 120px 32px;
-  background: white;
-}
-
-.section-inner {
-  max-width: 880px;
-  margin: 0 auto;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.section-heading {
-  font-size: clamp(40px, 6vw, 64px);
-}
-
-.text-green {
-  color: var(--color-green);
-}
-
-.accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.accordion-item {
-  border: 1px solid var(--color-line);
-  border-radius: 18px;
-  background: white;
-  transition: background 0.2s;
-}
-
-.accordion-item.open {
-  background-color: var(--color-paper);
-}
-
-.accordion-trigger {
-  width: 100%;
-  padding: 22px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 17px;
-  font-weight: 600;
-  text-align: left;
-  color: var(--color-ink);
-  gap: 16px;
-}
-
-.accordion-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 9999px;
-  background-color: var(--color-paper);
-  color: var(--color-ink-2);
-  display: grid;
-  place-items: center;
-  font-size: 16px;
-  font-weight: 700;
-  transition: all 0.2s;
-  flex-shrink: 0;
-}
-
-.accordion-icon.active {
-  background-color: var(--color-green);
-  color: white;
-}
-
-.accordion-body {
-  padding: 0 24px 22px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--color-muted);
-}
-</style>

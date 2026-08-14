@@ -13,7 +13,6 @@ const sz = computed(() => props.size ?? 72)
 const rot = computed(() => props.rotate ?? 0)
 
 const wrapStyle = computed(() => ({
-  position: 'absolute' as const,
   top: props.top !== undefined ? `${props.top}px` : undefined,
   left: props.left !== undefined ? `${props.left}px` : undefined,
   right: props.right !== undefined ? `${props.right}px` : undefined,
@@ -28,18 +27,13 @@ const scallopPath =
 </script>
 
 <template>
-  <div :style="wrapStyle">
+  <div class="absolute" :style="wrapStyle">
     <svg :viewBox="'0 0 100 100'" :width="sz" :height="sz">
       <path :d="scallopPath" :fill="color" />
     </svg>
     <div
-        :style="{
-        position: 'absolute',
-        inset: '0',
-        display: 'grid',
-        placeItems: 'center',
-        fontSize: `${sz * 0.4}px`,
-      }"
+        class="absolute inset-0 grid place-items-center"
+        :style="{fontSize: `${sz * 0.4}px`}"
     >
       {{ emoji }}
     </div>
