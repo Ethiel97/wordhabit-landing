@@ -2,8 +2,9 @@
 const { t } = useI18n()
 
 const navLinks = computed(() => [
-  { id: 'features', label: t('landing.nav.features') },
   { id: 'how-it-works', label: t('landing.nav.howItWorks') },
+  { id: 'why', label: t('landing.nav.why') },
+  { id: 'languages', label: t('landing.nav.languages') },
   { id: 'pricing', label: t('landing.nav.pricing') },
   { id: 'faq', label: t('landing.nav.faq') },
 ])
