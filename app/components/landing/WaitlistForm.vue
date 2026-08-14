@@ -6,6 +6,8 @@ const props = defineProps<{
 const {state, join, isLoading, isSuccess, isError} = useWaitlist()
 const {t} = useI18n()
 
+const{trackIosNotifySubmitted} = useAnalytics()
+
 function handleSubmit() {
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(state.value.email)) {
     state.value.errorMessage = t('landing.waitlist.errors.invalidEmail')
@@ -13,6 +15,7 @@ function handleSubmit() {
   }
   state.value.errorMessage = ''
   join();
+  trackIosNotifySubmitted();
 }
 
 </script>

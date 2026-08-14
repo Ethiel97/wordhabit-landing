@@ -10,20 +10,7 @@ const {t} = useI18n()
  * `hero_variant` rides along on store-click events so the measurement
  * is already there when we do.
  */
-const HERO_VARIANTS = ['a', 'b', 'c'] as const
-type HeroVariant = (typeof HERO_VARIANTS)[number]
-
-const heroCookie = useCookie<string>('wh-hero', {default: () => 'a'})
-
-/**
- * Normalized, never trusted raw: the pre-launch hero wrote 'A'|'B'|'C'
- * into this same cookie, and returning visitors still carry it. An
- * unrecognized value would resolve to no translation and print the key.
- */
-const heroVariant = computed<HeroVariant>(() => {
-  const value = String(heroCookie.value ?? '').toLowerCase()
-  return HERO_VARIANTS.includes(value as HeroVariant) ? (value as HeroVariant) : 'a'
-})
+const heroVariant = useHeroVariant()
 
 function scrollToNotify() {
   document.getElementById('ios-notify')?.scrollIntoView({behavior: 'smooth'})
@@ -46,7 +33,7 @@ function scrollToNotify() {
 
       <p class="sub">{{ t(`landing.launch.heroes.${heroVariant}.description`) }}</p>
 
-      <StoreBadges context="landing" :variant="heroVariant" class="badges"/>
+      <StoreBadges context="landing" class="badges"/>
 
       <p class="free">
         <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">

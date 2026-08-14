@@ -3,12 +3,21 @@ const props = withDefaults(defineProps<{
   context: 'landing' | 'word_page'
   center?: boolean
   light?: boolean
-  variant?: string
-}>(), {center: false, light: false, variant: undefined})
+}>(), {center: false, light: false})
 
 const config = useRuntimeConfig()
 const {t} = useI18n()
 const {trackStoreClick} = useAnalytics()
+const heroVariant = useHeroVariant()
+
+function trackClick(store: 'play_store' | 'app_store') {
+  trackStoreClick(
+    store,
+    props.context,
+    undefined,
+    props.context === 'landing' ? heroVariant.value : undefined,
+  )
+}
 
 function scrollToNotify(event: MouseEvent) {
   event.preventDefault()
@@ -22,7 +31,7 @@ function scrollToNotify(event: MouseEvent) {
         class="badge"
         :href="config.public.playStoreUrl"
         :aria-label="t('landing.launch.playAria')"
-        @click="trackStoreClick('play_store', props.context, undefined, props.variant)"
+        @click="trackClick('play_store')"
     >
       <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M4 2.7v18.6c0 .6.7 1 1.2.6l1-.6L16 12 6.2 2.7l-1-.6C4.7 1.7 4 2.1 4 2.7z" fill="#4CC9F0"/>
@@ -41,7 +50,7 @@ function scrollToNotify(event: MouseEvent) {
         class="badge"
         :href="config.public.appStoreUrl"
         :aria-label="t('landing.launch.appStore')"
-        @click="trackStoreClick('app_store', props.context, undefined, props.variant)"
+        @click="trackClick('app_store')"
     >
       <SharedWordAppleIcon/>
       <span class="t">

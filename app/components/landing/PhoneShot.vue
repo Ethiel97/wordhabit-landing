@@ -28,12 +28,20 @@ const outerRadius = computed(() => props.width * 0.155)
       <!-- The capture carries the device's own status bar; the crop hides
            it so the drawn one above stays the only clock on screen. -->
       <div class="crop">
-        <img
+        <NuxtImg
+            class="phone-shot-image"
             src="/app-home.webp"
             :alt="t('landing.launch.screenshotAlt')"
             width="680"
             height="1517"
+            sizes="340px"
+            densities="x1 x2"
+            format="webp"
+            quality="80"
+            :preload="{fetchPriority: 'high'}"
             fetchpriority="high"
+            loading="eager"
+            decoding="async"
         />
       </div>
     </div>
@@ -66,7 +74,7 @@ const outerRadius = computed(() => props.width * 0.155)
   overflow: hidden;
 }
 
-.crop img {
+.phone-shot-image {
   display: block;
   width: 100%;
   height: auto;

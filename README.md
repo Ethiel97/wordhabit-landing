@@ -7,6 +7,7 @@ This repository contains the Nuxt 4 marketing/landing app plus server API proxy 
 ## Tech Stack
 - Nuxt 4 (`nuxt`)
 - Vue 3 + TypeScript (`<script setup lang="ts">`)
+- Nuxt Image (`@nuxt/image`)
 - `@nuxt/ui`
 - Tailwind CSS (via CSS imports in `assets/css/main.css`)
 - pnpm
@@ -21,8 +22,8 @@ This repository contains the Nuxt 4 marketing/landing app plus server API proxy 
 - `nuxt.config.ts` - modules, global CSS, app head meta, runtime config
 
 ## Prerequisites
-- Node.js 20+
-- pnpm 9+
+- Node.js 22.12+
+- pnpm 10+
 
 ## Environment Variables
 Create a `.env` file in project root:
@@ -41,6 +42,9 @@ NUXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
 
 ## Local Development
 ```bash
+nvm install
+nvm use
+corepack enable
 pnpm install
 pnpm dev
 ```
@@ -78,4 +82,3 @@ Behavior:
 - Components are auto-imported (`pathPrefix: false`), so landing components are used as PascalCase tags without manual imports.
 - Section anchors are coupled between `AppNav.vue` link labels and section `id` values (`features`, `how-it-works`, `pricing`, `faq`).
 - Several landing SFC files appear truncated in the current repo snapshot (some end at exactly 100 lines); verify completeness before large UI refactors.
-

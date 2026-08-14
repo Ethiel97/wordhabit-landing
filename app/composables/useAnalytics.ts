@@ -13,10 +13,9 @@ export function useAnalytics() {
   const client = $posthog as PostHog | null
 
   /**
-   * `variant` carries the hero headline in play. Nothing randomizes it
-   * today, so every row reads the same value: it is here so switching
-   * the cookie to random is a one-line change with the measurement
-   * already in place.
+   * `variant` carries the hero headline in play. Every landing store CTA
+   * reports it, not only the badge rendered inside the hero, so the complete
+   * conversion funnel can be compared once variants are randomized.
    */
   function trackStoreClick(
     store: StoreName,

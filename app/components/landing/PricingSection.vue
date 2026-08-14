@@ -29,7 +29,7 @@ const rows = [
         <p class="section-desc">{{ t('landing.pricing.description') }}</p>
       </div>
 
-      <div class="table">
+      <div class="pricing-table">
         <div class="thead">
           <div class="feature-col"/>
           <div class="plan">
@@ -120,7 +120,8 @@ const rows = [
   color: var(--color-green);
 }
 
-.table {
+.pricing-table {
+  width: 100%;
   background: white;
   border: 1px solid var(--color-line);
   border-radius: 20px;
