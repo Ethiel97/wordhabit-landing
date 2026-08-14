@@ -3,18 +3,62 @@ const props = withDefaults(defineProps<{
   context: 'landing' | 'word_page'
   center?: boolean
   light?: boolean
+  wordId?: string
 }>(), {center: false, light: false})
 
 const config = useRuntimeConfig()
 const {t} = useI18n()
 const {trackStoreClick} = useAnalytics()
 const heroVariant = useHeroVariant()
+const isWordPage = computed(() => props.context === 'word_page')
+
+const badgeClass = computed(() => [
+  'inline-flex items-center gap-[11px] rounded-[14px] bg-ink text-left text-white shadow-[0_4px_0_0_#000,0_12px_24px_-8px_rgba(15,27,18,0.35)]',
+  isWordPage.value
+    ? 'min-h-[58px] py-2.5 pr-5 pl-[15px] transition-[transform,box-shadow] duration-100 ease-in-out hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-[0_1px_0_0_#000,0_6px_12px_-6px_rgba(15,27,18,0.3)]'
+    : 'min-h-14 py-[9px] pr-[19px] pl-3.5',
+])
+
+const soonClass = computed(() => [
+  'inline-flex items-center gap-[11px] rounded-[14px] text-left',
+  isWordPage.value
+    ? 'min-h-[58px] cursor-default bg-transparent py-2.5 pr-5 pl-[15px] text-muted shadow-[inset_0_0_0_1.5px_var(--color-line)]'
+    : 'min-h-14 py-[9px] pr-[19px] pl-3.5',
+  !isWordPage.value && props.light
+    ? 'bg-transparent text-[rgba(255,255,255,0.85)] shadow-[inset_0_0_0_1.5px_rgba(255,255,255,0.35),0_4px_0_0_rgba(255,255,255,0.15)]'
+    : '',
+  !isWordPage.value && !props.light
+    ? 'bg-white text-muted shadow-[inset_0_0_0_1.5px_var(--color-line),0_4px_0_0_var(--color-line)]'
+    : '',
+])
+
+const labelClass = 'flex flex-col leading-[1.15]'
+const captionClass = 'text-[9.5px] font-semibold tracking-[0.05em] uppercase opacity-[0.72]'
+const storeNameClass = computed(() => [
+  'font-bold tracking-[-0.01em]',
+  isWordPage.value ? 'text-[17px]' : 'text-[16.5px]',
+])
+const storeCopy = computed(() => isWordPage.value
+  ? {
+      getOn: t('sharedWord.store.getOn'),
+      googlePlay: t('sharedWord.store.googlePlay'),
+      downloadOn: t('sharedWord.store.downloadOn'),
+      appStore: t('sharedWord.store.appStore'),
+      comingSoon: t('sharedWord.store.comingSoon'),
+    }
+  : {
+      getOn: t('landing.launch.getOn'),
+      googlePlay: t('landing.launch.googlePlay'),
+      downloadOn: t('landing.launch.downloadOn'),
+      appStore: t('landing.launch.appStore'),
+      comingSoon: t('landing.launch.comingSoon'),
+    })
 
 function trackClick(store: 'play_store' | 'app_store') {
   trackStoreClick(
     store,
     props.context,
-    undefined,
+    props.wordId,
     props.context === 'landing' ? heroVariant.value : undefined,
   )
 }
@@ -26,9 +70,9 @@ function scrollToNotify(event: MouseEvent) {
 </script>
 
 <template>
-  <div class="badges" :class="{center}">
+  <div class="flex flex-wrap items-stretch gap-3" :class="{'justify-center': center}">
     <a
-        class="badge"
+        :class="badgeClass"
         :href="config.public.playStoreUrl"
         :aria-label="t('landing.launch.playAria')"
         @click="trackClick('play_store')"
@@ -39,96 +83,44 @@ function scrollToNotify(event: MouseEvent) {
         <path d="M6.2 2.7L16 12l3.8-2.2L7.4 2.3c-.4-.2-.9-.2-1.2.4z" fill="#22C55E"/>
         <path d="M6.2 21.3L16 12l3.8 2.2-12.4 7.5c-.4.2-.9.2-1.2-.4z" fill="#F97316"/>
       </svg>
-      <span class="t">
-        <small>{{ t('landing.launch.getOn') }}</small>
-        <b>{{ t('landing.launch.googlePlay') }}</b>
+      <span :class="labelClass">
+        <small :class="captionClass">{{ storeCopy.getOn }}</small>
+        <b :class="storeNameClass">{{ storeCopy.googlePlay }}</b>
       </span>
     </a>
 
     <a
         v-if="config.public.appStoreUrl"
-        class="badge"
+        :class="badgeClass"
         :href="config.public.appStoreUrl"
         :aria-label="t('landing.launch.appStore')"
         @click="trackClick('app_store')"
     >
       <SharedWordAppleIcon/>
-      <span class="t">
-        <small>{{ t('landing.launch.downloadOn') }}</small>
-        <b>{{ t('landing.launch.appStore') }}</b>
+      <span :class="labelClass">
+        <small :class="captionClass">{{ storeCopy.downloadOn }}</small>
+        <b :class="storeNameClass">{{ storeCopy.appStore }}</b>
       </span>
     </a>
     <a
-        v-else
-        class="badge soon"
-        :class="{light}"
+        v-else-if="!isWordPage"
+        :class="soonClass"
         href="#ios-notify"
         :aria-label="t('landing.launch.appStoreAria')"
         @click="scrollToNotify"
     >
       <SharedWordAppleIcon :color="light ? 'rgba(255,255,255,0.85)' : 'var(--color-muted)'"/>
-      <span class="t">
-        <small>{{ t('landing.launch.comingSoon') }}</small>
-        <b>{{ t('landing.launch.appStore') }}</b>
+      <span :class="labelClass">
+        <small :class="captionClass">{{ storeCopy.comingSoon }}</small>
+        <b :class="storeNameClass">{{ storeCopy.appStore }}</b>
       </span>
     </a>
+    <span v-else :class="soonClass">
+      <SharedWordAppleIcon color="var(--color-muted-2)"/>
+      <span :class="labelClass">
+        <small :class="captionClass">{{ storeCopy.comingSoon }}</small>
+        <b :class="storeNameClass">{{ storeCopy.appStore }}</b>
+      </span>
+    </span>
   </div>
 </template>
-
-<style scoped>
-.badges {
-  display: flex;
-  align-items: stretch;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.badges.center {
-  justify-content: center;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
-  background: var(--color-ink);
-  color: white;
-  border-radius: 14px;
-  padding: 9px 19px 9px 14px;
-  min-height: 56px;
-  text-align: left;
-  box-shadow: 0 4px 0 0 #000, 0 12px 24px -8px rgba(15, 27, 18, 0.35);
-}
-
-.badge .t {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.badge .t small {
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  opacity: 0.72;
-}
-
-.badge .t b {
-  font-size: 16.5px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.badge.soon {
-  background: white;
-  color: var(--color-muted);
-  box-shadow: inset 0 0 0 1.5px var(--color-line), 0 4px 0 0 var(--color-line);
-}
-
-.badge.soon.light {
-  background: transparent;
-  color: rgba(255, 255, 255, 0.85);
-  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.35), 0 4px 0 0 rgba(255, 255, 255, 0.15);
-}
-</style>

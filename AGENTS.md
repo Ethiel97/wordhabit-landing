@@ -33,7 +33,7 @@ pnpm preview
 
 ## Codebase-Specific Conventions
 - Components are auto-imported via `nuxt.config.ts` with `pathPrefix: false`; use PascalCase tags directly (example: `<HeroSection />`, `<AppLogo />`).
-- Styling is mostly component-scoped CSS blocks plus shared token classes from `assets/css/main.css` (`.display`, `.pill`, button primitives).
+- Styling is Tailwind-first. Keep visual rules in utility classes, factor repeated groups into small UI components, and reserve `assets/css/main.css` for Tailwind imports, design tokens, global base rules, and named animation keyframes.
 - Repeated CTA behavior uses direct DOM scroll to `#hero-form` (see `AppNav.vue`, `PricingSection.vue`) instead of router navigation.
 - Hero variant selection is cookie-driven (`useCookie('wh-hero')` in `HeroSection.vue`) for persistent A/B-style toggles.
 
@@ -44,11 +44,10 @@ pnpm preview
 
 ## Known Repository Anomalies (Verify Before Refactors)
 - `nuxt.config.ts` references `./app/assets/css/main.css`, but stylesheet exists at `assets/css/main.css`.
-- Several SFCs are exactly 100 lines and appear truncated mid-style block (`HeroSection.vue`, `PricingSection.vue`, others). Confirm file completeness before editing large style regions.
-- `app/components/landing/PhoneMock.vue` currently duplicates hero layout logic; validate intended responsibility before using it as a reusable phone mock.
+- The OG image renderer intentionally uses inline styles because Takumi does not consume the browser Tailwind stylesheet.
 
 ## Agent Guardrails for This Repo
 - Keep new work inside the existing section-based landing architecture unless asked to introduce routes/features.
 - Reuse `useWaitlist()` for any new waitlist UI to preserve synchronized state across sections.
-- Prefer updating existing design tokens/classes in `assets/css/main.css` over introducing parallel style systems.
+- Prefer existing Tailwind theme tokens and shared UI components over repeating long utility groups or introducing component-scoped CSS.
 - If you change navigation labels/anchors, update both `AppNav.vue` labels and section `id` attributes together.

@@ -20,49 +20,32 @@ async function changeLocale(event: Event) {
 </script>
 
 <template>
-  <label class="locale-switcher" :class="{ dark }">
+  <label class="inline-flex items-center">
     <span class="sr-only">{{ t('languages.selector') }}</span>
-    <select
-      :value="locale"
-      :aria-label="t('languages.selector')"
-      @change="changeLocale"
-    >
-      <option v-for="option in options" :key="option.code" :value="option.code">
-        {{ option.name }}
-      </option>
-    </select>
+    <span class="relative inline-flex items-center">
+      <select
+        :value="locale"
+        :aria-label="t('languages.selector')"
+        :class="[
+          'min-h-10 cursor-pointer appearance-none rounded-xl border px-3 pr-8 font-sans text-[13px] font-semibold leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green',
+          dark
+            ? 'border-white/28 bg-white/14 text-white [&>option]:text-ink'
+            : 'border-line bg-white text-ink-2',
+        ]"
+        @change="changeLocale"
+      >
+        <option v-for="option in options" :key="option.code" :value="option.code">
+          {{ option.name }}
+        </option>
+      </select>
+      <svg
+          class="pointer-events-none absolute right-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-current"
+          viewBox="0 0 16 16"
+          fill="none"
+          aria-hidden="true"
+      >
+        <path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
   </label>
 </template>
-
-<style scoped>
-.locale-switcher {
-  display: inline-flex;
-  align-items: center;
-}
-
-.locale-switcher select {
-  min-height: 40px;
-  border: 1px solid var(--color-line);
-  border-radius: 12px;
-  background: white;
-  color: var(--color-ink-2);
-  padding: 0 32px 0 12px;
-  font: 600 13px/1 var(--font-sans);
-  cursor: pointer;
-}
-
-.locale-switcher select:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--color-green);
-}
-
-.locale-switcher.dark select {
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.14);
-  color: white;
-}
-
-.locale-switcher.dark option {
-  color: var(--color-ink);
-}
-</style>

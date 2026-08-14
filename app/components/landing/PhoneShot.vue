@@ -9,11 +9,11 @@ const outerRadius = computed(() => props.width * 0.155)
 
 <template>
   <div
-      class="phone"
+      class="bg-ink shadow-[0_24px_48px_-12px_rgba(15,27,18,0.35)]"
       :style="{width: `${width}px`, borderRadius: `${outerRadius}px`, padding: `${bezel}px`}"
   >
-    <div class="screen" :style="{borderRadius: `${outerRadius - bezel}px`}">
-      <div class="sbar">
+    <div class="overflow-hidden bg-[#F8FAF8]" :style="{borderRadius: `${outerRadius - bezel}px`}">
+      <div class="flex items-center justify-between bg-[#F8FAF8] px-5 pt-2.5 pb-1 text-xs font-bold text-ink">
         <span>9:41</span>
         <svg width="34" height="11" viewBox="0 0 34 11" fill="var(--color-ink)" aria-hidden="true">
           <rect x="0" y="6" width="2.4" height="4" rx="0.8"/>
@@ -27,9 +27,9 @@ const outerRadius = computed(() => props.width * 0.155)
       </div>
       <!-- The capture carries the device's own status bar; the crop hides
            it so the drawn one above stays the only clock on screen. -->
-      <div class="crop">
+      <div class="overflow-hidden">
         <NuxtImg
-            class="phone-shot-image"
+            class="mt-[-13.9%] block h-auto w-full"
             src="/app-home.webp"
             :alt="t('landing.launch.screenshotAlt')"
             width="680"
@@ -47,37 +47,3 @@ const outerRadius = computed(() => props.width * 0.155)
     </div>
   </div>
 </template>
-
-<style scoped>
-.phone {
-  background: var(--color-ink);
-  box-shadow: 0 24px 48px -12px rgba(15, 27, 18, 0.35);
-}
-
-.screen {
-  overflow: hidden;
-  background: #F8FAF8;
-}
-
-.sbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px 4px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-ink);
-  background: #F8FAF8;
-}
-
-.crop {
-  overflow: hidden;
-}
-
-.phone-shot-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: -13.9%;
-}
-</style>

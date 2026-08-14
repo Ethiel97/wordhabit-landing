@@ -1,28 +1,33 @@
+<script setup lang="ts">
+withDefaults(defineProps<{
+  to?: string
+  compact?: boolean
+  dark?: boolean
+}>(), {
+  to: '#',
+  compact: false,
+  dark: false,
+})
+</script>
+
 <template>
-  <a href="#" class="flex items-center gap-2.5">
-    <div class="logo-mark">
-      <span>W</span>
+  <NuxtLink :to="to" :class="['flex items-center', compact ? 'gap-2' : 'gap-2.5']">
+    <div
+        :class="[
+          'grid shrink-0 place-items-center bg-green shadow-[0_3px_0_0_var(--color-green-700)]',
+          compact ? 'h-8 w-8 rounded-lg' : 'h-9 w-9 rounded-[10px]',
+        ]"
+    >
+      <span :class="['font-display font-extrabold text-white', compact ? 'text-base' : 'text-lg']">W</span>
     </div>
-    <span class="display" style="font-size: 22px; font-weight: 800;">Wordhabit</span>
-  </a>
+    <span
+        :class="[
+          'font-display font-extrabold leading-[0.95] tracking-[-0.03em]',
+          compact ? 'text-lg' : 'text-[22px]',
+          {'text-white': dark},
+        ]"
+    >
+      Wordhabit
+    </span>
+  </NuxtLink>
 </template>
-
-<style scoped>
-.logo-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background-color: var(--color-green);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 3px 0 0 var(--color-green-700);
-  flex-shrink: 0;
-}
-
-.logo-mark span {
-  color: white;
-  font-weight: 800;
-  font-size: 18px;
-  font-family: var(--font-display);
-}
-</style>

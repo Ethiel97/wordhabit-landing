@@ -29,6 +29,42 @@
     --shadow-sm: 0 1px 2px rgba(15, 27, 18, 0.04), 0 1px 1px rgba(15, 27, 18, 0.03);
     --shadow-md: 0 8px 24px -8px rgba(15, 27, 18, 0.10), 0 4px 8px -4px rgba(15, 27, 18, 0.06);
     --shadow-lg: 0 24px 48px -16px rgba(15, 27, 18, 0.18), 0 8px 16px -8px rgba(15, 27, 18, 0.08);
+
+    --animate-sw-up: sw-up 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    --animate-sw-pop: sw-pop 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.3) 0.5s forwards;
+    --animate-sw-drift: sw-drift 14s ease-in-out infinite alternate;
+    --animate-sw-drift-reverse: sw-drift 17s ease-in-out infinite alternate-reverse;
+
+    @keyframes sw-up {
+        from {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes sw-pop {
+        from {
+            opacity: 0;
+            transform: translateY(6px) scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    @keyframes sw-drift {
+        from {
+            transform: translate(0, 0);
+        }
+        to {
+            transform: translate(14px, 10px);
+        }
+    }
 }
 
 /* ── Global base ───────────────────────────────────────────── */
@@ -67,68 +103,9 @@
     textarea {
         font-family: inherit;
     }
-}
-
-/* ── Reusable component classes ────────────────────────────── */
-@layer components {
 
     ::selection {
         background-color: var(--color-green-500);
         color: var(--color-paper);
-    }
-
-    /* Display / heading font */
-    .display {
-        font-family: var(--font-display);
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        line-height: 0.95;
-    }
-
-    /* Pill badge */
-    .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 12px;
-        border-radius: 9999px;
-        font-size: 12px;
-        font-weight: 600;
-        background-color: var(--color-green-100);
-        color: var(--color-green-700);
-    }
-
-    /* Base button */
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 12px 18px;
-        border-radius: 14px;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 1;
-        transition: all 0.15s ease;
-        box-shadow: var(--shadow-sm);
-    }
-
-    .btn-primary {
-        background-color: var(--color-green);
-        color: white;
-    }
-
-    .btn-primary:hover {
-        background-color: var(--color-green-600);
-    }
-
-    .btn-ghost {
-        background-color: white;
-        color: var(--color-ink-2);
-        border: 1px solid var(--color-line);
-    }
-
-    .btn-ghost:hover {
-        background-color: var(--color-paper-2);
     }
 }

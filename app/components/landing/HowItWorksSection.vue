@@ -11,20 +11,28 @@ const steps = computed(() => [
 </script>
 
 <template>
-  <section id="how-it-works" class="how-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="pill" style="margin-bottom: 16px;">{{ t('landing.howItWorks.eyebrow') }}</div>
-        <h2 class="display section-heading">
-          {{ t('landing.howItWorks.headingFirst') }}
-          <span class="text-green">{{ t('landing.howItWorks.headingEmphasis') }}</span>
-        </h2>
-      </div>
+  <LandingSection id="how-it-works">
+    <div class="mx-auto max-w-[1120px]">
+      <LandingSectionHeader
+          class="mx-auto mb-14 max-w-[800px] max-[880px]:mb-9"
+          :eyebrow="t('landing.howItWorks.eyebrow')"
+          :heading-first="t('landing.howItWorks.headingFirst')"
+          :heading-emphasis="t('landing.howItWorks.headingEmphasis')"
+      />
 
-      <ol class="steps">
-        <li v-for="step in steps" :key="step.key" class="step">
-          <div class="circle-wrap">
-            <span class="circle">
+      <ol class="grid list-none grid-cols-4 gap-6 max-[880px]:mx-auto max-[880px]:flex max-[880px]:max-w-[340px] max-[880px]:flex-col max-[880px]:gap-0">
+        <li
+            v-for="(step, index) in steps"
+            :key="step.key"
+            class="text-center max-[880px]:flex max-[880px]:gap-[18px] max-[880px]:pb-7 max-[880px]:text-left"
+        >
+          <div
+              :class="[
+                `relative mb-[18px] flex justify-center after:absolute after:top-[27px] after:left-[calc(50%+42px)] after:h-0.5 after:w-[calc(100%-60px)] after:bg-line after:content-[''] max-[880px]:mb-0 max-[880px]:shrink-0 max-[880px]:flex-col max-[880px]:items-center max-[880px]:after:top-[60px] max-[880px]:after:left-1/2 max-[880px]:after:h-[calc(100%-60px)] max-[880px]:after:w-0.5 max-[880px]:after:-translate-x-1/2`,
+                {'after:hidden': index === steps.length - 1},
+              ]"
+          >
+            <span class="grid h-14 w-14 place-items-center rounded-full border-2 border-green bg-white text-green-700 shadow-[0_2px_8px_rgba(15,27,18,0.06)]">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <g v-if="step.icon === 'eye'">
                   <ellipse cx="12" cy="12" rx="9" ry="6" fill="none" stroke="currentColor" stroke-width="1.8"/>
@@ -45,141 +53,14 @@ const steps = computed(() => [
               </svg>
             </span>
           </div>
-          <div class="text">
-            <h3 class="step-title">{{ t(`landing.howItWorks.steps.${step.key}.title`) }}</h3>
-            <p class="step-desc">{{ t(`landing.howItWorks.steps.${step.key}.description`) }}</p>
+          <div class="max-[880px]:pt-1.5">
+            <h3 class="text-[17px] font-bold tracking-[-0.01em]">{{ t(`landing.howItWorks.steps.${step.key}.title`) }}</h3>
+            <p class="mt-2 text-pretty text-[14.5px] leading-[1.55] text-muted">
+              {{ t(`landing.howItWorks.steps.${step.key}.description`) }}
+            </p>
           </div>
         </li>
       </ol>
     </div>
-  </section>
+  </LandingSection>
 </template>
-
-<style scoped>
-.how-section {
-  padding: 96px 32px;
-}
-
-.section-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
-.section-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 56px;
-}
-
-.section-heading {
-  font-size: clamp(32px, 5vw, 48px);
-  text-wrap: balance;
-}
-
-.text-green {
-  color: var(--color-green);
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  list-style: none;
-}
-
-.step {
-  text-align: center;
-}
-
-.circle-wrap {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 18px;
-}
-
-/* The connector runs between circles, so the last step has none. */
-.circle-wrap::after {
-  content: '';
-  position: absolute;
-  top: 27px;
-  left: calc(50% + 42px);
-  width: calc(100% - 60px);
-  height: 2px;
-  background: var(--color-line);
-}
-
-.step:last-child .circle-wrap::after {
-  display: none;
-}
-
-.circle {
-  width: 56px;
-  height: 56px;
-  border-radius: 9999px;
-  background: white;
-  border: 2px solid var(--color-green);
-  color: var(--color-green-700);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 2px 8px rgba(15, 27, 18, 0.06);
-}
-
-.step-title {
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.step-desc {
-  margin-top: 8px;
-  font-size: 14.5px;
-  line-height: 1.55;
-  color: var(--color-muted);
-  text-wrap: pretty;
-}
-
-@media (max-width: 880px) {
-  .how-section {
-    padding: 64px 20px;
-  }
-
-  .section-header {
-    margin-bottom: 36px;
-  }
-
-  .steps {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    max-width: 340px;
-    margin: 0 auto;
-  }
-
-  .step {
-    display: flex;
-    gap: 18px;
-    text-align: left;
-    padding-bottom: 28px;
-  }
-
-  .circle-wrap {
-    margin-bottom: 0;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-  }
-
-  .circle-wrap::after {
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: calc(100% - 60px);
-  }
-
-  .text {
-    padding-top: 6px;
-  }
-}
-</style>
