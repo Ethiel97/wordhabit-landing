@@ -31,6 +31,10 @@ Create a `.env` file in project root:
 NUXT_API_URL=http://localhost:4000/api
 # Optional (present in runtimeConfig)
 POLAR_ACCESS_TOKEN=
+# PostHog web analytics — same project as the mobile app.
+# Empty or absent disables analytics entirely.
+NUXT_PUBLIC_POSTHOG_KEY=
+NUXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
 ```
 
 `NUXT_API_URL` is used server-side in `useRuntimeConfig().apiUrl` for forwarding waitlist requests.

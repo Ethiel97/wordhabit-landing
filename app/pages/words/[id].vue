@@ -5,6 +5,7 @@ import {selectLocalizedDefinition} from '~/utils/selectLocalizedDefinition'
 const route = useRoute();
 const config = useRuntimeConfig();
 const {locale, t} = useI18n();
+const {trackStoreClick} = useAnalytics();
 
 const {data} = await useAsyncData<{ success: boolean; data: SharedWordResult | null }>(
     `shared-word-${route.params.id}`,
@@ -150,7 +151,8 @@ if (word.value && definition.value) {
           <a
               class="sw-badge"
               :href="config.public.playStoreUrl"
-              :aria-label="t('sharedWord.aria.googlePlay')">
+              :aria-label="t('sharedWord.aria.googlePlay')"
+              @click="trackStoreClick('play_store', 'word_page', word?.id)">
             <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 2.7v18.6c0 .6.7 1 1.2.6l1-.6L16 12 6.2 2.7l-1-.6C4.7 1.7 4 2.1 4 2.7z" fill="#4CC9F0"/>
               <path d="M16 12l3.8-2.2c.9.5.9 1.9 0 2.4L16 12z" fill="#FFD166"/>
@@ -167,7 +169,8 @@ if (word.value && definition.value) {
               v-if="config.public.appStoreUrl"
               class="sw-badge"
               :href="config.public.appStoreUrl"
-              :aria-label="t('sharedWord.aria.appStore')">
+              :aria-label="t('sharedWord.aria.appStore')"
+              @click="trackStoreClick('app_store', 'word_page', word?.id)">
             <SharedWordAppleIcon/>
             <span class="t">
               <small>{{ t('sharedWord.store.downloadOn') }}</small>
