@@ -26,125 +26,57 @@
       "joinWaitlist": "Rejoindre la liste d’attente",
       "toggle": "Ouvrir ou fermer la navigation",
       "menu": "Menu",
-      "mobile": "Navigation mobile"
-    },
-    "hero": {
-      "beta": "Actuellement en bêta privée",
-      "primary": {
-        "headingFirst": "Maîtrisez un",
-        "headingEmphasis": "nouveau mot",
-        "headingLast": "chaque jour.",
-        "description": "Wordhabit est une application mobile qui transforme le vocabulaire en rituel quotidien. Flashcards, quiz et séries sont conçus pour ancrer les mots durablement."
-      },
-      "big": {
-        "today": "Le mot du jour :",
-        "description": "Construisez un vocabulaire que vous utilisez vraiment. Un beau mot par jour."
-      },
-      "phone": {
-        "platforms": "iOS · Android · Web",
-        "headingFirst": "Votre esprit.",
-        "headingEmphasis": "Niveau supérieur.",
-        "headingLast": "Un mot à la fois.",
-        "description": "Une habitude de 5 minutes pour gagner en finesse, mieux vous exprimer et briller dans toutes les conversations."
-      },
-      "toggle": {
-        "label": "Hero",
-        "stack": "Cartes",
-        "bigType": "Grand mot"
-      }
-    },
-    "flashcard": {
-      "synonyms": "Synonymes",
-      "noSynonyms": "Aucun synonyme pour le moment.",
-      "wordOfDay": "Mot du jour",
-      "fallbackTerm": "Vocabulaire",
-      "meaning": "Définition",
-      "loadingMeaning": "Chargement de la définition…",
-      "loadingExample": "Chargement de la phrase d’exemple…",
-      "listen": "Écouter la prononciation",
-      "save": "Enregistrer ce mot",
-      "share": "Partager ce mot"
-    },
-    "features": {
-      "eyebrow": "Fonctionnalités",
-      "headingFirst": "Pensé pour que les mots",
-      "headingEmphasis": "restent vraiment.",
-      "description": "La plupart des applications de vocabulaire vous noient sous les listes. Nous combinons répétition espacée, contexte réel et juste assez de jeu pour rendre la pratique quotidienne agréable.",
-      "items": {
-        "flashcards": {
-          "title": "Flashcards intelligentes",
-          "description": "La répétition espacée sait quand vous êtes sur le point d’oublier et fait revenir le mot au bon moment."
-        },
-        "dailyWord": {
-          "title": "Mot du jour",
-          "description": "Un nouveau mot chaque matin, choisi pour son utilité, sa beauté et, parfois, pour faire son petit effet."
-        },
-        "streaks": {
-          "title": "Badges et séries",
-          "description": "Atteignez une série de 100 jours. Débloquez plus de 30 badges et découvrez quel passionné des mots vous êtes."
-        },
-        "quizzes": {
-          "title": "Des quiz qui marquent",
-          "description": "De courts défis quotidiens : choix multiples, textes à trous et audio. Cinq minutes pour vraiment retenir."
-        },
-        "interests": {
-          "title": "Choisissez vos centres d’intérêt",
-          "description": "Sciences, affaires, littérature, argot : des mots adaptés à votre univers, pas une liste générique."
-        },
-        "friends": {
-          "title": "Apprenez avec vos proches",
-          "description": "Partagez vos réussites, comparez vos séries et envoyez des mots. Le vocabulaire est plus amusant à plusieurs."
-        }
-      }
+      "mobile": "Navigation mobile",
+      "why": "Pourquoi un seul mot",
+      "languages": "Langues"
     },
     "howItWorks": {
       "eyebrow": "Comment ça marche",
-      "headingFirst": "Trois étapes.",
-      "headingEmphasis": "Une habitude.",
+      "headingFirst": "Quatre temps.",
+      "headingEmphasis": "Cinq minutes.",
       "steps": {
-        "interests": {
-          "title": "Choisissez ce qui vous passionne",
-          "description": "Sciences, histoire, affaires, argot : sélectionnez vos intérêts pour recevoir des mots que vous utiliserez vraiment."
+        "discover": {
+          "title": "Découvrir",
+          "description": "Rencontrez le mot du jour : son sens, sa prononciation, un exemple réel."
         },
-        "daily": {
-          "title": "Cinq minutes par jour",
-          "description": "Un nouveau mot le matin, une courte révision à midi et quelques flashcards le soir. C’est tout."
+        "practice": {
+          "title": "Pratiquer",
+          "description": "Enchaînez les flashcards jusqu’à ce que le mot vous devienne familier."
         },
-        "compound": {
-          "title": "Voyez les progrès s’accumuler",
-          "description": "Après 30 jours, vous avez acquis 30 mots. Après un an, vous parlez comme une version plus riche de vous-même."
+        "master": {
+          "title": "Maîtriser",
+          "description": "Prouvez-le dans un quiz court et ancrez-le."
+        },
+        "review": {
+          "title": "Réviser plus tard",
+          "description": "Le mot revient juste avant que vous ne l’oubliiez."
         }
       }
     },
     "pricing": {
       "eyebrow": "Tarifs",
-      "headingFirst": "Gratuit pour toujours.",
-      "headingEmphasis": "Premium quand vous serez prêt.",
-      "perMonth": "/mois",
-      "waitlistDiscount": "-50 % pour la liste d’attente",
+      "headingFirst": "L’habitude est",
+      "headingEmphasis": "gratuite pour toujours.",
+      "description": "Le mot du jour, les flashcards et la maîtrise ne coûtent rien, aujourd’hui comme demain. Pro ajoute les extras, et le prix du moment s’affiche dans l’application.",
       "free": {
         "name": "Gratuit",
-        "tagline": "L’habitude quotidienne, offerte.",
-        "cta": "Commencer gratuitement",
-        "features": {
-          "dailyWord": "1 mot par jour",
-          "review": "Révision quotidienne par flashcards",
-          "badges": "6 badges de départ",
-          "stats": "Statistiques essentielles"
-        }
+        "tagline": "Tout ce qu’il faut pour l’habitude quotidienne.",
+        "badge": "Gratuit pour toujours"
       },
-      "premium": {
-        "name": "Premium",
-        "tagline": "Des outils puissants pour les collectionneurs de mots.",
-        "cta": "Obtenir un accès anticipé",
-        "features": {
-          "unlimited": "Mots et collections illimités",
-          "badges": "Plus de 30 badges",
-          "audio": "Prononciation audio",
-          "offline": "Mode hors ligne",
-          "support": "Assistance prioritaire"
-        }
-      }
+      "pro": {
+        "name": "WordHabit Pro",
+        "tagline": "Pour quand une seule langue ne suffit plus.",
+        "badge": "Optionnel"
+      },
+      "rows": {
+        "dailyWord": "Le mot du jour, chaque jour",
+        "flashcards": "Flashcards et révision espacée",
+        "mastery": "Quiz de maîtrise",
+        "quizModes": "Modes de quiz supplémentaires (Situations réelles, Rapidité)",
+        "languages": "Plusieurs langues à la fois",
+        "streakRepair": "Réparation de série"
+      },
+      "priceNote": "Les prix varient selon les pays et s’affichent dans l’application avant tout abonnement."
     },
     "faq": {
       "eyebrow": "FAQ",
@@ -152,24 +84,24 @@
       "headingEmphasis": "On vous répond.",
       "items": {
         "launch": {
-          "question": "Quand Wordhabit sera-t-il disponible ?",
-          "answer": "Nous ouvrons progressivement les accès tout au long de 2026. Les membres de la liste d’attente passent en premier et bénéficient de 50 % de réduction la première année."
+          "question": "Wordhabit est-il disponible ?",
+          "answer": "Oui, sur Google Play depuis août 2026. La version iOS est en cours de validation sur l’App Store : laissez votre e-mail et nous vous préviendrons dès sa sortie."
         },
         "devices": {
-          "question": "L’application fonctionnera-t-elle sur mon téléphone ?",
-          "answer": "Oui. Nous lançons d’abord les versions iOS et Android."
+          "question": "Est-ce que ça marche sur mon téléphone ?",
+          "answer": "Sur Android aujourd’hui. Sur iPhone dès la fin de la validation App Store."
+        },
+        "free": {
+          "question": "Wordhabit est-il vraiment gratuit ?",
+          "answer": "Oui. Le mot du jour, les flashcards et la maîtrise sont gratuits pour toujours. Pro est optionnel et ajoute des modes de quiz supplémentaires, plusieurs langues à la fois et la réparation de série."
         },
         "dictionary": {
-          "question": "Quelle différence avec une application de dictionnaire ?",
-          "answer": "Un dictionnaire sert à chercher. Wordhabit sert à retenir. La répétition espacée, les exemples concrets et les quiz font passer les mots de « déjà vu » à « je l’utilise »."
+          "question": "En quoi est-ce différent d’un dictionnaire ?",
+          "answer": "Un dictionnaire sert à chercher. Wordhabit sert à retenir : la révision espacée, les exemples réels et les quiz font passer un mot de « déjà vu » à « je l’utilise »."
         },
         "duration": {
-          "question": "Combien de temps dure une session quotidienne ?",
-          "answer": "Cinq minutes. C’est volontairement assez court pour être fait chaque jour : c’est ainsi que l’habitude s’installe."
-        },
-        "languages": {
-          "question": "Proposez-vous d’autres langues que l’anglais ?",
-          "answer": "Actuellement : anglais et français. L’espagnol, l’allemand et le japonais arriveront au cours de 2026."
+          "question": "Combien de temps dure une session ?",
+          "answer": "Environ cinq minutes : découvrir le mot, pratiquer avec les cartes, le prouver dans un quiz court. La révision revient quelques jours plus tard, juste avant l’oubli."
         }
       }
     },
@@ -181,28 +113,67 @@
     "waitlist": {
       "placeholder": "vous{'@'}exemple.com",
       "emailLabel": "Adresse e-mail",
-      "joining": "Inscription…",
-      "join": "Rejoindre la liste",
-      "successTitle": "Vous êtes sur la liste !",
-      "successMessage": "Nous vous écrirons dès que votre place sera disponible.",
+      "joining": "Enregistrement…",
+      "join": "Me prévenir",
+      "successTitle": "Vous êtes sur la liste iOS !",
+      "successMessage": "Nous vous écrirons dès que Wordhabit arrive sur l’App Store.",
       "errors": {
         "invalidEmail": "Saisissez une adresse e-mail valide.",
         "alreadyJoined": "Cette adresse e-mail est déjà sur la liste d’attente.",
         "generic": "Une erreur est survenue. Veuillez réessayer."
       }
     },
-    "socialProof": {
-      "people": "{count} passionnés des mots sont déjà inscrits"
+    "launch": {
+      "nowOnPlay": "Disponible sur Google Play",
+      "navCta": "Obtenir l’app",
+      "getOn": "Disponible sur",
+      "googlePlay": "Google Play",
+      "downloadOn": "Téléchargez dans l’",
+      "appStore": "App Store",
+      "comingSoon": "Bientôt",
+      "playAria": "Obtenir Wordhabit sur Google Play",
+      "appStoreAria": "Version App Store bientôt disponible, être prévenu",
+      "screenshotAlt": "L’écran d’accueil de Wordhabit : le mot du jour et le parcours de la journée",
+      "freeForever": "Gratuit. Le mot du jour, les flashcards et la maîtrise le resteront pour toujours.",
+      "iphoneHint": "Sur iPhone ?",
+      "iphoneHintLink": "On vous prévient dès la sortie sur l’App Store →",
+      "finalSub": "Cinq minutes par jour. Un mot gardé pour la vie.",
+      "iosCaptureLabel": "Sur iPhone ? Laissez votre e-mail, on vous prévient dès la sortie App Store.",
+      "heroes": {
+        "a": {
+          "first": "Dix mots appris aujourd’hui, neuf oubliés vendredi.",
+          "emphasis": "Ou un seul,",
+          "last": "gardé pour la vie.",
+          "description": "Wordhabit vous apprend un mot par jour, en profondeur. Découvrez-le, pratiquez-le, maîtrisez-le, révisez-le plus tard : un petit parcours par jour, et le mot est à vous."
+        },
+        "b": {
+          "first": "Le",
+          "emphasis": "rituel de cinq minutes",
+          "last": "qui manquait à vos matins.",
+          "description": "Un mot avec votre café. Trois petites étapes, une série qui vous tient, et demain un nouveau mot vous attend."
+        },
+        "c": {
+          "first": "Apprenez un mot une fois.",
+          "emphasis": "Gardez-le",
+          "last": "pour toujours.",
+          "description": "La révision espacée ramène chaque mot juste avant que vous ne l’oubliiez, jusqu’à ce qu’il passe de déjà-vu à vraiment utilisé."
+        }
+      }
     },
-    "phone": {
-      "streak": "Jour {day} · 🔥 Série de {count}",
-      "greeting": "Bonjour, {name}",
-      "wordOfDay": "MOT DU JOUR",
-      "fallbackTerm": "Éphémère",
-      "fallbackDefinition": "Qui ne dure que très peu de temps.",
-      "review": "À RÉVISER",
-      "badges": "BADGES",
-      "startLesson": "Commencer la leçon du jour"
+    "manifesto": {
+      "eyebrow": "Pourquoi un seul mot",
+      "lineOne": "La plupart des applications vous font courir après dix mots par jour, et vendredi il n’en reste rien.",
+      "lineTwoFirst": "Nous vous donnons",
+      "lineTwoEmphasis": "un seul mot",
+      "lineTwoLast": "et le temps de vraiment vous l’approprier.",
+      "lineThreeFirst": "Dans un an, cela fait",
+      "lineThreeEmphasis": "365 mots que vous utilisez vraiment."
+    },
+    "languages": {
+      "eyebrow": "Trois langues",
+      "headingFirst": "Choisissez une langue.",
+      "headingEmphasis": "Ou enrichissez la vôtre.",
+      "ownLanguage": "Beaucoup de mots que vous ne connaissez pas encore existent dans votre propre langue. Choisissez celle que vous parlez déjà et enrichissez-la, un jour à la fois."
     }
   },
   "sharedWord": {

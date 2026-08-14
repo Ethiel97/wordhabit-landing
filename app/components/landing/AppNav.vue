@@ -2,15 +2,16 @@
 const { t } = useI18n()
 
 const navLinks = computed(() => [
-  { id: 'features', label: t('landing.nav.features') },
   { id: 'how-it-works', label: t('landing.nav.howItWorks') },
+  { id: 'why', label: t('landing.nav.why') },
+  { id: 'languages', label: t('landing.nav.languages') },
   { id: 'pricing', label: t('landing.nav.pricing') },
   { id: 'faq', label: t('landing.nav.faq') },
 ])
 const isMobileMenuOpen = ref(false)
 
 function scrollToWaitlist() {
-  document.getElementById('hero-form')?.scrollIntoView({behavior: 'smooth'})
+  document.getElementById('hero')?.scrollIntoView({behavior: 'smooth'})
 }
 
 function toggleMobileMenu() {
@@ -61,7 +62,7 @@ function handleNavLinkClick(event: MouseEvent, targetId: string) {
         <LocaleSwitcher />
         <button
             class="btn btn-primary px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-green)] focus-visible:ring-offset-2 sm:text-base"
-            @click="scrollToWaitlist">{{ t('landing.nav.joinWaitlist') }}
+            @click="scrollToWaitlist">{{ t('landing.launch.navCta') }}
         </button>
       </div>
 
@@ -98,7 +99,7 @@ function handleNavLinkClick(event: MouseEvent, targetId: string) {
       <LocaleSwitcher />
 
       <button class="btn btn-primary mobile-cta" @click="handleWaitlistClick">
-        {{ t('landing.nav.joinWaitlist') }}
+        {{ t('landing.launch.navCta') }}
       </button>
     </div>
   </nav>

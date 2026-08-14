@@ -25,8 +25,9 @@ useSeoMeta({
   <div class="overflow-hidden">
     <AppNav/>
     <HeroSection/>
-    <FeaturesSection/>
     <HowItWorksSection/>
+    <ManifestoSection/>
+    <LanguagesSection/>
     <PricingSection/>
     <FaqSection/>
     <FinalCta/>

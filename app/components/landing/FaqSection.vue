@@ -1,28 +1,12 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-const items = computed(() => [
-  {
-    q: t('landing.faq.items.launch.question'),
-    a: t('landing.faq.items.launch.answer'),
-  },
-  {
-    q: t('landing.faq.items.devices.question'),
-    a: t('landing.faq.items.devices.answer'),
-  },
-  {
-    q: t('landing.faq.items.dictionary.question'),
-    a: t('landing.faq.items.dictionary.answer'),
-  },
-  {
-    q: t('landing.faq.items.duration.question'),
-    a: t('landing.faq.items.duration.answer'),
-  },
-  {
-    q: t('landing.faq.items.languages.question'),
-    a: t('landing.faq.items.languages.answer'),
-  },
-])
+const items = computed(() =>
+  (['launch', 'devices', 'free', 'dictionary', 'duration'] as const).map((key) => ({
+    q: t(`landing.faq.items.${key}.question`),
+    a: t(`landing.faq.items.${key}.answer`),
+  })),
+)
 
 const open = ref<number>(0)
 

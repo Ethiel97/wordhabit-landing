@@ -26,125 +26,57 @@
       "joinWaitlist": "Unirme a la lista",
       "toggle": "Abrir o cerrar la navegación",
       "menu": "Menú",
-      "mobile": "Navegación móvil"
-    },
-    "hero": {
-      "beta": "Ahora en beta privada",
-      "primary": {
-        "headingFirst": "Domina una",
-        "headingEmphasis": "palabra nueva",
-        "headingLast": "cada día.",
-        "description": "Wordhabit es una aplicación móvil que convierte el vocabulario en un ritual diario. Tarjetas, cuestionarios y rachas pensados para recordar de verdad."
-      },
-      "big": {
-        "today": "La palabra de hoy:",
-        "description": "Construye un vocabulario que realmente uses. Una gran palabra cada día."
-      },
-      "phone": {
-        "platforms": "iOS · Android · Web",
-        "headingFirst": "Tu mente.",
-        "headingEmphasis": "A otro nivel.",
-        "headingLast": "Palabra a palabra.",
-        "description": "Un hábito de 5 minutos para pensar mejor, expresarte con más precisión y destacar en cualquier conversación."
-      },
-      "toggle": {
-        "label": "Hero",
-        "stack": "Tarjetas",
-        "bigType": "Palabra grande"
-      }
-    },
-    "flashcard": {
-      "synonyms": "Sinónimos",
-      "noSynonyms": "Aún no hay sinónimos.",
-      "wordOfDay": "Palabra del día",
-      "fallbackTerm": "Vocabulario",
-      "meaning": "Definición",
-      "loadingMeaning": "Cargando la definición…",
-      "loadingExample": "Cargando la frase de ejemplo…",
-      "listen": "Escuchar la pronunciación",
-      "save": "Guardar esta palabra",
-      "share": "Compartir esta palabra"
-    },
-    "features": {
-      "eyebrow": "Funciones",
-      "headingFirst": "Creado para que las palabras",
-      "headingEmphasis": "se queden contigo.",
-      "description": "La mayoría de las aplicaciones de vocabulario te ahogan en listas. Usamos repetición espaciada, contexto real y el punto justo de juego para que practicar cada día sea un placer.",
-      "items": {
-        "flashcards": {
-          "title": "Tarjetas inteligentes",
-          "description": "La repetición espaciada sabe cuándo estás a punto de olvidar y hace aparecer la palabra justo a tiempo."
-        },
-        "dailyWord": {
-          "title": "Palabra del día",
-          "description": "Una palabra nueva cada mañana, elegida por su utilidad, su belleza y, a veces, para lucirte un poco."
-        },
-        "streaks": {
-          "title": "Insignias y rachas",
-          "description": "Alcanza una racha de 100 días. Desbloquea más de 30 insignias y descubre qué clase de amante de las palabras eres."
-        },
-        "quizzes": {
-          "title": "Cuestionarios que funcionan",
-          "description": "Retos diarios rápidos: opción múltiple, completar espacios y audio. Cinco minutos para recordar de verdad."
-        },
-        "interests": {
-          "title": "Elige tus intereses",
-          "description": "Ciencia, negocios, literatura o jerga. Palabras adaptadas a tu mundo, no una lista genérica."
-        },
-        "friends": {
-          "title": "Aprende con amigos",
-          "description": "Comparte logros, compite con rachas y envía palabras. El vocabulario es más divertido cuando se aprende en grupo."
-        }
-      }
+      "mobile": "Navegación móvil",
+      "why": "Por qué una palabra",
+      "languages": "Idiomas"
     },
     "howItWorks": {
       "eyebrow": "Cómo funciona",
-      "headingFirst": "Tres pasos.",
-      "headingEmphasis": "Un hábito.",
+      "headingFirst": "Cuatro pasos.",
+      "headingEmphasis": "Cinco minutos.",
       "steps": {
-        "interests": {
-          "title": "Elige lo que te apasiona",
-          "description": "Ciencia, historia, negocios o jerga: elige tus intereses para recibir palabras que realmente usarás."
+        "discover": {
+          "title": "Descubrir",
+          "description": "Conoce la palabra del día: qué significa, cómo suena, un ejemplo real."
         },
-        "daily": {
-          "title": "Cinco minutos al día",
-          "description": "Una palabra nueva por la mañana, un repaso rápido al mediodía y unas tarjetas por la noche. Eso es todo."
+        "practice": {
+          "title": "Practicar",
+          "description": "Pasa las tarjetas hasta que la palabra te resulte familiar."
         },
-        "compound": {
-          "title": "Observa cómo se acumula",
-          "description": "Después de 30 días habrás aprendido 30 palabras. Después de un año, hablarás como una versión más rica de ti."
+        "master": {
+          "title": "Dominar",
+          "description": "Demuéstralo en un cuestionario corto y fíjala."
+        },
+        "review": {
+          "title": "Repasar más tarde",
+          "description": "La palabra vuelve justo antes de que la olvides."
         }
       }
     },
     "pricing": {
       "eyebrow": "Precios",
-      "headingFirst": "Gratis para siempre.",
-      "headingEmphasis": "Premium cuando quieras.",
-      "perMonth": "/mes",
-      "waitlistDiscount": "50 % menos para la lista de espera",
+      "headingFirst": "El hábito es",
+      "headingEmphasis": "gratis para siempre.",
+      "description": "La palabra del día, las tarjetas y el dominio no cuestan nada, hoy y siempre. Pro añade los extras, y el precio actual se muestra en la aplicación.",
       "free": {
         "name": "Gratis",
-        "tagline": "El hábito diario corre de nuestra cuenta.",
-        "cta": "Empezar gratis",
-        "features": {
-          "dailyWord": "1 palabra al día",
-          "review": "Repaso diario con tarjetas",
-          "badges": "6 insignias iniciales",
-          "stats": "Estadísticas básicas"
-        }
+        "tagline": "Todo lo que el hábito diario necesita.",
+        "badge": "Gratis para siempre"
       },
-      "premium": {
-        "name": "Premium",
-        "tagline": "Herramientas potentes para coleccionistas de palabras.",
-        "cta": "Obtener acceso anticipado",
-        "features": {
-          "unlimited": "Palabras y colecciones ilimitadas",
-          "badges": "Más de 30 insignias",
-          "audio": "Pronunciación en audio",
-          "offline": "Modo sin conexión",
-          "support": "Soporte prioritario"
-        }
-      }
+      "pro": {
+        "name": "WordHabit Pro",
+        "tagline": "Para cuando un idioma no basta.",
+        "badge": "Opcional"
+      },
+      "rows": {
+        "dailyWord": "La palabra del día, cada día",
+        "flashcards": "Tarjetas y repaso espaciado",
+        "mastery": "Cuestionario de dominio",
+        "quizModes": "Modos de cuestionario extra (Situaciones reales, Velocidad)",
+        "languages": "Varios idiomas a la vez",
+        "streakRepair": "Reparación de racha"
+      },
+      "priceNote": "Los precios varían según el país y se muestran en la aplicación antes de suscribirte."
     },
     "faq": {
       "eyebrow": "Preguntas",
@@ -152,24 +84,24 @@
       "headingEmphasis": "Tenemos respuestas.",
       "items": {
         "launch": {
-          "question": "¿Cuándo se lanza Wordhabit?",
-          "answer": "Abriremos el acceso por etapas a lo largo de 2026. Quienes estén en la lista de espera entrarán primero y pagarán la mitad durante el primer año."
+          "question": "¿Wordhabit ya está disponible?",
+          "answer": "Sí, en Google Play desde agosto de 2026. La versión para iOS está en revisión en la App Store: déjanos tu correo y te avisamos en cuanto esté."
         },
         "devices": {
-          "question": "¿Funcionará en mi teléfono?",
-          "answer": "Sí. Lanzaremos primero las versiones para iOS y Android."
+          "question": "¿Funciona en mi teléfono?",
+          "answer": "En Android hoy. En iPhone en cuanto termine la revisión de la App Store."
+        },
+        "free": {
+          "question": "¿Wordhabit es realmente gratis?",
+          "answer": "Sí. La palabra del día, las tarjetas y el dominio son gratis para siempre. Pro es opcional y añade modos de cuestionario extra, varios idiomas a la vez y reparación de racha."
         },
         "dictionary": {
-          "question": "¿En qué se diferencia de una aplicación de diccionario?",
-          "answer": "Los diccionarios sirven para consultar. Wordhabit sirve para recordar. La repetición espaciada, los ejemplos reales y los cuestionarios llevan las palabras de “me suena” a “la uso”."
+          "question": "¿En qué se diferencia de un diccionario?",
+          "answer": "Un diccionario sirve para consultar. Wordhabit sirve para retener: el repaso espaciado, los ejemplos reales y los cuestionarios llevan una palabra de «la he visto» a «la uso»."
         },
         "duration": {
           "question": "¿Cuánto dura una sesión diaria?",
-          "answer": "Cinco minutos. La idea es que sea lo bastante breve como para hacerlo cada día: ahí es donde nace el hábito."
-        },
-        "languages": {
-          "question": "¿Ofrecéis otros idiomas además del inglés?",
-          "answer": "Actualmente: inglés y francés. El español, el alemán y el japonés llegarán a lo largo de 2026."
+          "answer": "Unos cinco minutos: descubrir la palabra, practicar con tarjetas y demostrarlo en un cuestionario corto. El repaso vuelve días después, justo antes del olvido."
         }
       }
     },
@@ -181,28 +113,67 @@
     "waitlist": {
       "placeholder": "tu{'@'}ejemplo.com",
       "emailLabel": "Correo electrónico",
-      "joining": "Uniéndote…",
-      "join": "Unirme a la lista",
-      "successTitle": "¡Estás en la lista!",
-      "successMessage": "Te escribiremos cuando se abra tu plaza.",
+      "joining": "Guardando…",
+      "join": "Avisadme",
+      "successTitle": "¡Estás en la lista de iOS!",
+      "successMessage": "Te escribiremos en cuanto Wordhabit llegue a la App Store.",
       "errors": {
         "invalidEmail": "Introduce un correo electrónico válido.",
         "alreadyJoined": "Este correo ya está en la lista de espera.",
         "generic": "Algo salió mal. Inténtalo de nuevo."
       }
     },
-    "socialProof": {
-      "people": "{count} amantes de las palabras ya están en la lista"
+    "launch": {
+      "nowOnPlay": "Ya en Google Play",
+      "navCta": "Descargar la app",
+      "getOn": "Disponible en",
+      "googlePlay": "Google Play",
+      "downloadOn": "Descárgala en la",
+      "appStore": "App Store",
+      "comingSoon": "Muy pronto",
+      "playAria": "Consigue Wordhabit en Google Play",
+      "appStoreAria": "Versión para App Store muy pronto, avisadme",
+      "screenshotAlt": "La pantalla de inicio de Wordhabit: la palabra del día y el recorrido diario",
+      "freeForever": "Gratis. La palabra del día, las tarjetas y el dominio seguirán siendo gratis para siempre.",
+      "iphoneHint": "¿Tienes iPhone?",
+      "iphoneHintLink": "Te avisamos en cuanto esté en la App Store →",
+      "finalSub": "Cinco minutos al día. Una palabra para toda la vida.",
+      "iosCaptureLabel": "¿Tienes iPhone? Déjanos tu correo y te avisamos en cuanto esté en la App Store.",
+      "heroes": {
+        "a": {
+          "first": "Diez palabras hoy, nueve olvidadas el viernes.",
+          "emphasis": "O una sola,",
+          "last": "para toda la vida.",
+          "description": "Wordhabit te enseña una palabra al día, a fondo. Descúbrela, practícala, domínala y repásala más tarde: un pequeño recorrido diario y la palabra es tuya."
+        },
+        "b": {
+          "first": "El",
+          "emphasis": "ritual de cinco minutos",
+          "last": "que le faltaba a tus mañanas.",
+          "description": "Una palabra con tu café. Tres pasos pequeños, una racha que te mantiene y mañana te espera una nueva palabra."
+        },
+        "c": {
+          "first": "Aprende una palabra una vez.",
+          "emphasis": "Consérvala",
+          "last": "para siempre.",
+          "description": "El repaso espaciado trae cada palabra justo antes de que la olvides, hasta que pasa de haberla visto a usarla de verdad."
+        }
+      }
     },
-    "phone": {
-      "streak": "Día {day} · 🔥 Racha de {count}",
-      "greeting": "Buenos días, {name}",
-      "wordOfDay": "PALABRA DEL DÍA",
-      "fallbackTerm": "Efímero",
-      "fallbackDefinition": "Que dura muy poco tiempo.",
-      "review": "REPASAR",
-      "badges": "INSIGNIAS",
-      "startLesson": "Empezar la lección de hoy"
+    "manifesto": {
+      "eyebrow": "Por qué una sola palabra",
+      "lineOne": "La mayoría de las apps te hacen correr diez palabras al día, y el viernes ya no queda ninguna.",
+      "lineTwoFirst": "Nosotros te damos",
+      "lineTwoEmphasis": "una palabra",
+      "lineTwoLast": "y el tiempo para hacerla tuya de verdad.",
+      "lineThreeFirst": "Dentro de un año, eso son",
+      "lineThreeEmphasis": "365 palabras que de verdad usas."
+    },
+    "languages": {
+      "eyebrow": "Tres idiomas",
+      "headingFirst": "Elige un idioma.",
+      "headingEmphasis": "O profundiza en el tuyo.",
+      "ownLanguage": "Existen muchas palabras que aún no conoces en tu propio idioma. Elige el que ya hablas y enriquécelo, un día a la vez."
     }
   },
   "sharedWord": {

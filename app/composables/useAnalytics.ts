@@ -12,17 +12,28 @@ export function useAnalytics() {
   const {$posthog} = useNuxtApp()
   const client = $posthog as PostHog | null
 
+  /**
+   * `variant` carries the hero headline in play. Every landing store CTA
+   * reports it, not only the badge rendered inside the hero, so the complete
+   * conversion funnel can be compared once variants are randomized.
+   */
   function trackStoreClick(
     store: StoreName,
     context: StoreClickContext,
     wordId?: string,
+    variant?: string,
   ) {
     client?.capture('store link clicked', {
       store,
       context,
       ...(wordId ? {word_id: wordId} : {}),
+      ...(variant ? {hero_variant: variant} : {}),
     })
   }
 
-  return {trackStoreClick}
+  function trackIosNotifySubmitted() {
+    client?.capture('ios notify submitted')
+  }
+
+  return {trackStoreClick, trackIosNotifySubmitted}
 }

@@ -1,6 +1,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-05-07',
-  modules: ['@nuxt/ui', '@nuxt/fonts', '@nuxtjs/i18n', 'nuxt-og-image'],
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxtjs/i18n',
+    'nuxt-og-image',
+  ],
 
   i18n: {
     defaultLocale: 'en',
