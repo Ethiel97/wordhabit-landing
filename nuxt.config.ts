@@ -75,6 +75,12 @@ export default defineNuxtConfig({
         playStoreUrl: process.env.NUXT_PUBLIC_PLAY_STORE_URL
           ?? 'https://play.google.com/store/apps/details?id=com.enthusiastdev.wordhabit',
         appStoreUrl: process.env.NUXT_PUBLIC_APP_STORE_URL ?? '',
+        // Same PostHog project as the mobile app, so web and app share
+        // one funnel. An empty key disables analytics entirely,
+        // mirroring the Flutter side.
+        posthogKey: process.env.NUXT_PUBLIC_POSTHOG_KEY ?? '',
+        posthogHost: process.env.NUXT_PUBLIC_POSTHOG_HOST
+          ?? 'https://us.i.posthog.com',
       },
   },
 })

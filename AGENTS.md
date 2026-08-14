@@ -40,7 +40,7 @@ pnpm preview
 ## Integrations and External Dependencies
 - `@nuxt/ui` is enabled in `nuxt.config.ts`; app-level UI color config is in `app/app.config.ts` (`primary: 'green'`).
 - Fonts are loaded via Google Fonts links in `nuxt.config.ts` head config.
-- No analytics, API clients, server routes, or external state stores are currently wired.
+- Analytics: PostHog via `app/plugins/posthog.client.ts` (cookieless, disabled when `NUXT_PUBLIC_POSTHOG_KEY` is empty). Pages capture named events through `useAnalytics()` only — keep the vocabulary closed, no ad-hoc `capture` calls.
 
 ## Known Repository Anomalies (Verify Before Refactors)
 - `nuxt.config.ts` references `./app/assets/css/main.css`, but stylesheet exists at `assets/css/main.css`.
