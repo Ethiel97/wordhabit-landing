@@ -12,6 +12,7 @@ export interface SharedWordResult {
     term: string;
     pronunciation: string | null;
     partOfSpeech: PartOfSpeech;
+    targetLanguage: LanguageCode;
     definitions: SharedWordDefinition[];
     example?: { sentence: string } | null;
 }

@@ -8,12 +8,14 @@ const props = withDefaults(defineProps<{
     definition?: string;
     eyebrow?: string;
     cta?: string;
+    language?: string;
 }>(), {
     term: '',
     pos: '',
     definition: '',
     eyebrow: 'Word of the day',
     cta: 'Learn it with Wordhabit',
+    language: '',
 });
 
 const shortDefinition = computed(() =>
@@ -37,10 +39,17 @@ const mascotSrc = `data:image/svg+xml;base64,${btoa(MASCOT_SVG)}`;
       {{ term }}
     </div>
 
-    <div
-        style="display: flex; align-items: center; font-size: 20px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.85);">
-      <div style="width: 34px; height: 4px; border-radius: 999px; background: rgba(255,255,255,0.6); margin-right: 10px;"/>
-      <div>{{ eyebrow }}</div>
+    <div style="display: flex; width: 100%; align-items: center; justify-content: space-between;">
+      <div
+          style="display: flex; align-items: center; font-size: 20px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.85);">
+        <div style="width: 34px; height: 4px; border-radius: 999px; background: rgba(255,255,255,0.6); margin-right: 10px;"/>
+        <div>{{ eyebrow }}</div>
+      </div>
+      <div
+          v-if="language"
+          style="display: flex; align-items: center; background: rgba(255,255,255,0.92); color: #15803D; padding: 11px 20px; border-radius: 999px; font-size: 20px; font-weight: 800;">
+        {{ language }}
+      </div>
     </div>
 
     <div

@@ -39,6 +39,11 @@ const posLabel = computed(() =>
         ? t(`sharedWord.partOfSpeech.${word.value.partOfSpeech.toLowerCase()}`)
         : '');
 
+const languageLabel = computed(() => {
+    const languageCode = word.value?.targetLanguage?.toLowerCase();
+    return languageCode ? t(`sharedWord.languages.${languageCode}`) : '';
+});
+
 const event = useRequestEvent();
 if (import.meta.server && notFound.value && event) {
     setResponseStatus(event, 404);
@@ -69,6 +74,7 @@ if (word.value && definition.value) {
         definition: definition.value.text,
         eyebrow: t('sharedWord.ogEyebrow'),
         cta: t('sharedWord.ogCta'),
+        language: languageLabel.value,
     }, {width: 1200, height: 630, alt: imageAlt});
 } else {
     useSeoMeta({
@@ -116,6 +122,7 @@ if (word.value && definition.value) {
         <template v-else>
           <h1 class="sw-term up d1">{{ word?.term }}</h1>
           <div class="sw-meta up d2">
+            <span v-if="languageLabel" class="language">{{ languageLabel }}</span>
             <span class="pos">{{ posLabel }}</span>
             <span v-if="word?.pronunciation" class="phon">{{ word.pronunciation }}</span>
           </div>
@@ -334,11 +341,18 @@ if (word.value && definition.value) {
   font-weight: 600;
 }
 
-.sw-meta .pos {
+.sw-meta .pos,
+.sw-meta .language {
   padding: 5px 13px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.sw-meta .language {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-green-700);
+  font-weight: 800;
 }
 
 .sw-meta .phon {

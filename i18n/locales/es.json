@@ -211,6 +211,11 @@
     "ogAlt": "Tarjeta de Wordhabit para {term}",
     "ogCta": "Apréndela con Wordhabit",
     "seoSuffix": "Apréndela en contexto y recuérdala para siempre practicando cada día con Wordhabit.",
+    "languages": {
+      "en": "Inglés",
+      "fr": "Francés",
+      "es": "Español"
+    },
     "tagline": {
       "first": "Una palabra al día.",
       "emphasis": "Aprendida a fondo.",

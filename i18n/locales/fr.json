@@ -211,6 +211,11 @@
     "ogAlt": "Carte Wordhabit pour {term}",
     "ogCta": "L’apprendre avec Wordhabit",
     "seoSuffix": "Apprenez-le en contexte et retenez-le durablement en pratiquant chaque jour avec Wordhabit.",
+    "languages": {
+      "en": "Anglais",
+      "fr": "Français",
+      "es": "Espagnol"
+    },
     "tagline": {
       "first": "Un mot par jour.",
       "emphasis": "Appris en profondeur.",

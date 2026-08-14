@@ -211,6 +211,11 @@
     "ogAlt": "Wordhabit card for {term}",
     "ogCta": "Learn it with Wordhabit",
     "seoSuffix": "Learn it in context and remember it for good with a little Wordhabit practice every day.",
+    "languages": {
+      "en": "English",
+      "fr": "French",
+      "es": "Spanish"
+    },
     "tagline": {
       "first": "One word a day.",
       "emphasis": "Deeply learned.",
