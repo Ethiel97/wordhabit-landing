@@ -53,6 +53,19 @@ const languageLabel = computed(() => {
     return languageCode ? t(`sharedWord.languages.${languageCode}`) : '';
 });
 
+const termTitleStyle = computed(() => {
+    const segments = word.value?.term.trim().split(/[\s-]+/u).filter(Boolean) ?? [];
+    const longestSegmentLength = Math.max(
+        1,
+        ...segments.map(segment => Array.from(segment).length),
+    );
+
+    return {
+        '--shared-word-longest-segment': longestSegmentLength,
+        fontSize: 'clamp(24px, min(16vw, calc(165cqw / var(--shared-word-longest-segment))), 104px)',
+    };
+});
+
 const event = useRequestEvent();
 if (import.meta.server && notFound.value && event) {
     setResponseStatus(event, 404);
@@ -124,7 +137,7 @@ if (word.value && definition.value) {
         />
       </header>
 
-      <div class="relative mx-auto max-w-[660px] pt-[clamp(44px,9vw,72px)]">
+      <div class="relative mx-auto max-w-[660px] pt-[clamp(44px,9vw,72px)] [container-type:inline-size]">
         <template v-if="notFound">
           <div
               :class="[motionClasses.pop, 'absolute top-[clamp(8px,4vw,30px)] right-[4%]']"
@@ -152,7 +165,8 @@ if (word.value && definition.value) {
 
         <template v-else>
           <h1
-              :class="[motionClasses.up, motionClasses.d1, 'text-balance font-display text-[clamp(58px,16vw,104px)] leading-[0.92] font-extrabold tracking-[-0.035em] [overflow-wrap:anywhere]']"
+              :class="[motionClasses.up, motionClasses.d1, 'text-balance font-display leading-[0.92] font-extrabold tracking-[-0.035em] [overflow-wrap:normal] [word-break:normal]']"
+              :style="termTitleStyle"
           >
             {{ word?.term }}
           </h1>
