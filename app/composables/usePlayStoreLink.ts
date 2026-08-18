@@ -13,6 +13,7 @@
 export function usePlayStoreLink(
   context: 'landing' | 'word_page',
   wordId?: Ref<string | undefined> | string,
+  placement: Ref<'inline' | 'sticky'> | 'inline' | 'sticky' = 'inline',
 ) {
   const config = useRuntimeConfig()
   const route = useRoute()
@@ -37,7 +38,11 @@ export function usePlayStoreLink(
 
     // Which surface sent the install, kept even when the campaign above
     // came from outside: the two answer different questions.
-    referrer.set('utm_content', context)
+    const resolvedPlacement = unref(placement)
+    referrer.set(
+      'utm_content',
+      resolvedPlacement === 'inline' ? context : `${context}_${resolvedPlacement}`,
+    )
 
     const id = unref(wordId)
     if (id) referrer.set('wid', id)

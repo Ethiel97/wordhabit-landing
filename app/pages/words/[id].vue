@@ -66,6 +66,23 @@ const termTitleStyle = computed(() => {
     };
 });
 
+const inlineStoreCta = ref<HTMLElement | null>(null);
+const isInlineStoreCtaVisible = ref(false);
+let inlineStoreCtaObserver: IntersectionObserver | undefined;
+
+onMounted(() => {
+    if (!inlineStoreCta.value) {
+        return;
+    }
+
+    inlineStoreCtaObserver = new IntersectionObserver(([entry]) => {
+        isInlineStoreCtaVisible.value = entry?.isIntersecting ?? false;
+    }, {threshold: 0.5});
+    inlineStoreCtaObserver.observe(inlineStoreCta.value);
+});
+
+onBeforeUnmount(() => inlineStoreCtaObserver?.disconnect());
+
 const event = useRequestEvent();
 if (import.meta.server && notFound.value && event) {
     setResponseStatus(event, 404);
@@ -108,7 +125,7 @@ if (word.value && definition.value) {
 </script>
 
 <template>
-  <div>
+  <div class="pb-24 sm:pb-0">
     <section
         class="relative overflow-hidden rounded-b-[36px] bg-[radial-gradient(120%_90%_at_15%_0%,rgba(255,255,255,0.16)_0%,rgba(255,255,255,0)_45%),linear-gradient(150deg,var(--color-green)_0%,var(--color-green-600)_62%,var(--color-green-700)_100%)] px-6 pb-[72px] text-white max-[560px]:px-[18px]"
         :aria-label="notFound ? t('sharedWord.aria.notFound') : t('sharedWord.aria.sharedWord')">
@@ -211,7 +228,9 @@ if (word.value && definition.value) {
         </h2>
         <p class="mt-3.5 text-[15.5px] leading-[1.6] text-muted">{{ t('sharedWord.subtitle') }}</p>
 
-        <StoreBadges context="word_page" center :word-id="word?.id" class="mt-7"/>
+        <div ref="inlineStoreCta" class="mt-7">
+          <StoreBadges context="word_page" center :word-id="word?.id" placement="inline"/>
+        </div>
 
         <div class="mt-5 text-xs font-bold tracking-[0.08em] text-muted-2 uppercase">{{ t('sharedWord.free') }}</div>
         <div v-if="notFound" class="mt-4">
@@ -221,6 +240,26 @@ if (word.value && definition.value) {
         </div>
       </section>
     </main>
+
+    <aside
+        v-if="!isInlineStoreCtaVisible"
+        class="pointer-events-none fixed inset-x-0 bottom-0 z-50 px-3 pb-[max(10px,env(safe-area-inset-bottom))] sm:hidden"
+    >
+      <div class="pointer-events-auto mx-auto flex max-w-[430px] items-center justify-between gap-3 rounded-[18px] border border-line bg-paper/95 py-2 pr-2 pl-4 shadow-[0_14px_40px_-14px_rgba(15,27,18,0.55)] backdrop-blur-xl">
+        <div class="min-w-0">
+          <strong class="block truncate font-display text-sm font-extrabold tracking-[-0.01em] text-ink">Wordhabit</strong>
+          <span class="block truncate text-[11px] font-semibold text-muted">{{ t('sharedWord.free') }}</span>
+        </div>
+        <StoreBadges
+            context="word_page"
+            :word-id="word?.id"
+            placement="sticky"
+            compact
+            preferred-store-only
+            class="shrink-0"
+        />
+      </div>
+    </aside>
 
     <AppFooter/>
   </div>

@@ -2,6 +2,7 @@ import type {PostHog} from 'posthog-js'
 
 type StoreName = 'play_store' | 'app_store'
 type StoreClickContext = 'word_page' | 'landing'
+type StoreClickPlacement = 'inline' | 'sticky'
 
 /**
  * The site's analytics vocabulary, kept closed like the app's: pages
@@ -22,10 +23,12 @@ export function useAnalytics() {
     context: StoreClickContext,
     wordId?: string,
     variant?: string,
+    placement: StoreClickPlacement = 'inline',
   ) {
     client?.capture('store link clicked', {
       store,
       context,
+      placement,
       ...(wordId ? {word_id: wordId} : {}),
       ...(variant ? {hero_variant: variant} : {}),
     })
