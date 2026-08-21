@@ -85,11 +85,11 @@
       "items": {
         "launch": {
           "question": "Wordhabit est-il disponible ?",
-          "answer": "Oui, sur Google Play depuis août 2026. La version iOS est en cours de validation sur l’App Store : laissez votre e-mail et nous vous préviendrons dès sa sortie."
+          "answer": "Oui. Wordhabit est maintenant disponible sur Google Play et l’App Store."
         },
         "devices": {
           "question": "Est-ce que ça marche sur mon téléphone ?",
-          "answer": "Sur Android aujourd’hui. Sur iPhone dès la fin de la validation App Store."
+          "answer": "Oui. Wordhabit fonctionne sur Android et iPhone."
         },
         "free": {
           "question": "Wordhabit est-il vraiment gratuit ?",
@@ -124,21 +124,21 @@
       }
     },
     "launch": {
-      "nowOnPlay": "Disponible sur Google Play",
+      "nowOnPlay": "Disponible sur Google Play et l’App Store",
       "navCta": "Obtenir l’app",
       "getOn": "Disponible sur",
       "googlePlay": "Google Play",
       "downloadOn": "Téléchargez dans l’",
       "appStore": "App Store",
-      "comingSoon": "Bientôt",
+      "comingSoon": "Disponible maintenant",
       "playAria": "Obtenir Wordhabit sur Google Play",
-      "appStoreAria": "Version App Store bientôt disponible, être prévenu",
+      "appStoreAria": "Télécharger Wordhabit dans l’App Store",
       "screenshotAlt": "L’écran d’accueil de Wordhabit : le mot du jour et le parcours de la journée",
       "freeForever": "Gratuit. Le mot du jour, les flashcards et la maîtrise le resteront pour toujours.",
       "iphoneHint": "Sur iPhone ?",
-      "iphoneHintLink": "On vous prévient dès la sortie sur l’App Store →",
+      "iphoneHintLink": "Télécharger Wordhabit dans l’App Store →",
       "finalSub": "Cinq minutes par jour. Un mot gardé pour la vie.",
-      "iosCaptureLabel": "Sur iPhone ? Laissez votre e-mail, on vous prévient dès la sortie App Store.",
+      "iosCaptureLabel": "Sur iPhone ? Téléchargez Wordhabit dans l’App Store.",
       "heroes": {
         "a": {
           "first": "Dix mots appris aujourd’hui, neuf oubliés vendredi.",

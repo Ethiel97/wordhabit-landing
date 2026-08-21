@@ -25,15 +25,15 @@ const playStoreUrl = usePlayStoreLink(
   toRef(props, 'wordId'),
   toRef(props, 'placement'),
 )
+const appStoreUrl = computed(() => config.public.appStoreUrl
+  || 'https://apps.apple.com/app/wordhabit/id6798891376')
 
 const requestUserAgent = import.meta.server ? useRequestHeader('user-agent') ?? '' : navigator.userAgent
 // A compact sticky CTA has room for one store. Once iOS is available,
 // Apple mobile visitors get the App Store while everyone else gets Play.
-const prefersAppStore = computed(() => Boolean(config.public.appStoreUrl)
-  && /iPad|iPhone|iPod/i.test(requestUserAgent))
+const prefersAppStore = computed(() => /iPad|iPhone|iPod/i.test(requestUserAgent))
 const showPlayStore = computed(() => !props.preferredStoreOnly || !prefersAppStore.value)
-const showAvailableAppStore = computed(() => Boolean(config.public.appStoreUrl)
-  && (!props.preferredStoreOnly || prefersAppStore.value))
+const showAppStore = computed(() => !props.preferredStoreOnly || prefersAppStore.value)
 
 const badgeClass = computed(() => [
   'inline-flex items-center bg-ink text-left text-white',
@@ -43,19 +43,6 @@ const badgeClass = computed(() => [
     ? 'min-h-[58px] py-2.5 pr-5 pl-[15px] transition-[transform,box-shadow] duration-100 ease-in-out hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-[0_1px_0_0_#000,0_6px_12px_-6px_rgba(15,27,18,0.3)]'
     : 'min-h-14 py-[9px] pr-[19px] pl-3.5',
   !props.compact ? 'gap-[11px] rounded-[14px] shadow-[0_4px_0_0_#000,0_12px_24px_-8px_rgba(15,27,18,0.35)]' : '',
-])
-
-const soonClass = computed(() => [
-  'inline-flex items-center gap-[11px] rounded-[14px] text-left',
-  isWordPage.value
-    ? 'min-h-[58px] cursor-default bg-transparent py-2.5 pr-5 pl-[15px] text-muted shadow-[inset_0_0_0_1.5px_var(--color-line)]'
-    : 'min-h-14 py-[9px] pr-[19px] pl-3.5',
-  !isWordPage.value && props.light
-    ? 'bg-transparent text-[rgba(255,255,255,0.85)] shadow-[inset_0_0_0_1.5px_rgba(255,255,255,0.35),0_4px_0_0_rgba(255,255,255,0.15)]'
-    : '',
-  !isWordPage.value && !props.light
-    ? 'bg-white text-muted shadow-[inset_0_0_0_1.5px_var(--color-line),0_4px_0_0_var(--color-line)]'
-    : '',
 ])
 
 const labelClass = computed(() => [
@@ -76,14 +63,12 @@ const storeCopy = computed(() => isWordPage.value
       googlePlay: t('sharedWord.store.googlePlay'),
       downloadOn: t('sharedWord.store.downloadOn'),
       appStore: t('sharedWord.store.appStore'),
-      comingSoon: t('sharedWord.store.comingSoon'),
     }
   : {
       getOn: t('landing.launch.getOn'),
       googlePlay: t('landing.launch.googlePlay'),
       downloadOn: t('landing.launch.downloadOn'),
       appStore: t('landing.launch.appStore'),
-      comingSoon: t('landing.launch.comingSoon'),
     })
 
 function trackClick(store: 'play_store' | 'app_store') {
@@ -96,10 +81,6 @@ function trackClick(store: 'play_store' | 'app_store') {
   )
 }
 
-function scrollToNotify(event: MouseEvent) {
-  event.preventDefault()
-  document.getElementById('ios-notify')?.scrollIntoView({behavior: 'smooth'})
-}
 </script>
 
 <template>
@@ -124,10 +105,10 @@ function scrollToNotify(event: MouseEvent) {
     </a>
 
     <a
-        v-if="showAvailableAppStore"
+        v-if="showAppStore"
         :class="badgeClass"
-        :href="config.public.appStoreUrl"
-        :aria-label="isWordPage ? t('sharedWord.aria.appStore') : t('landing.launch.appStore')"
+        :href="appStoreUrl"
+        :aria-label="isWordPage ? t('sharedWord.aria.appStore') : t('landing.launch.appStoreAria')"
         @click="trackClick('app_store')"
     >
       <SharedWordAppleIcon/>
@@ -136,25 +117,5 @@ function scrollToNotify(event: MouseEvent) {
         <b :class="storeNameClass">{{ storeCopy.appStore }}</b>
       </span>
     </a>
-    <a
-        v-else-if="!preferredStoreOnly && !isWordPage"
-        :class="soonClass"
-        href="#ios-notify"
-        :aria-label="t('landing.launch.appStoreAria')"
-        @click="scrollToNotify"
-    >
-      <SharedWordAppleIcon :color="light ? 'rgba(255,255,255,0.85)' : 'var(--color-muted)'"/>
-      <span :class="labelClass">
-        <small :class="captionClass">{{ storeCopy.comingSoon }}</small>
-        <b :class="storeNameClass">{{ storeCopy.appStore }}</b>
-      </span>
-    </a>
-    <span v-else-if="!preferredStoreOnly" :class="soonClass">
-      <SharedWordAppleIcon color="var(--color-muted-2)"/>
-      <span :class="labelClass">
-        <small :class="captionClass">{{ storeCopy.comingSoon }}</small>
-        <b :class="storeNameClass">{{ storeCopy.appStore }}</b>
-      </span>
-    </span>
   </div>
 </template>

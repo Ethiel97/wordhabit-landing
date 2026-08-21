@@ -11,10 +11,6 @@ const {t} = useI18n()
  * is already there when we do.
  */
 const heroVariant = useHeroVariant()
-
-function scrollToNotify() {
-  document.getElementById('ios-notify')?.scrollIntoView({behavior: 'smooth'})
-}
 </script>
 
 <template>
@@ -55,12 +51,6 @@ function scrollToNotify() {
         <span>{{ t('landing.launch.freeForever') }}</span>
       </p>
 
-      <p class="mt-3 text-[13px] text-muted">
-        {{ t('landing.launch.iphoneHint') }}
-        <a class="font-semibold text-green-700" href="#ios-notify" @click.prevent="scrollToNotify">
-          {{ t('landing.launch.iphoneHintLink') }}
-        </a>
-      </p>
     </div>
 
     <div class="flex justify-center">

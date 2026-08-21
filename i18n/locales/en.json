@@ -85,11 +85,11 @@
       "items": {
         "launch": {
           "question": "Is Wordhabit available now?",
-          "answer": "Yes, on Google Play since August 2026. The iOS version is in App Store review; leave your email and we will tell you the moment it is live."
+          "answer": "Yes. Wordhabit is available now on Google Play and the App Store."
         },
         "devices": {
           "question": "Will it work on my phone?",
-          "answer": "Android today. iPhone as soon as App Store review is done."
+          "answer": "Yes. Wordhabit works on Android and iPhone."
         },
         "free": {
           "question": "Is Wordhabit really free?",
@@ -124,21 +124,21 @@
       }
     },
     "launch": {
-      "nowOnPlay": "Now on Google Play",
+      "nowOnPlay": "Now on Google Play and the App Store",
       "navCta": "Get the app",
       "getOn": "Get it on",
       "googlePlay": "Google Play",
       "downloadOn": "Download on the",
       "appStore": "App Store",
-      "comingSoon": "Coming soon",
+      "comingSoon": "Available now",
       "playAria": "Get Wordhabit on Google Play",
-      "appStoreAria": "App Store version coming soon, get notified",
+      "appStoreAria": "Download Wordhabit on the App Store",
       "screenshotAlt": "The Wordhabit home screen: today’s word and the day’s journey",
       "freeForever": "Free. The word of the day, flashcards and mastery will stay free forever.",
       "iphoneHint": "On iPhone?",
-      "iphoneHintLink": "We will email you the moment it is on the App Store →",
+      "iphoneHintLink": "Download Wordhabit on the App Store →",
       "finalSub": "It takes five minutes. It stays for life.",
-      "iosCaptureLabel": "On iPhone? We’ll let you know the moment it’s on the App Store.",
+      "iosCaptureLabel": "On iPhone? Download Wordhabit on the App Store.",
       "heroes": {
         "a": {
           "first": "Ten words forgotten by Friday.",

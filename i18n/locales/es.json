@@ -85,11 +85,11 @@
       "items": {
         "launch": {
           "question": "¿Wordhabit ya está disponible?",
-          "answer": "Sí, en Google Play desde agosto de 2026. La versión para iOS está en revisión en la App Store: déjanos tu correo y te avisamos en cuanto esté."
+          "answer": "Sí. Wordhabit ya está disponible en Google Play y en la App Store."
         },
         "devices": {
           "question": "¿Funciona en mi teléfono?",
-          "answer": "En Android hoy. En iPhone en cuanto termine la revisión de la App Store."
+          "answer": "Sí. Wordhabit funciona en Android y iPhone."
         },
         "free": {
           "question": "¿Wordhabit es realmente gratis?",
@@ -124,21 +124,21 @@
       }
     },
     "launch": {
-      "nowOnPlay": "Ya en Google Play",
+      "nowOnPlay": "Ya en Google Play y en la App Store",
       "navCta": "Descargar la app",
       "getOn": "Disponible en",
       "googlePlay": "Google Play",
       "downloadOn": "Descárgala en la",
       "appStore": "App Store",
-      "comingSoon": "Muy pronto",
+      "comingSoon": "Disponible ahora",
       "playAria": "Consigue Wordhabit en Google Play",
-      "appStoreAria": "Versión para App Store muy pronto, avisadme",
+      "appStoreAria": "Descargar Wordhabit en la App Store",
       "screenshotAlt": "La pantalla de inicio de Wordhabit: la palabra del día y el recorrido diario",
       "freeForever": "Gratis. La palabra del día, las tarjetas y el dominio seguirán siendo gratis para siempre.",
       "iphoneHint": "¿Tienes iPhone?",
-      "iphoneHintLink": "Te avisamos en cuanto esté en la App Store →",
+      "iphoneHintLink": "Descargar Wordhabit en la App Store →",
       "finalSub": "Cinco minutos al día. Una palabra para toda la vida.",
-      "iosCaptureLabel": "¿Tienes iPhone? Déjanos tu correo y te avisamos en cuanto esté en la App Store.",
+      "iosCaptureLabel": "¿Tienes iPhone? Descarga Wordhabit en la App Store.",
       "heroes": {
         "a": {
           "first": "Diez palabras hoy, nueve olvidadas el viernes.",
