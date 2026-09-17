@@ -13,6 +13,10 @@
           {
             "/": "/words/*",
             "comment": "Opens a shared word's page in the app"
+          },
+          {
+            "/": "/app/*",
+            "comment": "Reserved for in-app destinations"
           }
         ]
       }
