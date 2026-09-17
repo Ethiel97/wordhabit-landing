@@ -222,6 +222,83 @@
       "appStore": "Télécharger dans l’App Store"
     }
   },
+  "pro": {
+    "seo": {
+      "title": "Wordhabit Pro — Allez plus loin. Sans limite.",
+      "description": "Essayez Wordhabit Pro gratuitement pendant 7 jours : modes de quiz supplémentaires, plusieurs langues à la fois et réparation de série. Le mot du jour reste gratuit pour toujours."
+    },
+    "nav": {
+      "back": "← Retour au site"
+    },
+    "hero": {
+      "eyebrow": "Wordhabit Pro · 7 jours gratuits",
+      "headingFirst": "Allez plus loin.",
+      "headingEmphasis": "Sans limite.",
+      "description": "Le mot du jour reste gratuit, pour toujours. Pro est là le jour où une seule langue ne suffit plus, où un seul mode de quiz ne suffit plus, et où un jour manqué ne doit pas coûter votre série.",
+      "trialNote": "Essayez Pro gratuitement pendant 7 jours depuis l’application. Résiliable à tout moment, l’habitude gratuite reste.",
+      "cardBadge": "Premium",
+      "cardTitle": "Tout le Gratuit, plus",
+      "cardTrial": "7 jours gratuits, puis le prix affiché dans l’application"
+    },
+    "features": {
+      "eyebrow": "Ce que Pro ajoute",
+      "headingFirst": "Trois extras.",
+      "headingEmphasis": "Zéro bruit.",
+      "description": "Pro n’ajoute pas de mots à votre journée. Il ajoute des façons de garder celui que vous venez d’apprendre.",
+      "items": {
+        "quizModes": {
+          "title": "Quiz Situations réelles et Rapidité",
+          "body": "Prouvez un mot dans une situation réelle, ou contre la montre. Deux façons de plus de l’ancrer, en plus de la maîtrise."
+        },
+        "languages": {
+          "title": "Plusieurs langues à la fois",
+          "body": "Anglais, français et espagnol, chacun avec son mot du jour, sa série et sa progression."
+        },
+        "streakRepair": {
+          "title": "Réparation de série",
+          "body": "Un jour manqué n’efface plus des semaines d’habitude. Réparez la série et continuez."
+        }
+      }
+    },
+    "trial": {
+      "eyebrow": "L’essai gratuit",
+      "headingFirst": "Sept jours.",
+      "headingEmphasis": "Rien de débité.",
+      "steps": {
+        "one": {
+          "title": "Installez l’application",
+          "body": "Installez Wordhabit, ou ouvrez-la si vous l’avez déjà."
+        },
+        "two": {
+          "title": "Ouvrez Pro depuis votre profil",
+          "body": "La carte Pro est en haut de votre profil. Touchez-la pour voir les formules et le prix de votre pays."
+        },
+        "three": {
+          "title": "Lancez vos 7 jours gratuits",
+          "body": "Rien n’est débité avant le 8e jour, et vous pouvez résilier à tout moment depuis votre compte de boutique."
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "Questions sur Pro",
+      "headingFirst": "Avant d’essayer,",
+      "headingEmphasis": "les réponses simples.",
+      "items": {
+        "after": {
+          "question": "Que se passe-t-il après les 7 jours ?",
+          "answer": "La formule choisie démarre, au prix affiché dans l’application avant l’abonnement. Résiliez avant le 8e jour et rien n’est débité."
+        },
+        "cancel": {
+          "question": "Puis-je résilier ?",
+          "answer": "Oui, à tout moment, depuis vos abonnements Google Play ou App Store. Pro reste actif jusqu’à la fin de la période payée."
+        },
+        "free": {
+          "question": "Est-ce que je perds quelque chose sans Pro ?",
+          "answer": "Non. Le mot du jour, les flashcards et la maîtrise sont gratuits pour toujours. Pro s’ajoute à l’habitude, il ne lui retire rien."
+        }
+      }
+    }
+  },
   "footer": {
     "copyright": "© 2026 · Créé pour les amoureux des mots.",
     "support": "Assistance",

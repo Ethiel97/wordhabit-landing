@@ -222,6 +222,83 @@
       "appStore": "Descargar en el App Store"
     }
   },
+  "pro": {
+    "seo": {
+      "title": "Wordhabit Pro — Llega más lejos. Sin límites.",
+      "description": "Prueba Wordhabit Pro gratis durante 7 días: modos de cuestionario extra, varios idiomas a la vez y reparación de racha. La palabra del día sigue siendo gratis para siempre."
+    },
+    "nav": {
+      "back": "← Volver al sitio"
+    },
+    "hero": {
+      "eyebrow": "Wordhabit Pro · 7 días gratis",
+      "headingFirst": "Llega más lejos.",
+      "headingEmphasis": "Sin límites.",
+      "description": "La palabra del día sigue siendo gratis, para siempre. Pro es para el día en que un idioma no basta, un modo de cuestionario no basta, y un día sin practicar no debería costarte la racha.",
+      "trialNote": "Prueba Pro gratis durante 7 días desde la aplicación. Cancela cuando quieras: el hábito gratuito se queda.",
+      "cardBadge": "Premium",
+      "cardTitle": "Todo lo de Gratis, y además",
+      "cardTrial": "7 días gratis y después el precio mostrado en la aplicación"
+    },
+    "features": {
+      "eyebrow": "Lo que añade Pro",
+      "headingFirst": "Tres extras.",
+      "headingEmphasis": "Cero ruido.",
+      "description": "Pro no añade más palabras a tu día. Añade más formas de quedarte con la que acabas de aprender.",
+      "items": {
+        "quizModes": {
+          "title": "Cuestionarios de Situaciones reales y Velocidad",
+          "body": "Demuestra una palabra en una situación real, o contra el reloj. Dos formas más de fijarla, además del dominio."
+        },
+        "languages": {
+          "title": "Varios idiomas a la vez",
+          "body": "Inglés, francés y español, cada uno con su palabra del día, su racha y su progreso."
+        },
+        "streakRepair": {
+          "title": "Reparación de racha",
+          "body": "Un día sin practicar ya no borra semanas de hábito. Repara la racha y sigue."
+        }
+      }
+    },
+    "trial": {
+      "eyebrow": "La prueba gratuita",
+      "headingFirst": "Siete días.",
+      "headingEmphasis": "Sin cobros.",
+      "steps": {
+        "one": {
+          "title": "Descarga la app",
+          "body": "Instala Wordhabit, o ábrela si ya la tienes."
+        },
+        "two": {
+          "title": "Abre Pro desde tu perfil",
+          "body": "La tarjeta Pro está arriba en tu perfil. Tócala para ver los planes y el precio de tu país."
+        },
+        "three": {
+          "title": "Empieza tus 7 días gratis",
+          "body": "No se cobra nada antes del día 8, y puedes cancelar cuando quieras desde tu cuenta de la tienda."
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "Preguntas sobre Pro",
+      "headingFirst": "Antes de probar,",
+      "headingEmphasis": "las respuestas claras.",
+      "items": {
+        "after": {
+          "question": "¿Qué pasa después de los 7 días?",
+          "answer": "Empieza el plan que elegiste, al precio mostrado en la aplicación antes de suscribirte. Cancela antes del día 8 y no se cobra nada."
+        },
+        "cancel": {
+          "question": "¿Puedo cancelar?",
+          "answer": "Sí, cuando quieras, desde tus suscripciones de Google Play o de la App Store. Pro sigue activo hasta el final del periodo pagado."
+        },
+        "free": {
+          "question": "¿Pierdo algo sin Pro?",
+          "answer": "No. La palabra del día, las tarjetas y el dominio son gratis para siempre. Pro suma al hábito, nunca le quita."
+        }
+      }
+    }
+  },
   "footer": {
     "copyright": "© 2026 · Creado para amantes de las palabras.",
     "support": "Ayuda",

@@ -222,6 +222,83 @@
       "appStore": "Download on the App Store"
     }
   },
+  "pro": {
+    "seo": {
+      "title": "Wordhabit Pro — Go deeper. No limits.",
+      "description": "Try Wordhabit Pro free for 7 days: extra quiz modes, several languages at once and streak repair. The word of the day stays free forever."
+    },
+    "nav": {
+      "back": "← Back to site"
+    },
+    "hero": {
+      "eyebrow": "Wordhabit Pro · 7 days free",
+      "headingFirst": "Go deeper.",
+      "headingEmphasis": "No limits.",
+      "description": "The word of the day stays free, forever. Pro is for the day one language is not enough, one quiz mode is not enough, and one missed day should not cost your streak.",
+      "trialNote": "Try Pro free for 7 days from the app. Cancel anytime, the free habit stays.",
+      "cardBadge": "Premium",
+      "cardTitle": "Everything in Free, plus",
+      "cardTrial": "7 days free, then the price shown in the app"
+    },
+    "features": {
+      "eyebrow": "What Pro adds",
+      "headingFirst": "Three extras.",
+      "headingEmphasis": "Zero noise.",
+      "description": "Pro does not add more words to your day. It adds more ways to keep the one you learned.",
+      "items": {
+        "quizModes": {
+          "title": "Real world and Speed quizzes",
+          "body": "Prove a word in a real situation, or against the clock. Two more ways to make it stick, on top of Mastery."
+        },
+        "languages": {
+          "title": "Several languages at once",
+          "body": "English, French and Spanish, each with its own word of the day, its own streak and its own progress."
+        },
+        "streakRepair": {
+          "title": "Streak repair",
+          "body": "One missed day no longer erases weeks of habit. Repair it and keep going."
+        }
+      }
+    },
+    "trial": {
+      "eyebrow": "The free trial",
+      "headingFirst": "Seven days.",
+      "headingEmphasis": "Nothing charged.",
+      "steps": {
+        "one": {
+          "title": "Get the app",
+          "body": "Install Wordhabit, or open it if you already have it."
+        },
+        "two": {
+          "title": "Open Pro from your profile",
+          "body": "The Pro card sits at the top of your profile. Tap it to see the plans and the price for your country."
+        },
+        "three": {
+          "title": "Start your 7 free days",
+          "body": "Nothing is charged before day 8, and you can cancel from your store account at any time."
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "Pro questions",
+      "headingFirst": "Before you try,",
+      "headingEmphasis": "the plain answers.",
+      "items": {
+        "after": {
+          "question": "What happens after the 7 days?",
+          "answer": "The plan you picked starts, at the price shown in the app before you subscribed. Cancel before day 8 and nothing is charged."
+        },
+        "cancel": {
+          "question": "Can I cancel?",
+          "answer": "Yes, at any time, from your Google Play or App Store subscriptions. Pro stays active until the end of the period you paid for."
+        },
+        "free": {
+          "question": "Do I lose anything without Pro?",
+          "answer": "No. The word of the day, flashcards and mastery are free forever. Pro adds to the habit, it never takes from it."
+        }
+      }
+    }
+  },
   "footer": {
     "copyright": "© 2026 · Made for word lovers.",
     "support": "Support",
