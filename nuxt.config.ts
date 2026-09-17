@@ -24,6 +24,13 @@ export default defineNuxtConfig({
     },
   },
 
+  routeRules: {
+    // Apple fetches this without an extension and expects JSON.
+    '/.well-known/apple-app-site-association': {
+      headers: { 'content-type': 'application/json' },
+    },
+  },
+
   site: {
     url: 'https://wordhabit.app',
     name: 'Wordhabit',
