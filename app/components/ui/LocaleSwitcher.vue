@@ -34,7 +34,7 @@ async function changeLocale(event: Event) {
         ]"
         @change="changeLocale"
       >
-        <option v-for="option in options" :key="option.code" :value="option.code">
+        <option v-for="option in options" :key="option.code" :value="option.code" :selected="option.code === locale">
           {{ option.name }}
         </option>
       </select>
