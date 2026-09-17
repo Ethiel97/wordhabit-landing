@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["8B29HJY4QM.com.enthusiastdev.wordhabit"],
+        "components": [
+          { "/": "/pro", "comment": "Opens the Pro paywall in the app" }
+        ]
+      }
+    ]
+  }
+}

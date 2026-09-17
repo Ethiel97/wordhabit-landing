@@ -1,7 +1,7 @@
 import type {PostHog} from 'posthog-js'
 
 type StoreName = 'play_store' | 'app_store'
-type StoreClickContext = 'word_page' | 'landing'
+type StoreClickContext = 'word_page' | 'landing' | 'pro_page'
 type StoreClickPlacement = 'inline' | 'sticky'
 
 /**

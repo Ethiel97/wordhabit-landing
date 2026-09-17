@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.enthusiastdev.wordhabit",
+      "sha256_cert_fingerprints": [
+        "7A:79:52:7D:A7:61:A4:EE:A6:11:79:6D:CD:70:B3:13:03:88:3B:6D:36:7E:FE:D3:7B:ED:AB:47:DE:91:28:E7"
+      ]
+    }
+  }
+]

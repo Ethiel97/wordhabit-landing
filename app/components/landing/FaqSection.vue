@@ -1,8 +1,22 @@
 <script setup lang="ts">
+const props = withDefaults(defineProps<{
+  id?: string
+  eyebrow?: string
+  headingFirst?: string
+  headingEmphasis?: string
+  items?: {q: string, a: string}[]
+}>(), {
+  id: 'faq',
+  eyebrow: undefined,
+  headingFirst: undefined,
+  headingEmphasis: undefined,
+  items: undefined,
+})
+
 const { t } = useI18n()
 
-const items = computed(() =>
-  (['launch', 'devices', 'free', 'dictionary', 'duration'] as const).map((key) => ({
+const items = computed(() => props.items
+  ?? (['launch', 'devices', 'free', 'dictionary', 'duration'] as const).map((key) => ({
     q: t(`landing.faq.items.${key}.question`),
     a: t(`landing.faq.items.${key}.answer`),
   })),
@@ -16,15 +30,15 @@ function toggle(i: number) {
 </script>
 
 <template>
-  <section id="faq" class="bg-white px-8 py-[120px]">
+  <section :id="id" class="bg-white px-8 py-[120px]">
     <div class="mx-auto max-w-[880px]">
       <!-- Header -->
       <LandingSectionHeader
           class="mb-14"
           size="large"
-          :eyebrow="t('landing.faq.eyebrow')"
-          :heading-first="t('landing.faq.headingFirst')"
-          :heading-emphasis="t('landing.faq.headingEmphasis')"
+          :eyebrow="eyebrow ?? t('landing.faq.eyebrow')"
+          :heading-first="headingFirst ?? t('landing.faq.headingFirst')"
+          :heading-emphasis="headingEmphasis ?? t('landing.faq.headingEmphasis')"
       />
 
       <!-- Accordion -->

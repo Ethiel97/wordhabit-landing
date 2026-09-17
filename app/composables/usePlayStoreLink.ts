@@ -11,7 +11,7 @@
  * `shared_word`. Our labels only fill the gaps.
  */
 export function usePlayStoreLink(
-  context: 'landing' | 'word_page',
+  context: 'landing' | 'word_page' | 'pro_page',
   wordId?: Ref<string | undefined> | string,
   placement: Ref<'inline' | 'sticky'> | 'inline' | 'sticky' = 'inline',
 ) {
@@ -30,7 +30,7 @@ export function usePlayStoreLink(
 
     const referrer = new URLSearchParams()
     referrer.set('utm_source', incoming('utm_source')
-      ?? (context === 'word_page' ? 'shared_word' : 'landing'))
+      ?? (context === 'word_page' ? 'shared_word' : context))
     referrer.set('utm_medium', incoming('utm_medium') ?? 'web')
 
     const campaign = incoming('utm_campaign')

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
-  context: 'landing' | 'word_page'
+  context: 'landing' | 'word_page' | 'pro_page'
   center?: boolean
   light?: boolean
   wordId?: string
