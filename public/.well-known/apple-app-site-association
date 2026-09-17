@@ -2,9 +2,18 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["8B29HJY4QM.com.enthusiastdev.wordhabit"],
+        "appIDs": [
+          "8B29HJY4QM.com.enthusiastdev.wordhabit"
+        ],
         "components": [
-          { "/": "/pro", "comment": "Opens the Pro paywall in the app" }
+          {
+            "/": "/pro",
+            "comment": "Opens the Pro paywall in the app"
+          },
+          {
+            "/": "/words/*",
+            "comment": "Opens a shared word's page in the app"
+          }
         ]
       }
     ]
