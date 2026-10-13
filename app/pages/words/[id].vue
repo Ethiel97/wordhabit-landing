@@ -245,7 +245,7 @@ if (word.value && definition.value) {
         v-if="!isInlineStoreCtaVisible"
         class="pointer-events-none fixed inset-x-0 bottom-0 z-50 px-3 pb-[max(10px,env(safe-area-inset-bottom))] sm:hidden"
     >
-      <div class="pointer-events-auto mx-auto flex max-w-[430px] items-center justify-between gap-3 rounded-[18px] border border-line bg-paper/95 py-2 pr-2 pl-4 shadow-[0_14px_40px_-14px_rgba(15,27,18,0.55)] backdrop-blur-xl">
+      <div class="pointer-events-auto mx-auto flex max-w-[430px] items-center justify-between gap-3 rounded-[18px] border border-line bg-paper/95 py-2.5 pr-2.5 pl-4 shadow-[0_14px_40px_-14px_rgba(15,27,18,0.55)] backdrop-blur-xl">
         <div class="min-w-0">
           <strong class="block truncate font-display text-sm font-extrabold tracking-[-0.01em] text-ink">Wordhabit</strong>
           <span class="block truncate text-[11px] font-semibold text-muted">{{ t('sharedWord.free') }}</span>
@@ -261,6 +261,6 @@ if (word.value && definition.value) {
       </div>
     </aside>
 
-    <AppFooter/>
+    <AppFooter store-credits/>
   </div>
 </template>

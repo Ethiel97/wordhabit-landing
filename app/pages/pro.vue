@@ -209,6 +209,6 @@ const faqItems = computed(() =>
     />
 
     <FinalCta/>
-    <AppFooter/>
+    <AppFooter store-credits/>
   </div>
 </template>

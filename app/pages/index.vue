@@ -31,6 +31,6 @@ useSeoMeta({
     <PricingSection/>
     <FaqSection/>
     <FinalCta/>
-    <AppFooter/>
+    <AppFooter store-credits/>
   </div>
 </template>

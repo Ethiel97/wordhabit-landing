@@ -1,4 +1,9 @@
 <script setup lang="ts">
+// Pages that show the store badges also carry the trademark credit lines.
+withDefaults(defineProps<{ storeCredits?: boolean }>(), {
+  storeCredits: false,
+})
+
 const {t} = useI18n()
 </script>
 
@@ -19,6 +24,11 @@ const {t} = useI18n()
         <NuxtLink to="/privacy">{{ t('footer.privacy') }}</NuxtLink>
         <NuxtLink to="/terms">{{ t('footer.terms') }}</NuxtLink>
       </div>
+    </div>
+
+    <div v-if="storeCredits" class="mx-auto mt-8 max-w-[1240px] border-t border-white/10 pt-6 text-xs leading-[1.6]">
+      <p>{{ t('footer.storeCredits.apple') }}</p>
+      <p>{{ t('footer.storeCredits.google') }}</p>
     </div>
   </footer>
 </template>
