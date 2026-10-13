@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<{
 })
 
 const config = useRuntimeConfig()
-const {t} = useI18n()
+const {t, locale} = useI18n()
 const {trackStoreClick} = useAnalytics()
 const heroVariant = useHeroVariant()
 const isWordPage = computed(() => props.context === 'word_page')
@@ -35,41 +35,31 @@ const prefersAppStore = computed(() => /iPad|iPhone|iPod/i.test(requestUserAgent
 const showPlayStore = computed(() => !props.preferredStoreOnly || !prefersAppStore.value)
 const showAppStore = computed(() => !props.preferredStoreOnly || prefersAppStore.value)
 
-const badgeClass = computed(() => [
-  'inline-flex items-center bg-ink text-left text-white',
-  props.compact
-    ? 'min-h-11 gap-2 rounded-xl py-2 pr-4 pl-3 shadow-[0_3px_0_0_#000,0_8px_18px_-8px_rgba(15,27,18,0.4)] transition-[transform,box-shadow] duration-100 ease-in-out active:translate-y-0.5 active:shadow-[0_1px_0_0_#000,0_4px_10px_-6px_rgba(15,27,18,0.35)] [&>svg]:h-5 [&>svg]:w-5'
-    : isWordPage.value
-    ? 'min-h-[58px] py-2.5 pr-5 pl-[15px] transition-[transform,box-shadow] duration-100 ease-in-out hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-[0_1px_0_0_#000,0_6px_12px_-6px_rgba(15,27,18,0.3)]'
-    : 'min-h-14 py-[9px] pr-[19px] pl-3.5',
-  !props.compact ? 'gap-[11px] rounded-[14px] shadow-[0_4px_0_0_#000,0_12px_24px_-8px_rgba(15,27,18,0.35)]' : '',
-])
+// Official localized artwork, used unmodified: Apple's black "Download on
+// the App Store" badge and Google's "Get it on Google Play" badge, with its
+// transparent padding cropped so both images share the same visible height.
+// Locales without their own artwork fall back to English.
+const englishArtwork = {
+  appStore: {src: '/badges/app-store-en.svg', width: 120, height: 40},
+  googlePlay: {src: '/badges/google-play-en.png', width: 564, height: 168},
+}
+const artworkByLocale: Partial<Record<string, typeof englishArtwork>> = {
+  en: englishArtwork,
+  fr: {
+    appStore: {src: '/badges/app-store-fr.svg', width: 127, height: 40},
+    googlePlay: {src: '/badges/google-play-fr.png', width: 646, height: 192},
+  },
+  es: {
+    appStore: {src: '/badges/app-store-es.svg', width: 120, height: 40},
+    googlePlay: {src: '/badges/google-play-es.png', width: 646, height: 192},
+  },
+}
+const artwork = computed(() => artworkByLocale[locale.value] ?? englishArtwork)
 
-const labelClass = computed(() => [
-  'flex flex-col',
-  props.compact ? 'leading-[1.05]' : 'leading-[1.15]',
-])
-const captionClass = computed(() => [
-  'font-semibold tracking-[0.05em] uppercase opacity-[0.72]',
-  props.compact ? 'text-[8.5px]' : 'text-[9.5px]',
-])
-const storeNameClass = computed(() => [
-  'font-bold tracking-[-0.01em]',
-  props.compact ? 'text-[14.5px]' : isWordPage.value ? 'text-[17px]' : 'text-[16.5px]',
-])
-const storeCopy = computed(() => isWordPage.value
-  ? {
-      getOn: t('sharedWord.store.getOn'),
-      googlePlay: t('sharedWord.store.googlePlay'),
-      downloadOn: t('sharedWord.store.downloadOn'),
-      appStore: t('sharedWord.store.appStore'),
-    }
-  : {
-      getOn: t('landing.launch.getOn'),
-      googlePlay: t('landing.launch.googlePlay'),
-      downloadOn: t('landing.launch.downloadOn'),
-      appStore: t('landing.launch.appStore'),
-    })
+// Both stores ask for clear space of a quarter of the badge height around
+// each badge, so the gap tracks the height.
+const badgeClass = computed(() => props.compact ? 'h-10 w-auto' : 'h-12 w-auto sm:h-14')
+const gapClass = computed(() => props.compact ? 'gap-2.5' : 'gap-3 sm:gap-3.5')
 
 function trackClick(store: 'play_store' | 'app_store') {
   trackStoreClick(
@@ -84,38 +74,38 @@ function trackClick(store: 'play_store' | 'app_store') {
 </script>
 
 <template>
-  <div class="flex flex-wrap items-stretch" :class="[{'justify-center': center}, compact ? 'gap-2' : 'gap-3']">
-    <a
-        v-if="showPlayStore"
-        :class="badgeClass"
-        :href="playStoreUrl"
-        :aria-label="isWordPage ? t('sharedWord.aria.googlePlay') : t('landing.launch.playAria')"
-        @click="trackClick('play_store')"
-    >
-      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 2.7v18.6c0 .6.7 1 1.2.6l1-.6L16 12 6.2 2.7l-1-.6C4.7 1.7 4 2.1 4 2.7z" fill="#4CC9F0"/>
-        <path d="M16 12l3.8-2.2c.9.5.9 1.9 0 2.4L16 12z" fill="#FFD166"/>
-        <path d="M6.2 2.7L16 12l3.8-2.2L7.4 2.3c-.4-.2-.9-.2-1.2.4z" fill="#22C55E"/>
-        <path d="M6.2 21.3L16 12l3.8 2.2-12.4 7.5c-.4.2-.9.2-1.2-.4z" fill="#F97316"/>
-      </svg>
-      <span :class="labelClass">
-        <small :class="captionClass">{{ storeCopy.getOn }}</small>
-        <b :class="storeNameClass">{{ storeCopy.googlePlay }}</b>
-      </span>
-    </a>
-
+  <div class="flex flex-wrap items-center" :class="[{'justify-center': center}, gapClass]">
+    <!-- Apple asks for the App Store badge first in a lineup. -->
     <a
         v-if="showAppStore"
-        :class="badgeClass"
+        class="inline-flex shrink-0"
         :href="appStoreUrl"
         :aria-label="isWordPage ? t('sharedWord.aria.appStore') : t('landing.launch.appStoreAria')"
         @click="trackClick('app_store')"
     >
-      <SharedWordAppleIcon/>
-      <span :class="labelClass">
-        <small :class="captionClass">{{ storeCopy.downloadOn }}</small>
-        <b :class="storeNameClass">{{ storeCopy.appStore }}</b>
-      </span>
+      <img
+          :src="artwork.appStore.src"
+          :width="artwork.appStore.width"
+          :height="artwork.appStore.height"
+          :class="badgeClass"
+          alt=""
+      >
+    </a>
+
+    <a
+        v-if="showPlayStore"
+        class="inline-flex shrink-0"
+        :href="playStoreUrl"
+        :aria-label="isWordPage ? t('sharedWord.aria.googlePlay') : t('landing.launch.playAria')"
+        @click="trackClick('play_store')"
+    >
+      <img
+          :src="artwork.googlePlay.src"
+          :width="artwork.googlePlay.width"
+          :height="artwork.googlePlay.height"
+          :class="badgeClass"
+          alt=""
+      >
     </a>
   </div>
 </template>

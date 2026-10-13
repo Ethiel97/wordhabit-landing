@@ -126,10 +126,6 @@
     "launch": {
       "nowOnPlay": "Disponible sur Google Play et l’App Store",
       "navCta": "Obtenir l’app",
-      "getOn": "Disponible sur",
-      "googlePlay": "Google Play",
-      "downloadOn": "Téléchargez dans l’",
-      "appStore": "App Store",
       "comingSoon": "Disponible maintenant",
       "playAria": "Obtenir Wordhabit sur Google Play",
       "appStoreAria": "Télécharger Wordhabit dans l’App Store",
@@ -194,10 +190,6 @@
     },
     "subtitle": "Téléchargez l’app gratuite et faites-en une habitude.",
     "store": {
-      "getOn": "Disponible sur",
-      "googlePlay": "Google Play",
-      "downloadOn": "Télécharger sur l’",
-      "appStore": "App Store",
       "comingSoon": "Bientôt"
     },
     "free": "Gratuit · Sans compte",
@@ -303,6 +295,10 @@
     "copyright": "© 2026 · Créé pour les amoureux des mots.",
     "support": "Assistance",
     "privacy": "Confidentialité",
-    "terms": "Conditions"
+    "terms": "Conditions",
+    "storeCredits": {
+      "apple": "Apple, le logo Apple et iPhone sont des marques d’Apple Inc., déposées aux États-Unis et dans d’autres pays et régions. App Store est une marque de service d’Apple Inc.",
+      "google": "Google Play, le logo Google Play et Android sont des marques de Google LLC."
+    }
   }
 }

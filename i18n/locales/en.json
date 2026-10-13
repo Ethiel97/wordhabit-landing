@@ -126,10 +126,6 @@
     "launch": {
       "nowOnPlay": "Now on Google Play and the App Store",
       "navCta": "Get the app",
-      "getOn": "Get it on",
-      "googlePlay": "Google Play",
-      "downloadOn": "Download on the",
-      "appStore": "App Store",
       "comingSoon": "Available now",
       "playAria": "Get Wordhabit on Google Play",
       "appStoreAria": "Download Wordhabit on the App Store",
@@ -194,10 +190,6 @@
     },
     "subtitle": "Get the free app and make it a habit.",
     "store": {
-      "getOn": "Get it on",
-      "googlePlay": "Google Play",
-      "downloadOn": "Download on the",
-      "appStore": "App Store",
       "comingSoon": "Coming soon"
     },
     "free": "Free · No sign-up",
@@ -303,6 +295,10 @@
     "copyright": "© 2026 · Made for word lovers.",
     "support": "Support",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Terms",
+    "storeCredits": {
+      "apple": "Apple, the Apple logo and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.",
+      "google": "Google Play, the Google Play logo and Android are trademarks of Google LLC."
+    }
   }
 }

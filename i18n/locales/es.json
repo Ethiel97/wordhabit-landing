@@ -126,13 +126,9 @@
     "launch": {
       "nowOnPlay": "Ya en Google Play y en la App Store",
       "navCta": "Descargar la app",
-      "getOn": "Disponible en",
-      "googlePlay": "Google Play",
-      "downloadOn": "Descárgala en la",
-      "appStore": "App Store",
       "comingSoon": "Disponible ahora",
       "playAria": "Consigue Wordhabit en Google Play",
-      "appStoreAria": "Descargar Wordhabit en la App Store",
+      "appStoreAria": "Consigue Wordhabit en el App Store",
       "screenshotAlt": "La pantalla de inicio de Wordhabit: la palabra del día y el recorrido diario",
       "freeForever": "Gratis. La palabra del día, las tarjetas y el dominio seguirán siendo gratis para siempre.",
       "iphoneHint": "¿Tienes iPhone?",
@@ -194,10 +190,6 @@
     },
     "subtitle": "Descarga la app gratis y conviértelo en un hábito.",
     "store": {
-      "getOn": "Disponible en",
-      "googlePlay": "Google Play",
-      "downloadOn": "Descárgala en el",
-      "appStore": "App Store",
       "comingSoon": "Muy pronto"
     },
     "free": "Gratis · Sin registro",
@@ -219,7 +211,7 @@
       "sharedWord": "Palabra compartida",
       "mascot": "Mascota de Wordhabit",
       "googlePlay": "Disponible en Google Play",
-      "appStore": "Descargar en el App Store"
+      "appStore": "Consíguelo en el App Store"
     }
   },
   "pro": {
@@ -303,6 +295,10 @@
     "copyright": "© 2026 · Creado para amantes de las palabras.",
     "support": "Ayuda",
     "privacy": "Privacidad",
-    "terms": "Términos"
+    "terms": "Términos",
+    "storeCredits": {
+      "apple": "Apple, el logotipo de Apple y iPhone son marcas comerciales de Apple Inc., registradas en EE. UU. y en otros países y regiones. App Store es una marca de servicio de Apple Inc.",
+      "google": "Google Play, el logotipo de Google Play y Android son marcas comerciales de Google LLC."
+    }
   }
 }
