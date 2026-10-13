@@ -12,7 +12,7 @@ useSeoMeta({
   ogType: 'website',
   ogSiteName: 'Wordhabit',
   ogUrl: 'https://wordhabit.app/pro',
-  ogImage: 'https://wordhabit.app/og-image-v2.png',
+  ogImage: 'https://wordhabit.app/og-image-v3.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   twitterCard: 'summary_large_image',
