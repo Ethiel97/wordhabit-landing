@@ -35,8 +35,8 @@ const prefersAppStore = computed(() => /iPad|iPhone|iPod/i.test(requestUserAgent
 const showPlayStore = computed(() => !props.preferredStoreOnly || !prefersAppStore.value)
 const showAppStore = computed(() => !props.preferredStoreOnly || prefersAppStore.value)
 
-// Official artwork, used unmodified: Apple's black "Download on the App
-// Store" badge and Google's "Get it on Google Play" badge, with its
+// Official localized artwork, used unmodified: Apple's black "Download on
+// the App Store" badge and Google's "Get it on Google Play" badge, with its
 // transparent padding cropped so both images share the same visible height.
 // Locales without their own artwork fall back to English.
 const englishArtwork = {
@@ -45,6 +45,14 @@ const englishArtwork = {
 }
 const artworkByLocale: Partial<Record<string, typeof englishArtwork>> = {
   en: englishArtwork,
+  fr: {
+    appStore: {src: '/badges/app-store-fr.svg', width: 127, height: 40},
+    googlePlay: {src: '/badges/google-play-fr.png', width: 646, height: 192},
+  },
+  es: {
+    appStore: {src: '/badges/app-store-es.svg', width: 120, height: 40},
+    googlePlay: {src: '/badges/google-play-es.png', width: 646, height: 192},
+  },
 }
 const artwork = computed(() => artworkByLocale[locale.value] ?? englishArtwork)
 
