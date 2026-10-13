@@ -30,10 +30,10 @@ const outerRadius = computed(() => props.width * 0.155)
       <div class="overflow-hidden">
         <NuxtImg
             class="mt-[-13.9%] block h-auto w-full"
-            src="/app-home.webp"
+            src="/app-home-v2.webp"
             :alt="t('landing.launch.screenshotAlt')"
             width="680"
-            height="1517"
+            height="1478"
             sizes="340px"
             densities="x1 x2"
             format="webp"
