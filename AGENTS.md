@@ -5,6 +5,7 @@
 - App shell is minimal: `app/app.vue` renders only `<NuxtPage />`.
 - Primary UI stack: Nuxt + Vue SFCs (`<script setup lang="ts">`) + `@nuxt/ui` + Tailwind v4-style CSS imports.
 - There is no backend/API integration in this repo; waitlist behavior is currently local UI state.
+- `social/` is the Facebook publishing pipeline, outside the Nuxt app: weekly content in `social/weeks/`, rendered by `social/render.mjs` into `public/social/en/`. Read `social/README.md` and `social/GUIDE.md` before touching it; never edit the PNGs by hand.
 
 ## Architecture and Data Flow
 - `app/pages/index.vue` composes sections in order: nav -> hero -> features -> how-it-works -> pricing -> FAQ -> CTA -> footer.

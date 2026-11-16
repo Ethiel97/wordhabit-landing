@@ -1,0 +1,297 @@
+{
+  "week": 1,
+  "campaign": "anglais_fr",
+  "startDate": "2026-11-17",
+  "publishTimeUtc": "13:00",
+  "linkPlacement": "caption",
+  "posts": [
+    {
+      "day": 1,
+      "slug": "i-agree",
+      "series": "Erreurs fréquentes",
+      "hashtags": "#anglais #apprendrelanglais #vocabulaire #wordhabit",
+      "caption": "Tu dis « I am agree » ? C’est l’une des erreurs les plus fréquentes chez les francophones. 😅\n\nEn anglais, agree est déjà un verbe : on dit simplement I agree.\n\nEt pour varier, voici 4 expressions que les anglophones utilisent tous les jours 👆\n\n💬 À toi : tu es d’accord avec cette phrase ? Réponds en anglais en commentaire.\n« Learning one word a day is enough to make progress. »",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "Erreur fréquente",
+          "title": "Arrête de dire ~« I am agree »~",
+          "subtitle": "En anglais, *agree* est déjà un verbe. Voici comment dire que tu es d’accord, naturellement.",
+          "ara": "curious"
+        },
+        {
+          "type": "fix",
+          "label": "La règle",
+          "wrong": "I am agree.",
+          "right": "I agree.",
+          "note": "*Agree* est un verbe : on dit *I agree*, comme on dit *I think*. Personne ne dit *I am think*."
+        },
+        {
+          "type": "phrase",
+          "phrase": "I couldn’t agree more.",
+          "meaning": "Je suis entièrement d’accord.",
+          "example": "You’re right, I couldn’t agree more.",
+          "translation": "Tu as raison, je suis tout à fait d’accord."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Fair point.",
+          "meaning": "C’est juste. Bonne remarque.",
+          "example": "Fair point, but the price is still too high.",
+          "translation": "C’est juste, mais le prix reste trop élevé."
+        },
+        {
+          "type": "phrase",
+          "phrase": "That makes sense.",
+          "meaning": "C’est logique. Ça se tient.",
+          "example": "That makes sense. Let’s do it your way.",
+          "translation": "Ça se tient. Faisons comme tu dis."
+        },
+        {
+          "type": "phrase",
+          "phrase": "I’m with you on that.",
+          "meaning": "Je suis de ton avis là-dessus.",
+          "example": "I’m with you on that: we need more time.",
+          "translation": "Je suis de ton avis : il nous faut plus de temps."
+        },
+        {
+          "type": "prompt",
+          "kicker": "À toi",
+          "title": "Tu es d’accord ?",
+          "body": "Réponds en anglais en commentaire, avec l’une de ces expressions :\n« *Learning one word a day is enough to make progress.* »",
+          "footer": "Enregistre ce post pour le retrouver."
+        },
+        {
+          "type": "cta"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "slug": "stale",
+      "series": "Quiz du jour",
+      "hashtags": "#anglais #quiz #vocabulaire #wordhabit",
+      "caption": "Petit quiz du jour 🍞\n\nComment dit-on « du pain rassis » en anglais ?\nA. Rusty bread\nB. Stale bread\nC. Stiff bread\n\nRéponds A, B ou C en commentaire 👇 La réponse arrive demain.",
+      "answer": "Réponse du quiz d’hier : B, stale bread. Rusty veut dire rouillé, et stiff veut dire raide.",
+      "slides": [
+        {
+          "type": "quiz",
+          "kicker": "Quiz du jour",
+          "question": "Comment dit-on « du pain rassis » en anglais ?",
+          "options": [
+            "Rusty bread",
+            "Stale bread",
+            "Stiff bread"
+          ],
+          "footer": "Réponds A, B ou C en commentaire",
+          "ara": "curious"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "slug": "faux-amis-1",
+      "series": "Faux amis",
+      "hashtags": "#anglais #fauxamis #vocabulaire #wordhabit",
+      "caption": "Ils ressemblent au français, mais ils ne veulent pas dire la même chose 👀\n\n❌ Actually ≠ actuellement\n❌ Eventually ≠ éventuellement\n❌ Library ≠ librairie\n❌ Sensible ≠ sensible\n❌ Assist ≠ assister\n\nLe vrai sens de chacun est dans le post 👆\n\n💬 Lequel te piégeait ? Dis-le en commentaire.",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "Faux amis",
+          "title": "5 mots anglais qui ne veulent *pas* dire ce que tu crois",
+          "subtitle": "Ils ressemblent au français. Ils te trompent.",
+          "ara": "curious"
+        },
+        {
+          "type": "falsefriend",
+          "word": "Actually",
+          "notWord": "actuellement",
+          "meaning": "En fait. En réalité.",
+          "trap": "Actuellement se dit *currently*.",
+          "example": "Actually, I’ve never been to London.",
+          "translation": "En fait, je ne suis jamais allé à Londres."
+        },
+        {
+          "type": "falsefriend",
+          "word": "Eventually",
+          "notWord": "éventuellement",
+          "meaning": "Finalement. À la longue.",
+          "trap": "Éventuellement se dit *possibly*.",
+          "example": "She eventually found a job.",
+          "translation": "Elle a fini par trouver un travail."
+        },
+        {
+          "type": "falsefriend",
+          "word": "Library",
+          "notWord": "librairie",
+          "meaning": "Bibliothèque.",
+          "trap": "Une librairie se dit *a bookshop*.",
+          "example": "I study at the library every Saturday.",
+          "translation": "J’étudie à la bibliothèque tous les samedis."
+        },
+        {
+          "type": "falsefriend",
+          "word": "Sensible",
+          "notWord": "sensible",
+          "meaning": "Raisonnable. Sensé.",
+          "trap": "Sensible, en français, se dit *sensitive*.",
+          "example": "That’s a sensible decision.",
+          "translation": "C’est une décision raisonnable."
+        },
+        {
+          "type": "falsefriend",
+          "word": "Assist",
+          "notWord": "assister",
+          "meaning": "Aider.",
+          "trap": "Assister à une réunion se dit *to attend a meeting*.",
+          "example": "Can you assist me with this form?",
+          "translation": "Peux-tu m’aider avec ce formulaire ?"
+        },
+        {
+          "type": "prompt",
+          "kicker": "À toi",
+          "title": "Lequel te piégeait ?",
+          "body": "Dis-le en commentaire, puis écris une phrase en anglais avec ce mot.",
+          "footer": "Enregistre ce post pour le retrouver."
+        },
+        {
+          "type": "cta"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "slug": "age",
+      "series": "Quiz du jour",
+      "hashtags": "#anglais #quiz #grammaire #wordhabit",
+      "caption": "Quiz du jour 🎂\n\nLaquelle est correcte ?\nA. I have 25 years.\nB. I am 25 years old.\nC. I make 25 years.\n\nRéponds A, B ou C en commentaire 👇 La réponse arrive demain.",
+      "answer": "Réponse du quiz d’hier : B, I am 25 years old. En anglais, on « est » son âge : on ne l’« a » pas.",
+      "slides": [
+        {
+          "type": "quiz",
+          "kicker": "Quiz du jour",
+          "question": "Laquelle est correcte ?",
+          "options": [
+            "I have 25 years.",
+            "I am 25 years old.",
+            "I make 25 years."
+          ],
+          "footer": "Réponds A, B ou C en commentaire",
+          "ara": "curious"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "slug": "en-reunion",
+      "series": "Anglais au travail",
+      "hashtags": "#anglais #anglaisprofessionnel #vocabulaire #wordhabit",
+      "caption": "Une réunion en anglais et tu ne sais pas comment prendre la parole ? 🎤\n\nVoici 6 phrases polies et naturelles, très courantes au travail 👆\n\n💬 Laquelle vas-tu utiliser à ta prochaine réunion ? Dis-le en commentaire.",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "Anglais au travail",
+          "title": "6 phrases pour prendre la parole *en réunion*",
+          "subtitle": "Polies, naturelles, et très courantes au travail.",
+          "ara": "curious"
+        },
+        {
+          "type": "phrase",
+          "phrase": "Can I jump in here?",
+          "meaning": "Je peux intervenir ?",
+          "example": "Sorry, can I jump in here? I have a quick question.",
+          "translation": "Pardon, je peux intervenir ? J’ai une petite question."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Just to clarify…",
+          "meaning": "Juste pour clarifier…",
+          "example": "Just to clarify, the deadline is Friday?",
+          "translation": "Juste pour clarifier : la date limite, c’est vendredi ?"
+        },
+        {
+          "type": "phrase",
+          "phrase": "Could you elaborate on that?",
+          "meaning": "Tu peux développer ?",
+          "example": "Could you elaborate on that? I’m not sure I follow.",
+          "translation": "Tu peux développer ? Je ne te suis pas bien."
+        },
+        {
+          "type": "phrase",
+          "phrase": "I’d like to build on what Amina said.",
+          "meaning": "J’aimerais rebondir sur ce qu’a dit Amina.",
+          "example": "I’d like to build on what Amina said: we could test it first.",
+          "translation": "J’aimerais rebondir sur l’idée d’Amina : on pourrait d’abord tester."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Let’s circle back to this later.",
+          "meaning": "Revenons-y plus tard.",
+          "example": "Good question. Let’s circle back to it after the break.",
+          "translation": "Bonne question. Revenons-y après la pause."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Let’s take this offline.",
+          "meaning": "Parlons-en en dehors de la réunion.",
+          "example": "This needs more time. Let’s take it offline.",
+          "translation": "Ça demande plus de temps. Parlons-en après la réunion."
+        },
+        {
+          "type": "prompt",
+          "kicker": "À toi",
+          "title": "Laquelle vas-tu utiliser ?",
+          "body": "Écris en commentaire la phrase que tu utiliseras à ta prochaine réunion.",
+          "footer": "Enregistre ce post pour ta prochaine réunion."
+        },
+        {
+          "type": "cta"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "slug": "piece-of-cake",
+      "series": "Quiz du jour",
+      "hashtags": "#anglais #quiz #expressions #wordhabit",
+      "caption": "Quiz du jour 🍰\n\nQue veut dire « It’s a piece of cake » ?\nA. C’est un morceau de gâteau.\nB. C’est très facile.\nC. C’est la fête.\n\nRéponds A, B ou C en commentaire 👇 La réponse arrive demain.",
+      "answer": "Réponse du quiz d’hier : B. « It’s a piece of cake » veut dire « c’est très facile », comme « c’est du gâteau » en français.",
+      "slides": [
+        {
+          "type": "quiz",
+          "kicker": "Quiz du jour",
+          "question": "Que veut dire « It’s a piece of cake » ?",
+          "options": [
+            "C’est un morceau de gâteau.",
+            "C’est très facile.",
+            "C’est la fête."
+          ],
+          "footer": "Réponds A, B ou C en commentaire",
+          "ara": "curious"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "slug": "grateful",
+      "series": "Le mot de la semaine",
+      "hashtags": "#anglais #motdelasemaine #vocabulaire #wordhabit",
+      "caption": "Le mot de la semaine : grateful 🙏\n\nIl veut dire « reconnaissant ».\nI’m grateful for your help.\n\nAttention à l’orthographe : grateful, pas greatful.\n\n💬 À toi : écris une phrase avec grateful en commentaire. On répond à chacune.",
+      "slides": [
+        {
+          "type": "word",
+          "kicker": "Le mot de la semaine",
+          "word": "Grateful",
+          "phonetic": "/ˈɡreɪt.fəl/",
+          "pos": "adjectif",
+          "meaning": "Reconnaissant.",
+          "example": "I’m grateful for your help.",
+          "translation": "Merci pour ton aide, je t’en suis reconnaissant.",
+          "trap": "On écrit *grateful*, pas ~greatful~.",
+          "prompt": "Écris une phrase avec *grateful* en commentaire. On répond à chacune.",
+          "ara": "pleased"
+        }
+      ]
+    }
+  ]
+}

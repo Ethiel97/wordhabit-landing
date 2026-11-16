@@ -1,0 +1,14 @@
+<!-- Stops mirror WhColors.light().gradientStart / gradientEnd, derived
+     from the #16A34A brand seed. SVG cannot read the token, so this file
+     is the one place the values are restated: re-derive it whenever the
+     brand seed changes (see tool/generate_app_icons.dart). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="whLogoGradient" x1="67%" y1="0%" x2="33%" y2="100%">
+      <stop offset="0%" stop-color="#32AE60"/>
+      <stop offset="100%" stop-color="#168F3D"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="30" fill="url(#whLogoGradient)"/>
+  <path d="M26 34 L38 67 L50 42 L62 67 L74 34" stroke="#FFFFFF" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
