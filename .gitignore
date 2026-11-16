@@ -26,3 +26,7 @@ pnpm-debug.log*
 .DS_Store
 .idea/
 .vscode/
+
+# Facebook pipeline (social/render.mjs)
+social/data.js
+social/.out/

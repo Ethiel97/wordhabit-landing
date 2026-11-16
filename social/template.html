@@ -1,0 +1,217 @@
+<!doctype html>
+<!-- One 1080x1350 slide per load: template.html#<slug>/<slide number>.
+     render.mjs writes data.js (window.POSTS) next to this file. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=block" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FBF8F2;
+    --ink: #101828;
+    --gray: #667085;
+    --line: #EAE5DA;
+    --brand: #16A34A;
+    --brand-dark: #13702D;
+    --brand-tint: #E5F5EB;
+    --orange: #F5A200;
+    --red: #D92D20;
+    --red-bg: #FEF3F2;
+    --amber-bg: #FFF4E4;
+    --amber-border: #FCE4BC;
+    --amber-text: #B47206;
+    --scale: 1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .slide { position: relative; width: 1080px; height: 1350px; padding: 76px 84px; display: flex; flex-direction: column; }
+  .top { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 18px; font-weight: 800; font-size: 36px; letter-spacing: -0.01em; }
+  .brand img { width: 60px; height: 60px; }
+  .count { font-size: 28px; font-weight: 700; color: var(--gray); }
+  .body { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: calc(40px * var(--scale)); min-height: 0; }
+  .bottom { display: flex; align-items: center; justify-content: space-between; height: 48px; font-size: 22px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
+  .swipe { color: var(--brand); letter-spacing: 0.04em; text-transform: none; font-size: 30px; }
+
+  .kicker { align-self: flex-start; background: var(--brand); color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; padding: 12px 26px; border-radius: 999px; }
+  .label { font-size: 22px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brand); margin-bottom: 14px; }
+  .serif { font-family: 'Fraunces', serif; font-weight: 650; letter-spacing: -0.02em; }
+  em.accent { font-style: normal; color: var(--brand); }
+  .bad { color: var(--red); }
+
+  .title { font-size: calc(108px * var(--scale)); line-height: 1.04; }
+  .subtitle { font-size: calc(38px * var(--scale)); line-height: 1.35; font-weight: 500; color: #344054; max-width: 640px; }
+  .cover .body { justify-content: flex-start; padding-top: 70px; }
+  .ara { position: absolute; pointer-events: none; }
+  .cover .ara { width: 430px; right: 30px; bottom: 100px; }
+
+  .card { background: #fff; border: 2px solid var(--line); border-radius: 32px; padding: calc(40px * var(--scale)) 44px; }
+  .phrase { font-size: calc(102px * var(--scale)); line-height: 1.06; }
+  .meaning { font-size: calc(50px * var(--scale)); font-weight: 700; line-height: 1.25; }
+  .example { font-family: 'Fraunces', serif; font-weight: 500; font-size: calc(46px * var(--scale)); line-height: 1.3; }
+  .translation { margin-top: 18px; font-size: calc(32px * var(--scale)); line-height: 1.4; color: var(--gray); font-weight: 500; }
+  .rule { height: 2px; background: var(--line); }
+
+  .fixrow { display: flex; align-items: center; gap: 32px; border-radius: 32px; padding: 40px 44px; font-size: calc(72px * var(--scale)); }
+  .fixrow.wrong { background: var(--red-bg); border: 2px solid #FECDCA; }
+  .fixrow.wrong span { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 6px; color: #7A271A; }
+  .fixrow.right { background: var(--brand-tint); border: 2px solid #B7E4C7; color: var(--brand-dark); }
+  .mark { flex: none; width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-family: 'Plus Jakarta Sans'; font-size: 46px; font-weight: 800; }
+  .wrong .mark { background: var(--red); }
+  .right .mark { background: var(--brand); }
+  .note { font-size: calc(40px * var(--scale)); line-height: 1.4; font-weight: 500; color: #344054; }
+
+  .ff-word { font-size: calc(128px * var(--scale)); line-height: 1; }
+  .ff-not { margin-top: 18px; font-size: calc(46px * var(--scale)); font-weight: 600; color: var(--gray); }
+  .ff-not s { text-decoration-color: var(--red); text-decoration-thickness: 4px; }
+  .trap { background: var(--amber-bg); border: 2px solid var(--amber-border); border-radius: 28px; padding: 28px 36px; font-size: calc(34px * var(--scale)); font-weight: 600; color: #7A4B03; line-height: 1.35; }
+  .trap b { color: var(--amber-text); letter-spacing: 0.14em; font-size: 22px; display: block; margin-bottom: 8px; text-transform: uppercase; }
+
+  .prompt-title { font-size: calc(112px * var(--scale)); line-height: 1.02; }
+  .prompt-body { font-size: calc(42px * var(--scale)); line-height: 1.4; font-weight: 500; }
+  .save { align-self: flex-start; display: flex; align-items: center; gap: 16px; background: var(--brand-tint); color: var(--brand-dark); border-radius: 999px; padding: 18px 30px; font-size: 30px; font-weight: 700; }
+  .save svg { width: 30px; height: 30px; }
+
+  .quiz .body { justify-content: flex-start; padding-top: 56px; }
+  .question { font-size: calc(80px * var(--scale)); line-height: 1.08; }
+  .options { display: flex; flex-direction: column; gap: 22px; }
+  .option { display: flex; align-items: center; gap: 30px; background: #fff; border: 2px solid var(--line); border-radius: 28px; padding: 28px 34px; font-size: calc(44px * var(--scale)); font-weight: 600; }
+  .letter { flex: none; width: 72px; height: 72px; border-radius: 50%; border: 4px solid var(--brand); color: var(--brand); display: grid; place-items: center; font-size: 36px; font-weight: 800; }
+  .answer-cta { font-size: 36px; font-weight: 800; color: var(--brand); }
+  .quiz .ara { width: 300px; right: 40px; bottom: 96px; }
+
+  .word .body { justify-content: flex-start; padding-top: 40px; gap: calc(30px * var(--scale)); }
+  .word-main { font-size: calc(150px * var(--scale)); line-height: 0.95; }
+  .word-meta { font-size: 34px; color: var(--gray); font-weight: 600; margin-top: 14px; }
+  .word .ara { width: 250px; right: 60px; top: 230px; }
+  .tint { background: var(--brand-tint); border-radius: 28px; padding: 28px 36px; font-size: calc(34px * var(--scale)); font-weight: 700; color: var(--brand-dark); line-height: 1.35; }
+
+  .cta .body { align-items: center; text-align: center; gap: 34px; }
+  .cta .ara { position: static; width: 440px; }
+  .tagline { font-size: 76px; line-height: 1.08; }
+  .cta-sub { font-size: 38px; font-weight: 600; color: #344054; }
+  .stores { display: flex; gap: 18px; }
+  .store { background: var(--ink); color: #fff; border-radius: 20px; padding: 18px 30px; font-size: 30px; font-weight: 700; }
+  .link-hint { font-size: 52px; font-weight: 800; color: var(--brand); letter-spacing: -0.01em; }
+
+  .overflow::after { content: 'TEXTE TROP LONG'; position: absolute; inset: auto 0 0 0; background: var(--red); color: #fff; font: 800 40px 'Plus Jakarta Sans'; text-align: center; padding: 20px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="data.js"></script>
+<script>
+  // Copied from the app repo: assets/images/wordhabit_logo.svg and
+  // design/rive/mascot/character/poses/<pose>.svg.
+  const LOGO = 'assets/wordhabit-logo.svg';
+  const ara = (pose) => `<img class="ara" src="assets/ara-${pose}.svg" alt="">`;
+  const SAVE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+
+  // French typography: no-break space inside guillemets and before ? ! : ;
+  function fmt(text) {
+    return String(text)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/« /g, '« ').replace(/ »/g, ' »')
+      .replace(/ ([?!:;])/g, ' $1')
+      .replace(/\*([^*]+)\*/g, '<em class="accent">$1</em>')
+      .replace(/~([^~]+)~/g, '<span class="bad">$1</span>')
+      .replace(/\n/g, '<br>');
+  }
+
+  const render = {
+    cover: (s) => `
+      <div class="kicker">${fmt(s.kicker)}</div>
+      <div class="serif title">${fmt(s.title)}</div>
+      <div class="subtitle">${fmt(s.subtitle)}</div>`,
+    fix: (s) => `
+      <div class="kicker">${fmt(s.label)}</div>
+      <div class="fixrow wrong serif"><div class="mark">✕</div><span>${fmt(s.wrong)}</span></div>
+      <div class="fixrow right serif"><div class="mark">✓</div><span>${fmt(s.right)}</span></div>
+      <div class="note">${fmt(s.note)}</div>`,
+    phrase: (s) => `
+      <div class="serif phrase">${fmt(s.phrase)}</div>
+      <div class="rule"></div>
+      <div><div class="label">Le sens</div><div class="meaning">${fmt(s.meaning)}</div></div>
+      <div class="card"><div class="label">Exemple</div><div class="example">${fmt(s.example)}</div><div class="translation">${fmt(s.translation)}</div></div>`,
+    falsefriend: (s) => `
+      <div><div class="serif ff-word">${fmt(s.word)}</div><div class="ff-not">≠ <s>${fmt(s.notWord)}</s></div></div>
+      <div><div class="label">Le vrai sens</div><div class="meaning">${fmt(s.meaning)}</div></div>
+      <div class="trap"><b>Piège</b>${fmt(s.trap)}</div>
+      <div class="card"><div class="label">Exemple</div><div class="example">${fmt(s.example)}</div><div class="translation">${fmt(s.translation)}</div></div>`,
+    prompt: (s) => `
+      <div class="kicker">${fmt(s.kicker)}</div>
+      <div class="serif prompt-title">${fmt(s.title)}</div>
+      <div class="prompt-body">${fmt(s.body)}</div>
+      <div class="save">${SAVE_ICON}${fmt(s.footer)}</div>`,
+    quiz: (s) => `
+      <div class="kicker">${fmt(s.kicker)}</div>
+      <div class="serif question">${fmt(s.question)}</div>
+      <div class="options">${s.options.map((o, i) => `<div class="option"><div class="letter">${'ABC'[i]}</div><div>${fmt(o)}</div></div>`).join('')}</div>
+      <div class="answer-cta">${fmt(s.footer)} 👇</div>`,
+    word: (s) => `
+      <div class="kicker">${fmt(s.kicker)}</div>
+      <div><div class="serif word-main">${fmt(s.word)}</div><div class="word-meta">${fmt(s.phonetic)} · ${fmt(s.pos)}</div></div>
+      <div><div class="label">Le sens</div><div class="meaning">${fmt(s.meaning)}</div></div>
+      <div class="card"><div class="label">Exemple</div><div class="example">${fmt(s.example)}</div><div class="translation">${fmt(s.translation)}</div></div>
+      <div class="trap"><b>Piège</b>${fmt(s.trap)}</div>
+      <div class="tint">${fmt(s.prompt)}</div>`,
+    cta: () => `
+      ${ara('pleased')}
+      <div class="serif tagline">Un mot par jour.<br>Appris en profondeur.<br><em class="accent">Retenu pour la vie.</em></div>
+      <div class="cta-sub">Enrichis ton anglais avec Wordhabit.</div>
+      <div class="store">Gratuit sur Android et iPhone</div>
+      <div class="link-hint">wordhabit.app</div>`,
+  };
+
+  function show() {
+    const [slug, n] = decodeURIComponent(location.hash.slice(1)).split('/');
+    const post = window.POSTS.find((p) => p.slug === slug);
+    const index = Number(n || 1) - 1;
+    const slide = post.slides[index];
+    const total = post.slides.length;
+    const tail = slide.type === 'cover'
+      ? '<span class="swipe">Fais défiler →</span>'
+      : '';
+    document.getElementById('root').innerHTML = `
+      <div class="slide ${slide.type}">
+        <div class="top">
+          <div class="brand"><img src="${LOGO}" alt="">Wordhabit</div>
+          ${total > 1 ? `<div class="count">${index + 1}/${total}</div>` : ''}
+        </div>
+        <div class="body">${render[slide.type](slide)}</div>
+        <div class="bottom"><span>${fmt(post.series)}</span>${tail}</div>
+        ${slide.ara && slide.type !== 'cta' ? ara(slide.ara) : ''}
+      </div>`;
+    document.fonts.ready.then(fit);
+  }
+
+  // Shrinks the type scale until the body fits, then flags what still overflows.
+  function fit() {
+    const slide = document.querySelector('.slide');
+    const body = slide.querySelector('.body');
+    let scale = 1;
+    while (body.scrollHeight > body.clientHeight + 1 && scale > 0.8) {
+      scale -= 0.02;
+      document.documentElement.style.setProperty('--scale', scale);
+    }
+    if (body.scrollHeight > body.clientHeight + 1) slide.classList.add('overflow');
+    const loaded = (family) => [...document.fonts].some(
+      (face) => face.family.replace(/["']/g, '') === family && face.status === 'loaded',
+    );
+    document.body.dataset.fonts =
+      loaded('Fraunces') && loaded('Plus Jakarta Sans') ? 'ok' : 'missing';
+    document.body.dataset.ready = '1';
+  }
+
+  show();
+</script>
+</body>
+</html>
