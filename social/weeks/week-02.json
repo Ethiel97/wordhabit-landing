@@ -1,0 +1,280 @@
+{
+  "week": 2,
+  "campaign": "anglais_fr",
+  "startDate": "2026-11-24",
+  "publishTimeUtc": "13:00",
+  "linkPlacement": "caption",
+  "posts": [
+    {
+      "day": 1,
+      "slug": "very-tired",
+      "series": "Vocabulaire précis",
+      "hashtags": "#anglais #vocabulaire #apprendrelanglais #wordhabit",
+      "caption": "Very tired, very hungry, very happy… Et si tu disais mieux ? 💡\n\nEn anglais, un seul mot précis remplace souvent « very + adjectif ». Ton anglais devient plus naturel et plus expressif.\n\nVoici 5 mots à adopter dès aujourd’hui 👆\n\nAstuce : avec exhausted, starving ou terrified, on évite very. On dit plutôt absolutely : I’m absolutely exhausted.\n\n💬 À toi : comment tu te sens aujourd’hui ? Réponds en anglais en commentaire, avec l’un de ces mots.",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "Vocabulaire précis",
+          "title": "Remplace *very* par le mot juste",
+          "subtitle": "Un seul mot précis vaut mieux que « very + adjectif ». Voici 5 mots à adopter.",
+          "ara": "curious"
+        },
+        {
+          "type": "phrase",
+          "phrase": "Exhausted",
+          "meaning": "Épuisé. Plutôt que *very tired*.",
+          "example": "After the night shift, Kofi was exhausted.",
+          "translation": "Après sa garde de nuit, Kofi était épuisé."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Starving",
+          "meaning": "Affamé. Plutôt que *very hungry*.",
+          "example": "I skipped lunch. I’m starving!",
+          "translation": "J’ai sauté le déjeuner. Je meurs de faim !"
+        },
+        {
+          "type": "phrase",
+          "phrase": "Delighted",
+          "meaning": "Ravi. Plutôt que *very happy*.",
+          "example": "We’re delighted to welcome you to the team.",
+          "translation": "Nous sommes ravis de vous accueillir dans l’équipe."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Terrified",
+          "meaning": "Terrifié. Plutôt que *very scared*.",
+          "example": "Awa is terrified of spiders.",
+          "translation": "Awa a une peur bleue des araignées."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Huge",
+          "meaning": "Énorme. Plutôt que *very big*.",
+          "example": "They live in a huge house near the beach.",
+          "translation": "Ils habitent une immense maison près de la plage."
+        },
+        {
+          "type": "prompt",
+          "kicker": "À toi",
+          "title": "Et toi, aujourd’hui ?",
+          "body": "Réponds en anglais en commentaire, avec l’un de ces mots :\n« *How do you feel today?* »",
+          "footer": "Enregistre ce post pour le retrouver."
+        },
+        {
+          "type": "cta"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "slug": "depend-on",
+      "series": "Quiz du jour",
+      "hashtags": "#anglais #quiz #grammaire #wordhabit",
+      "caption": "Quiz du jour 🤔\n\nLaquelle est correcte ?\nA. It depends of the price.\nB. It depends to the price.\nC. It depends on the price.\n\nRéponds A, B ou C en commentaire 👇 La réponse arrive demain.",
+      "answer": "Réponse du quiz d’hier : C, it depends on the price. En anglais, depend se construit avec on (ou upon), jamais avec of ni to.",
+      "slides": [
+        {
+          "type": "quiz",
+          "kicker": "Quiz du jour",
+          "question": "Laquelle est correcte ?",
+          "options": [
+            "It depends of the price.",
+            "It depends to the price.",
+            "It depends on the price."
+          ],
+          "footer": "Réponds A, B ou C en commentaire",
+          "ara": "curious"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "slug": "expressions-1",
+      "series": "Expressions idiomatiques",
+      "hashtags": "#anglais #expressions #vocabulaire #wordhabit",
+      "caption": "Briser la glace, vendre la mèche… L’anglais aussi a ses expressions imagées 🧊\n\nVoici 5 expressions très courantes, avec leur sens, un exemple et leur équivalent en français 👆\n\n💬 À toi : laquelle préfères-tu ? Écris une phrase avec elle en commentaire.",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "Expressions idiomatiques",
+          "title": "5 expressions anglaises et leur *équivalent* français",
+          "subtitle": "Les anglophones les utilisent tous les jours. Toi aussi, bientôt.",
+          "ara": "curious"
+        },
+        {
+          "type": "phrase",
+          "phrase": "Break the ice",
+          "meaning": "Détendre l’atmosphère. Briser la glace.",
+          "example": "Yao told a joke to break the ice.",
+          "translation": "Yao a fait une blague pour briser la glace."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Spill the beans",
+          "meaning": "Révéler un secret. Vendre la mèche.",
+          "example": "Don’t spill the beans about the surprise party!",
+          "translation": "Ne vends pas la mèche pour la fête surprise !"
+        },
+        {
+          "type": "phrase",
+          "phrase": "Cost an arm and a leg",
+          "meaning": "Coûter très cher. Coûter les yeux de la tête.",
+          "example": "This phone cost an arm and a leg.",
+          "translation": "Ce téléphone a coûté les yeux de la tête."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Once in a blue moon",
+          "meaning": "Très rarement. Tous les trente-six du mois.",
+          "example": "I eat fast food once in a blue moon.",
+          "translation": "Je mange du fast-food tous les trente-six du mois."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Hit the sack",
+          "meaning": "Aller se coucher. Expression familière.",
+          "example": "It’s late. I’m going to hit the sack.",
+          "translation": "Il est tard. Je vais me coucher."
+        },
+        {
+          "type": "prompt",
+          "kicker": "À toi",
+          "title": "Ta préférée ?",
+          "body": "Écris en commentaire une phrase en anglais avec ton expression préférée.",
+          "footer": "Enregistre ce post pour le retrouver."
+        },
+        {
+          "type": "cta"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "slug": "broke",
+      "series": "Quiz du jour",
+      "hashtags": "#anglais #quiz #vocabulaire #wordhabit",
+      "caption": "Quiz du jour 💸\n\nQue veut dire « I’m broke » ?\nA. Je suis fauché.\nB. Je suis brisé.\nC. Je suis en retard.\n\nRéponds A, B ou C en commentaire 👇 La réponse arrive demain.",
+      "answer": "Réponse du quiz d’hier : A, je suis fauché. Broke veut dire sans argent ; « brisé » se dit broken.",
+      "slides": [
+        {
+          "type": "quiz",
+          "kicker": "Quiz du jour",
+          "question": "Que veut dire « I’m broke » ?",
+          "options": [
+            "Je suis fauché.",
+            "Je suis brisé.",
+            "Je suis en retard."
+          ],
+          "footer": "Réponds A, B ou C en commentaire",
+          "ara": "curious"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "slug": "explain-to-me",
+      "series": "Erreurs fréquentes",
+      "hashtags": "#anglais #grammaire #apprendrelanglais #wordhabit",
+      "caption": "Tu dis « explain me » ? C’est une erreur très fréquente chez les francophones, calquée sur « explique-moi ». 🙂\n\nEn anglais, on explique quelque chose à quelqu’un : explain something to someone.\nCan you explain the rule to me?\n\nEt voici 4 façons naturelles de demander une explication 👆\n\n💬 À toi : corrige cette phrase en commentaire.\n« Can you explain me this word? »",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "Erreur fréquente",
+          "title": "Arrête de dire ~« explain me »~",
+          "subtitle": "En anglais, on explique quelque chose *à* quelqu’un. Voici comment demander une explication, naturellement.",
+          "ara": "curious"
+        },
+        {
+          "type": "fix",
+          "label": "La règle",
+          "wrong": "Can you explain me the rule?",
+          "right": "Can you explain the rule to me?",
+          "note": "On dit *explain something to someone* : la personne vient après *to*, jamais juste après *explain*."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Could you explain that to me?",
+          "meaning": "Tu pourrais m’expliquer ça ?",
+          "example": "Could you explain that to me again, please?",
+          "translation": "Tu pourrais me réexpliquer ça, s’il te plaît ?"
+        },
+        {
+          "type": "phrase",
+          "phrase": "What do you mean by that?",
+          "meaning": "Qu’est-ce que tu veux dire par là ?",
+          "example": "Sorry, what do you mean by that?",
+          "translation": "Pardon, qu’est-ce que tu veux dire par là ?"
+        },
+        {
+          "type": "phrase",
+          "phrase": "Can you walk me through it?",
+          "meaning": "Tu peux m’expliquer étape par étape ?",
+          "example": "I’m new here. Can you walk me through the process?",
+          "translation": "Je débute ici. Tu peux m’expliquer la procédure pas à pas ?"
+        },
+        {
+          "type": "phrase",
+          "phrase": "Could you show me how it works?",
+          "meaning": "Tu peux me montrer comment ça marche ?",
+          "example": "Could you show me how this machine works?",
+          "translation": "Tu peux me montrer comment marche cette machine ?"
+        },
+        {
+          "type": "prompt",
+          "kicker": "À toi",
+          "title": "Corrige cette phrase",
+          "body": "Écris la bonne version en commentaire :\n« ~Can you explain me this word?~ »",
+          "footer": "Enregistre ce post pour le retrouver."
+        },
+        {
+          "type": "cta"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "slug": "internship",
+      "series": "Quiz du jour",
+      "hashtags": "#anglais #quiz #anglaisprofessionnel #wordhabit",
+      "caption": "Quiz du jour 💼\n\nComment dit-on « un stage en entreprise » en anglais ?\nA. A stage\nB. An internship\nC. A training\n\nRéponds A, B ou C en commentaire 👇 La réponse arrive demain.",
+      "answer": "Réponse du quiz d’hier : B, an internship. A stage veut dire une scène (de théâtre) ou une étape, et training est indénombrable : on ne dit pas a training.",
+      "slides": [
+        {
+          "type": "quiz",
+          "kicker": "Quiz du jour",
+          "question": "Comment dit-on « un stage en entreprise » en anglais ?",
+          "options": [
+            "A stage",
+            "An internship",
+            "A training"
+          ],
+          "footer": "Réponds A, B ou C en commentaire",
+          "ara": "curious"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "slug": "thorough",
+      "series": "Le mot de la semaine",
+      "hashtags": "#anglais #motdelasemaine #vocabulaire #wordhabit",
+      "caption": "Le mot de la semaine : thorough 🔍\n\nIl veut dire « minutieux, approfondi ».\nKofi did a thorough check before sending the report.\n\nAttention : thorough (minutieux) et through (à travers) n’ont qu’une lettre de différence.\n\n💬 À toi : écris une phrase avec thorough en commentaire. On répond à chacune.",
+      "slides": [
+        {
+          "type": "word",
+          "kicker": "Le mot de la semaine",
+          "word": "Thorough",
+          "phonetic": "/ˈθʌr.ə/",
+          "pos": "adjectif",
+          "meaning": "Minutieux. Approfondi, fait dans le détail.",
+          "example": "Kofi did a thorough check before sending the report.",
+          "translation": "Kofi a tout vérifié minutieusement avant d’envoyer le rapport.",
+          "trap": "Ne confonds pas *thorough* (minutieux) et through (à travers).",
+          "prompt": "Écris une phrase avec *thorough* en commentaire. On répond à chacune.",
+          "ara": "pleased"
+        }
+      ]
+    }
+  ]
+}
