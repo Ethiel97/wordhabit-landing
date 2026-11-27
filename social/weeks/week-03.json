@@ -1,0 +1,297 @@
+{
+  "week": 3,
+  "campaign": "anglais_fr",
+  "startDate": "2026-12-01",
+  "publishTimeUtc": "13:00",
+  "linkPlacement": "caption",
+  "posts": [
+    {
+      "day": 1,
+      "slug": "faux-amis-2",
+      "series": "Faux amis",
+      "hashtags": "#anglais #fauxamis #vocabulaire #wordhabit",
+      "caption": "Ils ressemblent au français, mais attention au piège 👀\n\nPretend ≠ prétendre\nDeception ≠ déception\nLecture ≠ lecture\nAchieve ≠ achever\nCoin ≠ coin\n\nLe vrai sens de chacun est dans le post 👆\n\n💬 À toi : lequel te piégeait ? Écris une phrase en anglais avec lui en commentaire.",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "Faux amis",
+          "title": "5 faux amis qui piègent *les francophones*",
+          "subtitle": "Ils ressemblent au français. Leur sens, lui, est différent.",
+          "ara": "curious"
+        },
+        {
+          "type": "falsefriend",
+          "word": "Pretend",
+          "notWord": "prétendre",
+          "meaning": "Faire semblant.",
+          "trap": "Prétendre (affirmer) se dit *to claim*.",
+          "example": "The children pretended to be asleep.",
+          "translation": "Les enfants faisaient semblant de dormir."
+        },
+        {
+          "type": "falsefriend",
+          "word": "Deception",
+          "notWord": "déception",
+          "meaning": "Tromperie. Mensonge.",
+          "trap": "Une déception se dit *a disappointment*.",
+          "example": "He got the money by deception.",
+          "translation": "Il a obtenu l’argent par la tromperie."
+        },
+        {
+          "type": "falsefriend",
+          "word": "Lecture",
+          "notWord": "lecture",
+          "meaning": "Cours magistral. Conférence.",
+          "trap": "La lecture se dit *reading*.",
+          "example": "Fatou has a lecture at 8 a.m. tomorrow.",
+          "translation": "Fatou a un cours magistral à 8 h demain."
+        },
+        {
+          "type": "falsefriend",
+          "word": "Achieve",
+          "notWord": "achever",
+          "meaning": "Atteindre, réaliser (un objectif).",
+          "trap": "Achever se dit *to finish* ou *to complete*.",
+          "example": "Yao finally achieved his goal.",
+          "translation": "Yao a enfin atteint son objectif."
+        },
+        {
+          "type": "falsefriend",
+          "word": "Coin",
+          "notWord": "coin",
+          "meaning": "Pièce de monnaie.",
+          "trap": "Un coin se dit *a corner*.",
+          "example": "I found a coin under the sofa.",
+          "translation": "J’ai trouvé une pièce sous le canapé."
+        },
+        {
+          "type": "prompt",
+          "kicker": "À toi",
+          "title": "Lequel te piégeait ?",
+          "body": "Dis-le en commentaire, puis écris une phrase en anglais avec ce mot.",
+          "footer": "Enregistre ce post pour le retrouver."
+        },
+        {
+          "type": "cta"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "slug": "cant-wait",
+      "series": "Quiz du jour",
+      "hashtags": "#anglais #quiz #expressions #wordhabit",
+      "caption": "Quiz du jour 🤗\n\nComment dit-on « J’ai hâte de te voir » en anglais ?\nA. I’m in a hurry to see you.\nB. I look forward to see you.\nC. I can’t wait to see you.\n\nRéponds A, B ou C en commentaire 👇 La réponse arrive demain.",
+      "answer": "Réponse du quiz d’hier : C, I can’t wait to see you. I’m in a hurry veut dire « je suis pressé », et look forward to se construit avec -ing : I look forward to seeing you.",
+      "slides": [
+        {
+          "type": "quiz",
+          "kicker": "Quiz du jour",
+          "question": "Comment dit-on « J’ai hâte de te voir » en anglais ?",
+          "options": [
+            "I’m in a hurry to see you.",
+            "I look forward to see you.",
+            "I can’t wait to see you."
+          ],
+          "footer": "Réponds A, B ou C en commentaire",
+          "ara": "curious"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "slug": "par-email",
+      "series": "Anglais au travail",
+      "hashtags": "#anglais #anglaisprofessionnel #vocabulaire #wordhabit",
+      "caption": "Un e-mail pro à écrire en anglais et tu bloques dès la première ligne ? ✉️\n\nVoici 6 phrases naturelles pour ouvrir, expliquer, relancer et conclure 👆\n\n💬 À toi : laquelle te sera la plus utile ? Dis-le en commentaire.",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "Anglais au travail",
+          "title": "6 phrases pour écrire un *e-mail* pro",
+          "subtitle": "Pour ouvrir, expliquer, relancer et conclure, naturellement.",
+          "ara": "curious"
+        },
+        {
+          "type": "phrase",
+          "phrase": "I hope this email finds you well.",
+          "meaning": "J’espère que vous allez bien.",
+          "example": "Hi Kofi, I hope this email finds you well.",
+          "translation": "Bonjour Kofi, j’espère que vous allez bien."
+        },
+        {
+          "type": "phrase",
+          "phrase": "I’m writing to…",
+          "meaning": "Je vous écris pour…",
+          "example": "I’m writing to confirm our meeting on Monday.",
+          "translation": "Je vous écris pour confirmer notre rendez-vous de lundi."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Please find attached…",
+          "meaning": "Veuillez trouver ci-joint…",
+          "example": "Please find attached the October report.",
+          "translation": "Veuillez trouver ci-joint le rapport d’octobre."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Just following up on…",
+          "meaning": "Je reviens vers vous au sujet de…",
+          "example": "Just following up on my email from last week.",
+          "translation": "Je reviens vers vous au sujet de mon e-mail de la semaine dernière."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Let me know if you have any questions.",
+          "meaning": "N’hésitez pas si vous avez des questions.",
+          "example": "Let me know if you have any questions about the quote.",
+          "translation": "N’hésitez pas si vous avez des questions sur le devis."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Thanks in advance.",
+          "meaning": "Merci d’avance.",
+          "example": "Thanks in advance for sending the documents.",
+          "translation": "Merci d’avance de m’envoyer les documents."
+        },
+        {
+          "type": "prompt",
+          "kicker": "À toi",
+          "title": "Laquelle te sera utile ?",
+          "body": "Écris en commentaire la phrase que tu utiliseras dans ton prochain e-mail.",
+          "footer": "Enregistre ce post pour ton prochain e-mail."
+        },
+        {
+          "type": "cta"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "slug": "fed-up",
+      "series": "Quiz du jour",
+      "hashtags": "#anglais #quiz #expressions #wordhabit",
+      "caption": "Quiz du jour 😤\n\nQue veut dire « I’m fed up » ?\nA. J’ai bien mangé.\nB. J’en ai marre.\nC. Je suis debout.\n\nRéponds A, B ou C en commentaire 👇 La réponse arrive demain.",
+      "answer": "Réponse du quiz d’hier : B, j’en ai marre. Fed vient de feed (nourrir), mais I’m fed up veut dire « j’en ai assez » ; « j’ai bien mangé » se dit plutôt I’m full.",
+      "slides": [
+        {
+          "type": "quiz",
+          "kicker": "Quiz du jour",
+          "question": "Que veut dire « I’m fed up » ?",
+          "options": [
+            "J’ai bien mangé.",
+            "J’en ai marre.",
+            "Je suis debout."
+          ],
+          "footer": "Réponds A, B ou C en commentaire",
+          "ara": "curious"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "slug": "nice",
+      "series": "Vocabulaire précis",
+      "hashtags": "#anglais #vocabulaire #apprendrelanglais #wordhabit",
+      "caption": "Nice person, nice food, nice view… Et si tu choisissais le mot juste ? 💡\n\nNice n’est pas faux, mais il dit peu de choses. Un mot précis rend ton anglais plus vivant.\n\nVoici 5 mots à utiliser à la place 👆\n\n💬 À toi : décris ton plat préféré en anglais en commentaire, sans utiliser nice.",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "Vocabulaire précis",
+          "title": "Remplace *nice* par le mot juste",
+          "subtitle": "*Nice* convient à tout, donc il ne dit pas grand-chose. Voici 5 mots plus précis.",
+          "ara": "curious"
+        },
+        {
+          "type": "phrase",
+          "phrase": "Kind",
+          "meaning": "Gentil. Plutôt que *nice* pour une personne.",
+          "example": "Amina is always kind to new students.",
+          "translation": "Amina est toujours gentille avec les nouveaux élèves."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Delicious",
+          "meaning": "Délicieux. Plutôt que *nice* pour un plat.",
+          "example": "Your mother’s jollof rice is delicious.",
+          "translation": "Le riz jollof de ta mère est délicieux."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Pleasant",
+          "meaning": "Agréable. Plutôt que *nice* pour un moment.",
+          "example": "We had a pleasant evening by the sea.",
+          "translation": "Nous avons passé une soirée agréable au bord de la mer."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Stunning",
+          "meaning": "Magnifique. Plutôt que *nice* pour une vue.",
+          "example": "The view from the hill is stunning.",
+          "translation": "La vue depuis la colline est magnifique."
+        },
+        {
+          "type": "phrase",
+          "phrase": "Sunny",
+          "meaning": "Ensoleillé. Plutôt que *nice weather*.",
+          "example": "It’s sunny today. Let’s eat outside.",
+          "translation": "Il fait beau aujourd’hui. Mangeons dehors."
+        },
+        {
+          "type": "prompt",
+          "kicker": "À toi",
+          "title": "Ton plat préféré ?",
+          "body": "Décris-le en anglais en commentaire, sans utiliser ~nice~.",
+          "footer": "Enregistre ce post pour le retrouver."
+        },
+        {
+          "type": "cta"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "slug": "since-2020",
+      "series": "Quiz du jour",
+      "hashtags": "#anglais #quiz #grammaire #wordhabit",
+      "caption": "Quiz du jour 🏠\n\nLaquelle est correcte ?\nA. I live here since 2020.\nB. I have lived here since 2020.\nC. I am living here since 2020.\n\nRéponds A, B ou C en commentaire 👇 La réponse arrive demain.",
+      "answer": "Réponse du quiz d’hier : B, I have lived here since 2020. Avec since, pour une situation qui dure encore, l’anglais emploie le present perfect, pas le présent comme en français. On peut aussi dire I have been living here since 2020.",
+      "slides": [
+        {
+          "type": "quiz",
+          "kicker": "Quiz du jour",
+          "question": "Laquelle est correcte ?",
+          "options": [
+            "I live here since 2020.",
+            "I have lived here since 2020.",
+            "I am living here since 2020."
+          ],
+          "footer": "Réponds A, B ou C en commentaire",
+          "ara": "curious"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "slug": "reliable",
+      "series": "Le mot de la semaine",
+      "hashtags": "#anglais #motdelasemaine #vocabulaire #wordhabit",
+      "caption": "Le mot de la semaine : reliable 🤝\n\nIl veut dire « fiable » : on peut compter dessus.\nFatou is a reliable colleague: she always meets her deadlines.\n\nAttention à l’orthographe : reliable vient de rely, et le y devient i.\n\n💬 À toi : écris une phrase avec reliable en commentaire. On répond à chacune.",
+      "slides": [
+        {
+          "type": "word",
+          "kicker": "Le mot de la semaine",
+          "word": "Reliable",
+          "phonetic": "/rɪˈlaɪ.ə.bəl/",
+          "pos": "adjectif",
+          "meaning": "Fiable. Sur qui l’on peut compter.",
+          "example": "Fatou is a reliable colleague: she always meets her deadlines.",
+          "translation": "Fatou est une collègue fiable : elle respecte toujours ses délais.",
+          "trap": "On écrit *reliable* (de *rely*), pas ~relyable~.",
+          "prompt": "Écris une phrase avec *reliable* en commentaire. On répond à chacune.",
+          "ara": "pleased"
+        }
+      ]
+    }
+  ]
+}
